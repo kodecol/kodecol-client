@@ -13,7 +13,11 @@ export function FinalCtaSection() {
   const content = FINAL_CTA_CONTENT;
 
   return (
-    <section id="cotizaciones" className="bg-surface-1 px-6 pb-[120px] pt-24 md:pt-[110px]">
+    <section
+      id="cotizaciones"
+      aria-labelledby="cotizaciones-title"
+      className="bg-surface-1 px-6 pb-[120px] pt-24 md:pt-[110px]"
+    >
       <Reveal className="mx-auto max-w-[980px]">
         <div
           className="relative overflow-hidden rounded-2xl border border-border-accent px-6 py-14 text-center md:px-10 md:py-[72px]"
@@ -34,7 +38,10 @@ export function FinalCtaSection() {
 
           <div className="relative flex flex-col items-center gap-6">
             <Eyebrow>{content.eyebrow}</Eyebrow>
-            <h2 className="font-sora text-4xl font-bold tracking-[-0.01em] text-text-primary md:text-[52px]">
+            <h2
+              id="cotizaciones-title"
+              className="font-sora text-4xl font-bold tracking-[-0.01em] text-text-primary md:text-[52px]"
+            >
               {content.title}
             </h2>
             <p className="max-w-[640px] text-lg leading-relaxed text-green-100">

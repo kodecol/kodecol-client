@@ -10,10 +10,14 @@ interface ExperienceSectionProps {
 /** Experiencia: sección server que envuelve el timeline client (la hoja interactiva). */
 export function ExperienceSection({ profile }: ExperienceSectionProps) {
   return (
-    <section className="px-6 py-16 md:py-20">
+    <section
+      aria-labelledby="experiencia-title"
+      className="px-6 py-16 md:py-20"
+    >
       <div className="mx-auto max-w-[820px]">
         <Reveal>
           <SectionHeading
+            id="experiencia-title"
             align="left"
             eyebrow="Experiencia"
             title="Una trayectoria construyendo de todo."

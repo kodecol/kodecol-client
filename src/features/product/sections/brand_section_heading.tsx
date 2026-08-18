@@ -4,6 +4,8 @@ interface BrandSectionHeadingProps {
   eyebrow: string;
   title?: string;
   description?: string;
+  /** id del <h2>: la <section> lo referencia con aria-labelledby. */
+  id?: string;
 }
 
 /** Encabezado de sección en la paleta de la marca invitada. */
@@ -11,6 +13,7 @@ export function BrandSectionHeading({
   eyebrow,
   title,
   description,
+  id,
 }: BrandSectionHeadingProps) {
   return (
     <header className="mb-12 flex max-w-[64ch] flex-col gap-4">
@@ -25,7 +28,10 @@ export function BrandSectionHeading({
       </Reveal>
       {title ? (
         <Reveal delay={60}>
-          <h2 className="font-sora text-[26px] font-bold leading-[1.1] tracking-[-0.03em] text-[var(--brand-ink)] md:text-[36px]">
+          <h2
+            id={id}
+            className="font-sora text-[26px] font-bold leading-[1.1] tracking-[-0.03em] text-[var(--brand-ink)] md:text-[36px]"
+          >
             {title}
           </h2>
         </Reveal>

@@ -13,7 +13,11 @@ interface ContactSectionProps {
 /** Contacto: tarjeta CTA con gradiente radial, WhatsApp + correo (fiel al mockup). */
 export function ContactSection({ profile }: ContactSectionProps) {
   return (
-    <section id="contacto" className="bg-surface-1 px-6 pb-24 pt-16 md:pt-20">
+    <section
+      id="contacto"
+      aria-labelledby="contacto-title"
+      className="bg-surface-1 px-6 pb-24 pt-16 md:pt-20"
+    >
       <Reveal className="mx-auto max-w-[820px]">
         <div
           className="relative overflow-hidden rounded-2xl border border-border-accent px-6 py-12 text-center md:px-10 md:py-16"
@@ -24,7 +28,10 @@ export function ContactSection({ profile }: ContactSectionProps) {
         >
           <div className="relative flex flex-col items-center gap-5">
             <Eyebrow>Hablemos</Eyebrow>
-            <h2 className="font-sora text-3xl font-bold text-text-primary md:text-4xl">
+            <h2
+              id="contacto-title"
+              className="font-sora text-3xl font-bold text-text-primary md:text-4xl"
+            >
               ¿Construimos algo juntos?
             </h2>
             <p className="max-w-[520px] text-base leading-relaxed text-green-100">

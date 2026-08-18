@@ -12,7 +12,13 @@ export function ProductHeroSection({ brand }: ProductHeroSectionProps) {
   const { detail } = brand;
 
   return (
-    <header className="relative overflow-hidden px-6 py-[88px] md:py-24">
+    /* Era un <header>, que dentro de <main> creaba un segundo landmark `banner`
+       junto al ProductTopBar. Como sección con aria-labelledby queda un solo
+       banner y el h1 nombra la región. */
+    <section
+      aria-labelledby="producto-title"
+      className="relative overflow-hidden px-6 py-[88px] md:py-24"
+    >
       {/* Atmósfera radial de la marca (nunca degradado lineal a pantalla completa) */}
       <div
         aria-hidden
@@ -28,7 +34,10 @@ export function ProductHeroSection({ brand }: ProductHeroSectionProps) {
           <Reveal>
             <Image
               src={brand.wordmark_src}
-              alt={brand.name}
+              /* Decorativo: el <h1> de debajo ya nombra la marca, así que
+                 repetirlo en el alt duplicaría el anuncio. */
+              alt=""
+              aria-hidden
               width={660}
               height={100}
               priority
@@ -91,7 +100,7 @@ export function ProductHeroSection({ brand }: ProductHeroSectionProps) {
         <Reveal delay={140} className="flex justify-center">
           <Image
             src={brand.gallery[0]}
-            alt={`Vista del producto ${brand.name}`}
+            alt={`Captura de la interfaz de ${brand.name}: ${brand.teaser.kind}`}
             width={480}
             height={347}
             priority
@@ -99,6 +108,6 @@ export function ProductHeroSection({ brand }: ProductHeroSectionProps) {
           />
         </Reveal>
       </div>
-    </header>
+    </section>
   );
 }

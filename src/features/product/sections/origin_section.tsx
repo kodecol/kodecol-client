@@ -9,9 +9,12 @@ interface OriginSectionProps {
 /** Por qué existe el producto, contado desde el lado de quien lo construyó. */
 export function OriginSection({ origin }: OriginSectionProps) {
   return (
-    <section className="px-6 py-24">
+    <section
+      aria-labelledby="origen-title"
+      className="px-6 py-24"
+    >
       <div className="mx-auto max-w-[1160px]">
-        <BrandSectionHeading eyebrow={origin.eyebrow} title={origin.title} />
+        <BrandSectionHeading id="origen-title" eyebrow={origin.eyebrow} title={origin.title} />
         {/* Diagnóstico → resolución: el primero pesa más, así que se lleva más
             ancho y las dos columnas quedan ópticamente equilibradas. */}
         <div className="grid items-start gap-10 md:grid-cols-[1.35fr_1fr]">

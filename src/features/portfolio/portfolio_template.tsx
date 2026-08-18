@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { DeveloperProfile } from "@/core/domain/developer_profile";
+import { MAIN_CONTENT_ID } from "@/shared/ui/skip_link";
 import { PortfolioTopBar } from "./portfolio_top_bar";
 import { AboutSection } from "./sections/about_section";
 import { ContactSection } from "./sections/contact_section";
@@ -22,7 +23,7 @@ export function PortfolioTemplate({ profile }: PortfolioTemplateProps) {
   return (
     <>
       <PortfolioTopBar profile={profile} />
-      <main>
+      <main id={MAIN_CONTENT_ID}>
         <ProfileHeroSection profile={profile} />
         <AboutSection profile={profile} />
         <SkillsSection profile={profile} />
@@ -33,7 +34,7 @@ export function PortfolioTemplate({ profile }: PortfolioTemplateProps) {
       </main>
       <footer className="border-t border-border-subtle bg-surface-1 px-6 py-8 text-center text-[13px] text-text-muted">
         Parte de la{" "}
-        <Link href="/#equipo" className="text-mint-500 hover:text-mint-400">
+        <Link href="/equipo" className="text-mint-500 hover:text-mint-400">
           crew de Kodecol
         </Link>{" "}
         · <em>Construimos futuro.</em>

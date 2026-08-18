@@ -14,10 +14,14 @@ interface EducationSectionProps {
  */
 export function EducationSection({ profile }: EducationSectionProps) {
   return (
-    <section className="bg-surface-1 px-6 py-16 md:py-20">
+    <section
+      aria-labelledby="formacion-title"
+      className="bg-surface-1 px-6 py-16 md:py-20"
+    >
       <div className="mx-auto max-w-[1000px]">
         <Reveal>
           <SectionHeading
+            id="formacion-title"
             align="left"
             eyebrow="Formación"
             title="Educación & Certificados"

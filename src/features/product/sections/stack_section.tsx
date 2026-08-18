@@ -9,9 +9,12 @@ interface StackSectionProps {
 /** Con qué está hecho: las mismas decisiones técnicas que Kodecol toma en un encargo. */
 export function StackSection({ stack }: StackSectionProps) {
   return (
-    <section className="px-6 py-24">
+    <section
+      aria-labelledby="stack-title"
+      className="px-6 py-24"
+    >
       <div className="mx-auto max-w-[1160px]">
-        <BrandSectionHeading eyebrow={stack.eyebrow} title={stack.title} />
+        <BrandSectionHeading id="stack-title" eyebrow={stack.eyebrow} title={stack.title} />
 
         <div className="grid gap-3.5 md:grid-cols-3">
           {stack.groups.map((group, index) => (

@@ -16,6 +16,7 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
+      aria-labelledby="inicio-title"
       className="relative overflow-hidden px-6 pt-[150px] md:pt-[170px]"
       style={{
         background:
@@ -48,7 +49,10 @@ export function HeroSection() {
       <div className="relative mx-auto grid min-h-[560px] max-w-[1200px] items-center gap-10 md:gap-14 lg:grid-cols-[1.5fr_1fr]">
         <div className="flex flex-col items-start gap-6">
           <Reveal delay={80}>
-            <h1 className="font-sora text-[30px] font-bold leading-[1.06] tracking-[-0.02em] text-text-primary md:text-[52px] lg:text-[60px]">
+            <h1
+              id="inicio-title"
+              className="font-sora text-[30px] font-bold leading-[1.06] tracking-[-0.02em] text-text-primary md:text-[52px] lg:text-[60px]"
+            >
               {content.title_lead}
               <span className="bg-gradient-to-r from-mint-500 to-green-300 bg-clip-text text-transparent">
                 {content.title_accent}

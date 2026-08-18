@@ -14,10 +14,14 @@ export function FeaturedProjectsSection({ profile }: FeaturedProjectsSectionProp
   const others = profile.projects.filter((project) => !project.featured);
 
   return (
-    <section className="px-6 py-16 md:py-20">
+    <section
+      aria-labelledby="proyectos-title"
+      className="px-6 py-16 md:py-20"
+    >
       <div className="mx-auto max-w-[1000px]">
         <Reveal>
           <SectionHeading
+            id="proyectos-title"
             align="left"
             eyebrow="Proyectos destacados"
             title="Cosas que he construido."
@@ -27,7 +31,7 @@ export function FeaturedProjectsSection({ profile }: FeaturedProjectsSectionProp
         <div className="mt-10 grid gap-5">
           {featured ? (
             <Reveal delay={60}>
-              <div
+              <article
                 className="relative overflow-hidden rounded-xl border border-border-accent p-7 shadow-glass md:p-9"
                 style={{
                   background:
@@ -56,14 +60,14 @@ export function FeaturedProjectsSection({ profile }: FeaturedProjectsSectionProp
                     <Chip key={chip}>{chip}</Chip>
                   ))}
                 </div>
-              </div>
+              </article>
             </Reveal>
           ) : null}
 
           <div className="grid gap-5 md:grid-cols-2">
             {others.map((project, index) => (
               <Reveal key={project.title} delay={120 + index * 60}>
-                <GlassCard interactive className="flex h-full flex-col gap-3 p-6">
+                <GlassCard as="article" interactive className="flex h-full flex-col gap-3 p-6">
                   <span className="w-fit rounded-full border border-border-subtle px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-text-muted">
                     {project.badge}
                   </span>

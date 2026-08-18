@@ -9,7 +9,11 @@ export function TeamSection() {
   const content = TEAM_CONTENT;
 
   return (
-    <section id="equipo" className="relative bg-bg px-6 py-24 md:py-[110px]">
+    <section
+      id="equipo"
+      aria-labelledby="equipo-title"
+      className="relative bg-bg px-6 py-24 md:py-[110px]"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-0 h-[360px] w-[760px] max-w-full -translate-x-1/2"
@@ -22,6 +26,7 @@ export function TeamSection() {
       <div className="relative mx-auto max-w-[980px]">
         <Reveal>
           <SectionHeading
+            id="equipo-title"
             eyebrow={content.eyebrow}
             title={content.title}
             subtitle={content.subtitle}

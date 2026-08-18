@@ -1,4 +1,6 @@
+import Link from "next/link";
 import type { ProductBrand } from "@/core/domain/product_brand";
+import { MAIN_CONTENT_ID } from "@/shared/ui/skip_link";
 import { build_brand_theme } from "./brand_theme";
 import { ProductTopBar } from "./product_top_bar";
 import { MetricsSection } from "./sections/metrics_section";
@@ -28,7 +30,7 @@ export function ProductTemplate({ brand }: ProductTemplateProps) {
       className="min-h-screen bg-[var(--brand-ground)] text-[var(--brand-ink)]"
     >
       <ProductTopBar brand={brand} />
-      <main>
+      <main id={MAIN_CONTENT_ID}>
         <ProductHeroSection brand={brand} />
         <OriginSection origin={brand.detail.origin} />
         <PrinciplesSection principles={brand.detail.principles} />
@@ -37,6 +39,18 @@ export function ProductTemplate({ brand }: ProductTemplateProps) {
         <PilotsSection pilots={brand.detail.pilots} />
         <ProductClosingSection closing={brand.detail.closing} />
       </main>
+      {/* La página de marca no tenía footer: era la única sin salida de vuelta
+          al sitio ni atribución de quién opera el producto. */}
+      <footer className="border-t border-[var(--brand-line)] px-6 py-8 text-center text-[13px] text-[var(--brand-ink-muted)]">
+        Un producto de{" "}
+        <Link
+          href="/"
+          className="text-[var(--brand-accent)] transition-opacity duration-fast hover:opacity-80"
+        >
+          Kodecol
+        </Link>{" "}
+        · <em>Construimos futuro.</em>
+      </footer>
     </div>
   );
 }

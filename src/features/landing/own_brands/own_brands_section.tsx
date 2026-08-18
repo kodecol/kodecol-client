@@ -26,6 +26,7 @@ export function OwnBrandsSection({ brands }: OwnBrandsSectionProps) {
   return (
     <section
       id="marcas"
+      aria-labelledby="marcas-title"
       className="relative overflow-hidden bg-bg px-6 py-[110px] md:py-[130px]"
     >
       <div
@@ -56,7 +57,10 @@ export function OwnBrandsSection({ brands }: OwnBrandsSectionProps) {
             <Eyebrow>{content.eyebrow}</Eyebrow>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="font-sora text-[30px] font-bold leading-[1.08] tracking-[-0.02em] text-text-primary md:text-[44px] lg:text-[50px]">
+            <h2
+              id="marcas-title"
+              className="font-sora text-[30px] font-bold leading-[1.08] tracking-[-0.02em] text-text-primary md:text-[44px] lg:text-[50px]"
+            >
               {content.title_lead}
               <span className="text-mint-500">{content.title_accent}</span>.
             </h2>

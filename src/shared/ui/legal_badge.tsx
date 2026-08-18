@@ -33,9 +33,12 @@ export function LegalBadge() {
           size={18}
           className="text-mint-500"
         />
-        <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-text-secondary">
+        {/* Era un <h2>: un encabezado dentro de un <a> es un antipatrón y además
+            competía en el esquema de la página con los h2 de sección. El
+            aria-label del enlace ya describe el bloque. */}
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-text-secondary">
           Empresa constituida
-        </h2>
+        </p>
       </div>
 
       <p className="mt-4 font-sora text-lg font-bold tracking-[-0.02em] text-text-primary">

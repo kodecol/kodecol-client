@@ -13,7 +13,10 @@ interface ProductClosingSectionProps {
  */
 export function ProductClosingSection({ closing }: ProductClosingSectionProps) {
   return (
-    <section className="relative overflow-hidden border-t border-[var(--brand-line)] px-6 py-[100px]">
+    <section
+      aria-labelledby="cierre-marca-title"
+      className="relative overflow-hidden border-t border-[var(--brand-line)] px-6 py-[100px]"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -26,7 +29,10 @@ export function ProductClosingSection({ closing }: ProductClosingSectionProps) {
 
       <div className="relative mx-auto flex max-w-[1160px] flex-col items-center gap-5 text-center">
         <Reveal>
-          <h2 className="max-w-[17ch] font-sora text-[28px] font-bold leading-[1.1] tracking-[-0.03em] text-[var(--brand-ink)] md:text-[42px]">
+          <h2
+            id="cierre-marca-title"
+            className="max-w-[17ch] font-sora text-[28px] font-bold leading-[1.1] tracking-[-0.03em] text-[var(--brand-ink)] md:text-[42px]"
+          >
             {closing.title}
           </h2>
         </Reveal>

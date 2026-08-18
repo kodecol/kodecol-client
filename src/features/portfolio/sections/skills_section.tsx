@@ -11,10 +11,14 @@ interface SkillsSectionProps {
 /** Stack & Skills: 4 tarjetas glass con chips de tecnologías. */
 export function SkillsSection({ profile }: SkillsSectionProps) {
   return (
-    <section className="bg-surface-1 px-6 py-16 md:py-20">
+    <section
+      aria-labelledby="habilidades-title"
+      className="bg-surface-1 px-6 py-16 md:py-20"
+    >
       <div className="mx-auto max-w-[1000px]">
         <Reveal>
           <SectionHeading
+            id="habilidades-title"
             align="left"
             eyebrow="Stack & Skills"
             title="Las herramientas con las que construyo."

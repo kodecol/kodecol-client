@@ -13,9 +13,21 @@ interface PrinciplesSectionProps {
  */
 export function PrinciplesSection({ principles }: PrinciplesSectionProps) {
   return (
-    <section className="border-y border-[var(--brand-line)] bg-[var(--brand-ground)] px-6 py-24 [background-image:linear-gradient(0deg,rgba(0,0,0,.35),rgba(0,0,0,.35))]">
+    <section
+      aria-labelledby="principios-title"
+      className="border-y border-[var(--brand-line)] bg-[var(--brand-ground)] px-6 py-24 [background-image:linear-gradient(0deg,rgba(0,0,0,.35),rgba(0,0,0,.35))]"
+    >
       <div className="mx-auto max-w-[1160px]">
-        <BrandSectionHeading eyebrow={principles.eyebrow} />
+        {/*
+          El `title` se pasaba vacío, así que esta sección no emitía <h2> y la
+          página saltaba de h1 a los h3 de los principios. El JSON ya trae el
+          título (es obligatorio por schema); solo hacía falta usarlo.
+        */}
+        <BrandSectionHeading
+          id="principios-title"
+          eyebrow={principles.eyebrow}
+          title={principles.title}
+        />
 
         <div className="grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:gap-16">
           <Reveal>

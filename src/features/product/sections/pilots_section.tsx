@@ -9,9 +9,13 @@ interface PilotsSectionProps {
 /** Dónde está hoy el producto: los negocios reales que ya lo usan. */
 export function PilotsSection({ pilots }: PilotsSectionProps) {
   return (
-    <section className="px-6 py-24">
+    <section
+      aria-labelledby="pilotos-title"
+      className="px-6 py-24"
+    >
       <div className="mx-auto max-w-[1160px]">
         <BrandSectionHeading
+          id="pilotos-title"
           eyebrow={pilots.eyebrow}
           title={pilots.title}
           description={pilots.description}

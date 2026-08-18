@@ -12,7 +12,11 @@ export function WhyKodecolSection() {
   const content = WHY_KODECOL_CONTENT;
 
   return (
-    <section id="nosotros" className="relative bg-bg px-6 py-24 md:py-[110px]">
+    <section
+      id="nosotros"
+      aria-labelledby="nosotros-title"
+      className="relative bg-bg px-6 py-24 md:py-[110px]"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[820px] max-w-full -translate-x-1/2 blur-lg"
@@ -25,6 +29,7 @@ export function WhyKodecolSection() {
       <div className="relative mx-auto max-w-[1200px]">
         <Reveal>
           <SectionHeading
+            id="nosotros-title"
             eyebrow={content.eyebrow}
             title={
               <>
@@ -41,7 +46,11 @@ export function WhyKodecolSection() {
         <div className="mt-14 grid gap-[22px] sm:grid-cols-2 lg:grid-cols-4">
           {content.differentiators.map((item, index) => (
             <Reveal key={item.title} delay={80 + index * 60}>
-              <GlassCard interactive className="flex h-full flex-col gap-4 rounded-xl p-6">
+              <GlassCard
+                as="article"
+                interactive
+                className="flex h-full flex-col gap-4 rounded-xl p-6"
+              >
                 <span className="grid size-12 place-items-center rounded-lg border border-border-accent bg-surface-inset/60 text-mint-500">
                   <LineIcon name={item.icon} size={24} />
                 </span>

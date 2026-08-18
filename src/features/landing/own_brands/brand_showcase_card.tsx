@@ -94,7 +94,7 @@ export function BrandShowcaseCard({ brand }: BrandShowcaseCardProps) {
           <div className="relative w-full max-w-[430px] overflow-hidden rounded-xl border border-border-subtle shadow-[0_24px_70px_rgba(0,0,0,.6)]">
             <Image
               src={brand.gallery[0]}
-              alt={`Vista del producto ${brand.name}`}
+              alt={`Captura de la interfaz de ${brand.name}: ${brand.teaser.kind}`}
               width={480}
               height={347}
               className="w-full brightness-[.72]"
