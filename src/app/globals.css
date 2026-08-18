@@ -202,6 +202,18 @@ body {
   scroll-margin-top: 96px;
 }
 
+/* Foco visible propio: el outline por defecto del navegador se pierde sobre
+   fondos tan oscuros. Solo para navegación por teclado — :focus-visible no se
+   dispara al hacer clic, así que el ratón no ve ningún anillo. */
+:focus-visible {
+  outline: 2px solid var(--color-mint-500);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* Estado inicial del reveal on scroll (shared/ui/reveal.tsx) */
 [data-reveal] {
   opacity: 0;

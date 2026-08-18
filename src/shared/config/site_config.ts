@@ -44,6 +44,20 @@ export const SITE_CONFIG = {
     // status: "Activa",
     rues_url: "https://www.rues.org.co/buscar/RM/kodecol",
   } satisfies LegalRegistry,
+  /*
+    Analítica y verificación de buscadores.
+
+    Static export: los NEXT_PUBLIC_* se inlinean en el bundle en tiempo de build,
+    así que cambiar un ID exige rebuild + redeploy — no basta con tocar el .env
+    del servidor. Vacío = desactivado, para que dev y previews queden sin scripts.
+
+    La verificación de Search Console se hace por registro DNS TXT (cubre www y
+    subdominios y sobrevive a los redespliegues); esta meta es solo el plan B.
+  */
+  analytics: {
+    ga_measurement_id: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "",
+    google_site_verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? "",
+  },
   /* Orden fiel al mockup: Inicio · Cotizaciones · Servicios · Nosotros · Equipo */
   nav_links: [
     { label: "Inicio", href: "/#inicio" },
