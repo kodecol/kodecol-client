@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { StaticPicture } from "@/shared/ui/static_picture";
 
 /**
  * Isotipo 3D de la marca como pieza focal del hero (DESIGN.md §11).
@@ -57,13 +57,17 @@ export function HeroVisual() {
         ref={mark_ref}
         className="transition-transform duration-fast ease-kodecol will-change-transform"
       >
-        <Image
-          src="/images/logo/isotipo-3d-trim.png"
+        {/*
+          Sin `priority` a propósito. Generaba un <link rel="preload"> para un PNG
+          de 301 KB que es DECORATIVO (aria-hidden) y que en móvil queda bajo el
+          pliegue, compitiendo por ancho de banda con la CSS y las fuentes. En
+          escritorio el LCP es el <h1>, que es texto.
+        */}
+        <StaticPicture
+          src_base="/images/logo/isotipo-3d-trim"
           alt=""
-          aria-hidden
           width={382}
           height={492}
-          priority
           className="h-auto w-[220px] md:w-[280px] lg:w-[320px]"
         />
       </div>

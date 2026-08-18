@@ -42,6 +42,11 @@ export function BrandMarquee({ images, className }: BrandMarqueeProps) {
         "pointer-events-none absolute inset-x-0 top-0 h-[680px] overflow-hidden opacity-50",
         /* Duotono corporativo sobre la imaginería de la marca invitada */
         "after:absolute after:inset-0 after:z-[2] after:bg-green-600 after:mix-blend-color after:content-['']",
+        /* El campo está a unas tres pantallas de scroll y anima en bucle:
+           content-visibility deja que el navegador se salte su layout y pintado
+           mientras está fuera de pantalla. contain-intrinsic-size le da la altura
+           reservada para que no haya salto cuando entra. */
+        "[contain-intrinsic-size:680px] [content-visibility:auto]",
         className,
       )}
     >
@@ -52,7 +57,10 @@ export function BrandMarquee({ images, className }: BrandMarqueeProps) {
               <div
                 key={column_index}
                 className={cn(
-                  "flex flex-col items-start gap-8 will-change-transform",
+                  /* Sin will-change: una animación de `transform` ya promueve la capa
+                     sola, y dejarlo fijo mantiene cuatro capas en memoria de GPU
+                     durante toda la vida de la página. */
+                  "flex flex-col items-start gap-8",
                   column_index % 2 === 0
                     ? "animate-kc-drift-down"
                     : "animate-kc-drift-up",

@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Chip } from "@/shared/ui/chip";
 import { GlassCard } from "@/shared/ui/glass_card";
 import { KodecolMark } from "@/shared/ui/kodecol_mark";
 import type { TeamMemberCard as TeamMemberCardData } from "./types";
+import { StaticPicture } from "@/shared/ui/static_picture";
 
 interface TeamMemberCardProps {
   member: TeamMemberCardData;
@@ -15,7 +15,7 @@ interface TeamMemberCardProps {
  */
 export function TeamMemberCard({ member }: TeamMemberCardProps) {
   return (
-    <GlassCard interactive className="overflow-hidden rounded-xl p-0">
+    <GlassCard as="article" interactive className="overflow-hidden rounded-xl p-0">
       <div
         className="relative h-[248px]"
         style={{
@@ -24,11 +24,12 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
         }}
       >
         {member.photo_src ? (
-          <Image
-            src={member.photo_src}
+          <StaticPicture
+            src_base={member.photo_src.replace(/\.[a-zA-Z]+$/, "")}
             alt={`Foto de ${member.name}`}
+            width={460}
+            height={690}
             fill
-            sizes="(max-width: 768px) 100vw, 460px"
             className="object-contain object-bottom p-2"
             style={{
               maskImage: "linear-gradient(to bottom, #000 64%, transparent 99%)",

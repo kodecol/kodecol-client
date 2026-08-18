@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { DeveloperProfile } from "@/core/domain/developer_profile";
 import { build_whatsapp_url } from "@/shared/lib/build_whatsapp_url";
 import { Button } from "@/shared/ui/button";
@@ -6,6 +5,7 @@ import { KodecolMark } from "@/shared/ui/kodecol_mark";
 import { LineIcon } from "@/shared/ui/line_icon";
 import { Reveal } from "@/shared/ui/reveal";
 import { WhatsappIcon } from "@/shared/ui/whatsapp_icon";
+import { StaticPicture } from "@/shared/ui/static_picture";
 
 interface ProfileHeroSectionProps {
   profile: DeveloperProfile;
@@ -15,6 +15,7 @@ interface ProfileHeroSectionProps {
 export function ProfileHeroSection({ profile }: ProfileHeroSectionProps) {
   return (
     <section
+      aria-labelledby="perfil-title"
       className="relative overflow-hidden px-6 pb-16 pt-[140px] md:pt-[160px]"
       style={{
         background:
@@ -33,11 +34,14 @@ export function ProfileHeroSection({ profile }: ProfileHeroSectionProps) {
               }}
             />
             {profile.photo_src ? (
-              <Image
-                src={profile.photo_src}
+              /* LCP real de la página: aquí `priority` sí corresponde. El PNG
+                 original son 1,9 MB a 1024×1536; la variante AVIF a 460 px pesa
+                 ~10 KB. Las genera scripts/generate_image_variants.mjs. */
+              <StaticPicture
+                src_base={profile.photo_src.replace(/\.[a-zA-Z]+$/, "")}
                 alt={`Foto de ${profile.full_name}`}
-                width={340}
-                height={400}
+                width={460}
+                height={690}
                 priority
                 className="max-h-[400px] w-auto object-contain drop-shadow-[0_16px_48px_rgba(0,0,0,.45)]"
               />
@@ -57,7 +61,10 @@ export function ProfileHeroSection({ profile }: ProfileHeroSectionProps) {
             </span>
           </Reveal>
           <Reveal delay={60}>
-            <h1 className="font-sora text-4xl font-bold leading-[1.1] tracking-[-0.02em] text-text-primary md:text-5xl">
+            <h1
+              id="perfil-title"
+              className="font-sora text-4xl font-bold leading-[1.1] tracking-[-0.02em] text-text-primary md:text-5xl"
+            >
               {profile.full_name}
             </h1>
           </Reveal>
@@ -112,13 +119,16 @@ export function ProfileHeroSection({ profile }: ProfileHeroSectionProps) {
           </Reveal>
 
           <Reveal delay={240} className="w-full">
+            {/* El <dt> (término) va antes que el <dd> (definición), como manda
+                la lista; el orden visual —cifra arriba— lo da flex-col-reverse.
+                Antes el DOM los tenía invertidos. */}
             <dl className="mt-4 grid grid-cols-3 gap-4 border-t border-border-subtle pt-6">
               {profile.metrics.map((metric) => (
-                <div key={metric.label}>
+                <div key={metric.label} className="flex flex-col-reverse">
+                  <dt className="mt-1 text-xs text-text-muted">{metric.label}</dt>
                   <dd className="font-sora text-2xl font-bold text-mint-500 md:text-3xl">
                     {metric.value}
                   </dd>
-                  <dt className="mt-1 text-xs text-text-muted">{metric.label}</dt>
                 </div>
               ))}
             </dl>
