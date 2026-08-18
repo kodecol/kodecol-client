@@ -18,19 +18,30 @@ src/adapters/     Implementaciones de puertos (lado driven). Conocen zod y la fu
 src/features/     Vertical slices. Cada slice = componentes + content.ts + types.ts propios.
   landing/        Un slice por sección de la landing (hero — incluye la trust bar —, services,
                   why_kodecol, own_brands, team, final_cta).
-  portfolio/      UNA plantilla polimórfica que recibe DeveloperProfile por props.
-  product/        UNA plantilla polimórfica que recibe ProductBrand por props (marcas propias).
+  portfolio/      UNA plantilla polimórfica que recibe DeveloperProfile por props,
+                  más la plantilla del índice /equipo.
+  product/        UNA plantilla polimórfica que recibe ProductBrand por props (marcas propias),
+                  más la plantilla del índice /marcas.
+  service/        UNA plantilla polimórfica que recibe ServiceOffering por props,
+                  más la plantilla del índice /servicios.
 src/shared/       Design system y utilidades transversales. No conoce el negocio.
-  ui/             Componentes reutilizables (glass_card, button, reveal, navbar, ...).
-                  También el destino de las primitivas de shadcn (ver §9).
-  config/         site_config.ts (WhatsApp, nav, metadata base).
+  ui/             Componentes reutilizables (glass_card, button, reveal, navbar, breadcrumb,
+                  skip_link, static_picture...). También el destino de las primitivas
+                  de shadcn (ver §9).
+  seo/            Capa de SEO: JsonLd, build_page_metadata, urls, nodos de schema.org.
+                  Ver §10.
+  analytics/      Carga de GA4 (google_analytics.tsx).
+  config/         site_config.ts (WhatsApp, nav, metadata base, IDs de analítica).
   lib/            Helpers puros (cn, build_whatsapp_url).
 content/          Datos, no código.
   developers/     JSON de perfiles de desarrolladores.
   products/       JSON de marcas propias (Axi Connect, ...).
-public/           Assets estáticos (images/, cv/).
-scripts/          Utilidades de repo que no forman parte del bundle (ej. generación de assets
-                  de marca derivados con sharp). Se ejecutan a mano vía pnpm.
+  services/       JSON de los servicios que presta Kodecol.
+public/           Assets estáticos (images/, cv/, .htaccess).
+assets/           Fuentes fuente de los scripts (og_fonts/). NO se despliega.
+scripts/          Utilidades de repo que no forman parte del bundle (generación de assets
+                  de marca, OG images y variantes AVIF/WebP con sharp; servidor estático
+                  para los e2e). Se ejecutan a mano vía pnpm.
 e2e/              Tests end-to-end con Playwright.
 docker/           Dockerfile multi-stage + compose.yaml.
 docs/             DESIGN-SYSTEM.md (valores exactos de tokens).
@@ -94,9 +105,18 @@ Hojas client existentes: `reveal`, `hero_visual`, `living_gradient`, `experience
   La validación es fail-fast: un JSON inválido **rompe el build** — es un gate de calidad, no un bug.
 - **Marcas propias:** JSON en `content/products/*.json`, mismo patrón que los portafolios
   (`product_brand_schema.ts`, anclado con `z.ZodType<ProductBrand>`).
+- **Servicios:** JSON en `content/services/*.json`, mismo patrón
+  (`service_offering_schema.ts`, anclado con `z.ZodType<ServiceOffering>`). Aquí zod además
+  hace de **gate anti-thin-content**: mínimos de longitud de párrafo, de entregables, de
+  métricas y de respuestas de FAQ. Seis páginas casi vacías Google las trata como
+  duplicadas y no posiciona ninguna, así que un JSON pobre rompe el build a propósito.
 - Prohibido hardcodear copy en JSX o duplicar datos de contacto: usar `site_config.ts`.
-- Añadir un desarrollador nuevo = crear un JSON + foto. Cero cambios de código.
+- Añadir un desarrollador nuevo = crear un JSON + foto, y correr `pnpm assets`
+  (genera su OG image y las variantes AVIF/WebP de la foto). Cero cambios de código.
 - Añadir una marca propia = crear un JSON + assets + una línea en el adaptador.
+- Añadir un servicio = crear un JSON + una línea en el adaptador + `pnpm assets`.
+- **Los slugs son URLs: una vez publicados no se cambian.** Si hubiera que cambiar uno,
+  el 301 se añade a mano en `public/.htaccess` (con `output: "export"` no hay `redirects()`).
 
 ### Marca invitada: dónde manda cada color
 
@@ -124,11 +144,14 @@ Una marca propia tiene identidad propia (Axi Connect es coral, no verde). La fro
 
 Antes de cerrar cualquier feature:
 
-1. `pnpm build` sin errores (rutas de portfolio como SSG).
+1. `pnpm build` sin errores (rutas de portfolio, marcas y servicios como SSG).
 2. `pnpm lint` limpio.
-3. `pnpm e2e` verde (desktop + mobile).
+3. `pnpm e2e` verde (desktop + mobile). El webServer construye y sirve `out/` con
+   `scripts/serve_out.mjs`: **`next start` no funciona con `output: "export"`**.
 4. Revisión responsive en 360 px, 768 px y 1280 px.
 5. Un solo `<h1>` por página, jerarquía de headings correcta, `alt` en imágenes.
+6. Si tocaste contenido o assets: `pnpm assets` y commitear lo generado.
+7. Si añadiste una ruta: aparece en `sitemap.ts` y en `e2e/seo.spec.ts`.
 
 ## 9. shadcn/ui
 
@@ -164,3 +187,78 @@ Así, `pnpm dlx shadcn@latest add <componente>` escribe directamente en `src/sha
    equivalente de shadcn y quedarse con dos botones (§7).
 6. **Cada componente nuevo trae dependencias** (`@radix-ui/*`, a veces `lucide-react`). Que el CLI
    las instale está bien; revisarlas en el PR también.
+
+## 10. SEO técnico
+
+El sitio es un **static export** sobre Apache/cPanel. Eso condiciona todo: no hay middleware,
+ni `headers()`, ni `redirects()`, ni ISR. Toda decisión de servidor vive en `public/.htaccess`.
+
+### Dónde vive cada cosa
+
+| Pieza | Ubicación | Regla |
+|---|---|---|
+| `<JsonLd>`, tipos, `prune_node` | `shared/seo/` | Genérico, sin negocio |
+| `build_page_metadata()` | `shared/seo/` | **Único** constructor de `Metadata` por página |
+| `build_absolute_url()` | `shared/seo/urls.ts` | **Única** fuente de URLs canónicas |
+| `Organization`, `WebSite`, `WebPage`, `BreadcrumbList`, `ItemList` | `shared/seo/site_nodes.ts` | Solo conocen `site_config` |
+| `Person` | `features/portfolio/portfolio_structured_data.ts` | Conoce el dominio → vive con su slice |
+| `SoftwareApplication` | `features/product/product_structured_data.ts` | ídem |
+| `Service`, `FAQPage` | `features/service/service_structured_data.ts` | ídem |
+| Ensamblaje del `@graph` | `app/**/page.tsx` | Es orquestación: rol de `app` |
+
+### Reglas duras
+
+1. **Toda página nueva usa `build_page_metadata()`.** No escribas un objeto `Metadata` a mano.
+   Motivo: en Next, definir `openGraph` o `twitter` en una página **reemplaza el objeto entero**
+   del layout, no hace merge. Sin el helper es trivial perder la `og:image` sin enterarse
+   (pasó con el home: definir `openGraph` lo dejó literalmente sin imagen).
+2. **Las URLs canónicas salen siempre de `build_absolute_url()`**, igual que el `<loc>` del
+   sitemap y los `@id` del JSON-LD. Ninguna ruta lleva barra final, tampoco la raíz.
+3. **Un solo `<script type="application/ld+json">` por página**, con un único `@graph`.
+   Google solo resuelve las referencias `@id` dentro del mismo bloque: si citas una entidad de
+   otra página, incluye también su nodo resumen (`build_entity_stub_node`).
+4. **No inventes datos estructurados.** Nada de `aggregateRating` ni `offers` sin precios ni
+   reseñas reales: es una acción manual de Google esperando a ocurrir.
+5. **Toda `<section>` lleva `aria-labelledby`** apuntando al `id` de su heading.
+   `SectionHeading` y `BrandSectionHeading` aceptan `id` justamente para eso.
+6. **Un `<dl>` solo admite `dt`/`dd`, opcionalmente envueltos en UN `div`.** Como `Reveal`
+   ya renderiza un `div`, la tarjeta debe ser el propio `Reveal`; meter otro `div` dentro
+   invalida la lista.
+7. **Imágenes pesadas de contenido → `StaticPicture`**, no `next/image`. Con
+   `images: { unoptimized: true }` (obligado por el export) `next/image` no genera `srcset` ni
+   convierte formatos: sirve el original tal cual. Las variantes las precalcula
+   `scripts/generate_image_variants.mjs`, que lee los JSON de contenido.
+8. `priority` **solo** en la imagen que es el LCP real. Ponerlo en una imagen decorativa
+   genera un `preload` que compite con la CSS y las fuentes.
+
+### Scripts de assets
+
+```bash
+pnpm assets           # brand:assets + og:images + images:variants
+pnpm serve:out        # sirve out/ emulando el .htaccess (puerto 4321)
+```
+Todo lo generado es determinista y **se commitea**.
+
+### Variables de entorno
+
+`NEXT_PUBLIC_GA_MEASUREMENT_ID` y `NEXT_PUBLIC_GSC_VERIFICATION`. Ojo: en un static export se
+**inlinean en build**, así que cambiarlas exige rebuild y redespliegue — no basta con tocar el
+`.env` del servidor. Vacías = desactivadas (dev y previews quedan sin scripts de terceros).
+
+### Al desplegar el `.htaccess`
+
+Un `.htaccess` mal formado tumba el sitio entero con un 500. Súbelo **solo** y verifica antes
+de subir el HTML:
+
+```bash
+curl -I http://kodecol.com/marcas/axi-connect      # 301 → https
+curl -I https://www.kodecol.com/                    # 301 → apex
+curl -I https://kodecol.com/marcas/axi-connect.html # 301 → sin .html
+curl -I https://kodecol.com/marcas/axi-connect/     # 301 → sin barra
+curl -I https://kodecol.com/no-existe               # 404, nunca 200
+curl -I https://kodecol.com/                        # 200, sin redirect
+```
+
+HSTS empieza en `max-age=300` a propósito: súbelo a un año tras una semana sin incidencias, y
+**nunca** añadas `preload` sin decidirlo explícitamente (es irreversible durante un año).
+La CSP va como `Report-Only`: revisa la consola una semana antes de activarla.

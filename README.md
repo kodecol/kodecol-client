@@ -10,6 +10,7 @@ dinámicos de la crew, construido con **Next.js 15 (App Router) + TypeScript + T
 | [`architecture.md`](./architecture.md) | Reglas del proyecto (leer **siempre** antes de cualquier feature) |
 | [`DESIGN.md`](./DESIGN.md) | Filosofía y reglas de diseño (dark premium, glass, bento) |
 | [`docs/DESIGN-SYSTEM.md`](./docs/DESIGN-SYSTEM.md) | Valores exactos de los tokens |
+| [`architecture.md` §10](./architecture.md) | Reglas de SEO técnico, datos estructurados y assets |
 
 ## Arquitectura (resumen)
 
@@ -33,6 +34,26 @@ pnpm dev          # http://localhost:3000
 pnpm build        # build de producción (valida los JSON con zod)
 pnpm lint
 pnpm e2e          # tests E2E con Playwright (desktop + mobile)
+
+pnpm assets       # regenera assets derivados: marca, OG images y variantes AVIF/WebP
+pnpm serve:out    # sirve out/ emulando el .htaccess de producción (:4321)
+pnpm deploy:build # build + copia del .htaccess a out/
+```
+
+> `pnpm e2e` construye el sitio y lo sirve desde `out/`. **`next start` no funciona** con
+> `output: "export"`, así que la suite usa `scripts/serve_out.mjs`.
+
+> Si tocas `content/` o añades una foto, corre `pnpm assets` y commitea lo generado:
+> las OG images y las variantes de imagen se derivan de esos JSON.
+
+## Variables de entorno
+
+Opcionales; vacías desactivan la analítica (dev y previews quedan sin scripts de terceros).
+En un static export se **inlinean en build**: cambiarlas exige rebuild y redespliegue.
+
+```bash
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX   # Google Analytics 4
+NEXT_PUBLIC_GSC_VERIFICATION=...             # solo si no verificas Search Console por DNS
 ```
 
 ## Docker
