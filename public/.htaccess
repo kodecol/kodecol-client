@@ -1,24 +1,65 @@
 # Kodecol — sitio estático (next build con output: "export") sobre Apache / cPanel.
 # Next omite los dotfiles de public/, así que este archivo lo copia `pnpm deploy:build`.
+#
+# Con output: "export" no hay middleware ni headers()/redirects() de Next: TODO lo
+# de servidor vive aquí.
+#
+# ORDEN CRÍTICO: primero los 301 de canonicalización (host, esquema, barra final,
+# .html) y solo al final la reescritura interna a .html. Invertirlo provoca
+# bucles de redirección.
 
-# URLs limpias: /marcas/axi-connect sirve marcas/axi-connect.html
 RewriteEngine On
 RewriteBase /
+
+# ── 1. Host y esquema canónicos ───────────────────────────────────────────────
+# Un solo salto para http, para www y para http+www: todo cae en https://kodecol.com.
+# El host va escrito a mano porque este sitio solo se despliega en ese dominio.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://kodecol.com%{REQUEST_URI} [R=301,L]
+
+# ── 2. Sin barra final (salvo la raíz) ────────────────────────────────────────
+# /marcas/axi-connect/ y /marcas/axi-connect servirían el mismo contenido en dos
+# URLs distintas. El <link rel="canonical"> apunta siempre a la forma sin barra.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# ── 3. La extensión .html no es una URL pública ───────────────────────────────
+# THE_REQUEST mira la petición literal del navegador, así que la reescritura
+# interna del paso 4 no vuelve a entrar aquí. Con REQUEST_URI sería bucle infinito.
+RewriteCond %{THE_REQUEST} \s/+(.*?)index\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# ── 4. URLs limpias: /marcas/axi-connect sirve marcas/axi-connect.html ────────
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [L]
 
 ErrorDocument 404 /404.html
 
+# ── 5. Tipos MIME que cPanel no trae de fábrica ───────────────────────────────
+# Sin la primera línea, el manifest se descargaría en vez de aplicarse.
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType image/avif .avif
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+</IfModule>
+
+# ── 6. Caché ──────────────────────────────────────────────────────────────────
 # Los assets de _next llevan hash en el nombre: son inmutables.
 # El HTML no se cachea nunca, para que un despliegue se vea al instante.
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 day"
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/avif "access plus 1 month"
   ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 
@@ -26,10 +67,43 @@ ErrorDocument 404 /404.html
   <FilesMatch "\.(js|css|woff2)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
+
+  # ── 7. Cabeceras de seguridad ───────────────────────────────────────────────
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  # HSTS deliberadamente corto al empezar: subir a 31536000 tras una semana sin
+  # incidencias. NO añadir `preload` sin estar seguro de que TODO subdominio va
+  # por https — esa decisión es prácticamente irreversible durante un año.
+  Header always set Strict-Transport-Security "max-age=300"
+
+  # ── 8. CSP ──────────────────────────────────────────────────────────────────
+  # Se despliega primero como -Report-Only: revisar la consola una semana y solo
+  # entonces renombrar la cabecera a Content-Security-Policy.
+  #
+  # 'unsafe-inline' en script-src es inevitable: sin middleware no hay nonce
+  # posible y Next inyecta scripts inline (self.__next_f.push). Aun así la
+  # política bloquea iframes, formularios a terceros, objetos y cambios de base.
+  # Las fuentes las auto-hospeda next/font: no hace falta fonts.gstatic.com.
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me; object-src 'none'; upgrade-insecure-requests"
+
+  # ── 9. Payloads RSC: el mismo contenido que el HTML, en texto plano ──────────
+  # Next emite /index.txt, /equipo/juan.txt, etc. junto a cada .html. Son
+  # duplicados indexables (el del home pesa 58 KB). robots.txt evita el rastreo,
+  # pero solo esta cabecera evita la indexación por enlaces.
+  <FilesMatch "\.txt$">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </FilesMatch>
+  <Files "robots.txt">
+    Header unset X-Robots-Tag
+  </Files>
 </IfModule>
 
+# ── 10. Compresión ────────────────────────────────────────────────────────────
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/plain text/xml application/javascript image/svg+xml application/xml application/json application/manifest+json
+</IfModule>
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript image/svg+xml application/xml application/json application/manifest+json
 </IfModule>
