@@ -1,0 +1,264 @@
+{
+  "slug": "aplicaciones-moviles",
+  "name": "Aplicaciones móviles",
+  "icon": "mobile",
+  "order": 4,
+  "teaser": {
+    "title": "Aplicaciones móviles",
+    "description": "Apps nativas e híbridas para iOS y Android, pensadas en la experiencia.",
+    "badge": null,
+    "featured": false
+  },
+  "hero": {
+    "eyebrow": "Aplicaciones para iOS y Android",
+    "headline_lead": "Apps que la gente ",
+    "headline_accent": "abre dos veces",
+    "description": "Instalar una app es fácil; que alguien vuelva a abrirla es el trabajo difícil. Construimos aplicaciones móviles que arrancan rápido, funcionan con mala señal y hacen bien tres cosas en vez de hacer mal quince. Publicadas en las tiendas y listas para actualizarse sin drama.",
+    "chips": [
+      "iOS y Android",
+      "Nativas e híbridas",
+      "Modo sin conexión",
+      "Publicación en tiendas"
+    ],
+    "primary_cta": {
+      "label": "Quiero construir mi app",
+      "whatsapp_message": "Hola Kodecol, quiero desarrollar una aplicación móvil."
+    },
+    "secondary_cta_label": "Ver qué incluye"
+  },
+  "problem": {
+    "eyebrow": "El problema que resolvemos",
+    "title": "El cementerio de apps que nadie usa.",
+    "description": "Las tiendas están llenas de aplicaciones que costaron mucho, se lanzaron con un evento y hoy tienen doce instalaciones activas. Casi siempre falló lo mismo, y casi nunca fue el código.",
+    "items": [
+      {
+        "title": "Una app que debía ser una web",
+        "description": "Si el usuario entra una vez al mes y no necesita cámara, ubicación ni notificaciones, la app añade fricción de instalación sin dar nada a cambio."
+      },
+      {
+        "title": "Se cae donde no hay señal",
+        "description": "Muchas aplicaciones asumen conexión permanente, así que en una bodega, un ascensor o una zona rural dejan de servir justo cuando más falta hacen."
+      },
+      {
+        "title": "Publicar es un calvario",
+        "description": "App Store y Play Store rechazan por motivos que nadie previó, y cada rechazo son días perdidos si no se conocen las reglas de antemano."
+      },
+      {
+        "title": "Imposible de actualizar",
+        "description": "Cada corrección obliga a esperar revisión de tienda y a que el usuario actualice, así que un error pequeño vive semanas en los teléfonos."
+      }
+    ],
+    "closing_note": "La mejor app es a veces no hacer una app. Lo decimos antes de cobrarte por construirla."
+  },
+  "deliverables": {
+    "eyebrow": "Qué incluye",
+    "title": "De la idea a la tienda, con todo lo del medio.",
+    "description": "El desarrollo es solo una parte. Publicar, medir y poder corregir rápido pesa tanto como el código, y es donde se atascan la mayoría de proyectos móviles que llegan tarde.",
+    "items": [
+      {
+        "title": "Definición y prototipo",
+        "description": "Aterrizamos qué hace la app y, sobre todo, qué no hace en la primera versión. Un prototipo navegable permite discutirlo antes de programar.",
+        "items": [
+          "Flujos principales y casos de uso priorizados",
+          "Prototipo navegable para validar con usuarios reales",
+          "Decisión razonada entre nativo e híbrido"
+        ]
+      },
+      {
+        "title": "Desarrollo multiplataforma",
+        "description": "Una sola base de código para iOS y Android cuando el caso lo permite, respetando las convenciones de cada sistema para que no se sienta ajena.",
+        "items": [
+          "Interfaz que respeta los patrones de cada plataforma",
+          "Rendimiento verificado en gama media y baja",
+          "Accesibilidad y soporte de tamaños de texto del sistema"
+        ]
+      },
+      {
+        "title": "Funcionamiento sin conexión",
+        "description": "La app guarda en el dispositivo y sincroniza cuando vuelve la señal, en vez de mostrar un error y perder lo que la persona acababa de escribir.",
+        "items": [
+          "Almacenamiento local y cola de sincronización",
+          "Resolución de conflictos al reconectar",
+          "Indicadores claros de estado de sincronización"
+        ]
+      },
+      {
+        "title": "Integraciones del dispositivo",
+        "description": "Cámara, ubicación, biometría o notificaciones, pero solo lo que el caso justifica: cada permiso que se pide es una razón más para desinstalar.",
+        "items": [
+          "Notificaciones push segmentadas",
+          "Cámara, escáner de códigos y galería",
+          "Ubicación y mapas cuando aporta al flujo"
+        ]
+      },
+      {
+        "title": "Backend y API",
+        "description": "La app necesita un servidor que la sostenga. Lo construimos o nos integramos con el que ya tienes, con autenticación y permisos bien resueltos.",
+        "items": [
+          "API propia o integración con tus sistemas",
+          "Autenticación, roles y sesiones seguras",
+          "Panel de administración para el equipo interno"
+        ]
+      },
+      {
+        "title": "Publicación y actualizaciones",
+        "description": "Nos encargamos del proceso completo en ambas tiendas, incluidas las políticas de privacidad y las fichas, que es donde suelen venir los rechazos.",
+        "items": [
+          "Publicación en App Store y Google Play",
+          "Fichas, capturas y política de privacidad",
+          "Actualizaciones y monitoreo de errores en producción"
+        ]
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Versión útil primero, catálogo de funciones después.",
+    "description": "Preferimos una primera versión pequeña en manos de usuarios reales antes que una completa que nadie ha probado. Lo que devuelva el uso real ordena todo lo que viene después.",
+    "steps": [
+      {
+        "title": "Descubrimiento",
+        "description": "Definimos el problema, quién la va a usar y en qué contexto, incluida la señal que va a tener. De ahí sale el alcance de la primera versión.",
+        "duration": "1 a 2 semanas"
+      },
+      {
+        "title": "Prototipo y validación",
+        "description": "Un prototipo navegable que se puede poner en manos de usuarios antes de escribir código, cuando corregir todavía cuesta horas y no semanas.",
+        "duration": "2 semanas"
+      },
+      {
+        "title": "Desarrollo por entregas",
+        "description": "Compilaciones de prueba instalables cada pocas semanas, para que el equipo vea el avance en su propio teléfono y no en una presentación.",
+        "duration": "6 a 14 semanas"
+      },
+      {
+        "title": "Publicación y evolución",
+        "description": "Gestionamos la publicación en ambas tiendas y acompañamos las primeras semanas, que es cuando aparecen los errores que ninguna prueba encontró.",
+        "duration": "2 semanas + continuo"
+      }
+    ]
+  },
+  "technologies": {
+    "eyebrow": "Con qué lo construimos",
+    "title": "Multiplataforma por defecto, nativo cuando hace falta.",
+    "description": "Una sola base de código cubre bien la mayoría de casos y cuesta la mitad de mantener. Cuando el caso pide rendimiento gráfico o acceso profundo al sistema, vamos a nativo sin discutir.",
+    "groups": [
+      {
+        "title": "Multiplataforma",
+        "items": ["React Native", "Ionic", "Capacitor", "TypeScript"]
+      },
+      {
+        "title": "Nativo",
+        "items": ["Kotlin (Android)", "Swift (iOS)", "Módulos nativos a la medida"]
+      },
+      {
+        "title": "Backend y datos",
+        "items": ["Node.js", "NestJS", "PostgreSQL", "SQLite en el dispositivo"]
+      },
+      {
+        "title": "Servicios móviles",
+        "items": ["Notificaciones push", "Autenticación federada", "Analítica de uso", "Reporte de fallos"]
+      },
+      {
+        "title": "Entrega continua",
+        "items": ["GitHub Actions", "Compilaciones de prueba", "App Store Connect", "Google Play Console"]
+      }
+    ],
+    "note": "Si tu caso se resuelve con una web bien hecha en el celular, te lo decimos antes de meterte en dos tiendas."
+  },
+  "results": {
+    "eyebrow": "Lo que cambia",
+    "title": "Una herramienta en el bolsillo, no un ícono más.",
+    "description": "Cuando la app resuelve algo concreto y funciona incluso con mala señal, deja de ser un proyecto de marketing y se convierte en parte de cómo trabaja la gente todos los días.",
+    "metrics": [
+      {
+        "value": "iOS y Android",
+        "label": "una base de código, dos tiendas",
+        "description": "Mismo comportamiento en ambas plataformas y un solo mantenimiento."
+      },
+      {
+        "value": "Sin conexión",
+        "label": "sigue funcionando sin señal",
+        "description": "Guarda en el dispositivo y sincroniza sola cuando vuelve la red."
+      },
+      {
+        "value": "Gama media",
+        "label": "probada en los teléfonos reales",
+        "description": "No solo en el último modelo del que la desarrolla."
+      },
+      {
+        "value": "Publicada",
+        "label": "gestionamos el proceso de tienda",
+        "description": "Fichas, políticas y revisiones, incluidos los rechazos si aparecen."
+      }
+    ],
+    "use_cases": [
+      {
+        "sector": "Operación en campo",
+        "title": "Formularios que no se pierden",
+        "description": "Personal en terreno registra visitas, fotos y firmas sin depender de la señal, y todo sube solo cuando el dispositivo recupera conexión.",
+        "result": "Se acabaron las planillas de papel y la doble digitación."
+      },
+      {
+        "sector": "Comercio y fidelización",
+        "title": "El cliente con la marca en el bolsillo",
+        "description": "Catálogo, pedidos y beneficios en una app con notificaciones segmentadas, que avisa cuando hay una razón real y no todos los martes.",
+        "result": "Recompra impulsada sin gastar en pauta cada vez."
+      },
+      {
+        "sector": "Logística",
+        "title": "Escaneo y trazabilidad en ruta",
+        "description": "El conductor escanea códigos y confirma entregas desde el teléfono, con ubicación y evidencia fotográfica asociadas a cada punto.",
+        "result": "Trazabilidad completa sin equipos dedicados."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Lo que se pregunta antes de hacer una app.",
+    "description": "Nativo o híbrido, cuánto tarda, qué pasa con las tiendas y si de verdad hace falta una aplicación. Las respuestas que ayudan a decidir sin necesidad de una reunión.",
+    "items": [
+      {
+        "question": "¿Nativo o híbrido? ¿Cuál me conviene?",
+        "answer": "Para la gran mayoría de aplicaciones de negocio, híbrido con React Native o Ionic da el mismo resultado percibido a la mitad del costo de desarrollo y mantenimiento, porque es una sola base de código para las dos tiendas. Nativo se justifica cuando hay rendimiento gráfico exigente, procesamiento intensivo en el dispositivo o uso profundo de funciones del sistema. Lo decidimos en el descubrimiento según tu caso, no por preferencia nuestra."
+      },
+      {
+        "question": "¿Cuánto tarda desarrollar una app?",
+        "answer": "Una primera versión con un flujo bien acotado suele tomar de ocho a doce semanas incluyendo la publicación en tiendas. Aplicaciones con varios roles, funcionamiento sin conexión o integraciones complejas con sistemas existentes llevan más. Trabajamos por entregas, así que vas a tener compilaciones instalables en tu teléfono mucho antes de la fecha final."
+      },
+      {
+        "question": "¿Ustedes se encargan de publicar en las tiendas?",
+        "answer": "Sí, el proceso completo: creación de las cuentas de desarrollador si no las tienes, fichas, capturas, textos, política de privacidad, declaraciones de datos y las revisiones de Apple y Google. Los rechazos son normales en la primera publicación y los gestionamos nosotros. Las cuentas quedan a nombre de tu empresa, no del nuestro."
+      },
+      {
+        "question": "¿La app funciona sin internet?",
+        "answer": "Si tu caso lo necesita, sí, y lo diseñamos desde el principio porque no es algo que se pueda añadir después sin rehacer medio proyecto. La app guarda los datos en el dispositivo, mantiene una cola de cambios pendientes y sincroniza cuando vuelve la conexión, resolviendo los conflictos que puedan aparecer. Es lo habitual en operación de campo, bodegas y logística."
+      },
+      {
+        "question": "¿Y si mi caso no necesita una app?",
+        "answer": "Te lo decimos. Si el usuario entra una vez al mes, no necesita cámara ni notificaciones y siempre tiene conexión, una web bien hecha en el celular le va a servir igual sin obligarlo a instalar nada ni obligarte a ti a mantener dos tiendas. Preferimos perder ese proyecto a construir algo que sabemos que va a terminar sin uso."
+      }
+    ]
+  },
+  "closing": {
+    "title": "¿Tienes una idea de app?",
+    "description": "Cuéntanos qué debería resolver y para quién. Te decimos si conviene nativa o híbrida, cuánto tomaría una primera versión y si de verdad necesitas una aplicación.",
+    "primary_cta": {
+      "label": "Hablemos por WhatsApp",
+      "whatsapp_message": "Hola Kodecol, quiero desarrollar una aplicación móvil."
+    },
+    "secondary_cta_label": "Solicitar cotización",
+    "note": "Si tu caso se resuelve mejor con una web, te lo decimos de entrada."
+  },
+  "seo": {
+    "title": "Desarrollo de aplicaciones móviles iOS y Android",
+    "description": "Apps nativas e híbridas para iOS y Android con modo sin conexión, notificaciones e integración con tus sistemas. Publicación en tiendas incluida.",
+    "keywords": [
+      "desarrollo de aplicaciones móviles",
+      "apps iOS y Android Colombia",
+      "React Native",
+      "desarrollo de apps Bogotá",
+      "aplicaciones empresariales móviles"
+    ]
+  }
+}

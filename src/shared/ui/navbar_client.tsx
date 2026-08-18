@@ -4,8 +4,13 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SITE_CONFIG } from "@/shared/config/site_config";
 
+interface NavbarClientProps {
+  /** `href` de la página actual, para marcarla con aria-current. */
+  current_href?: string;
+}
+
 /** Menú hamburguesa mobile: abre un panel glass a pantalla completa (DESIGN-SYSTEM.md §6.4). */
-export function NavbarClient() {
+export function NavbarClient({ current_href }: NavbarClientProps) {
   const [open, set_open] = useState(false);
 
   /* Bloquea el scroll del body mientras el panel está abierto */
@@ -56,16 +61,20 @@ export function NavbarClient() {
           id="mobile-menu"
           className="fixed inset-0 top-[86px] z-[90] flex flex-col gap-2 rounded-t-[24px] border-t border-glass-border bg-[rgba(4,17,15,.92)] px-8 py-10 backdrop-blur-[24px]"
         >
-          {SITE_CONFIG.nav_links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => set_open(false)}
-              className="rounded-lg py-3 font-sora text-xl font-semibold text-text-primary transition-colors hover:text-mint-500"
-            >
-              {link.label}
-            </Link>
-          ))}
+          <ul className="flex flex-col gap-2">
+            {SITE_CONFIG.nav_links.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  aria-current={link.href === current_href ? "page" : undefined}
+                  onClick={() => set_open(false)}
+                  className="block rounded-lg py-3 font-sora text-xl font-semibold text-text-primary transition-colors hover:text-mint-500 aria-[current=page]:text-mint-500"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
           <a
             href={SITE_CONFIG.whatsapp_url}
             target="_blank"

@@ -57,9 +57,18 @@ const contact_schema = z.object({
   github_url: z.string().url().nullable(),
 });
 
+/*
+  Longitudes SEO: el <title> se renderiza como "%s · Kodecol" (layout.tsx), así
+  que el máximo deja sitio al sufijo antes de que la SERP lo trunque (~65). La
+  description se corta pasados ~165 caracteres.
+*/
 const seo_schema = z.object({
-  title: z.string().min(1),
-  description: z.string().min(1),
+  title: z.string().min(1).max(55, "con el sufijo \" · Kodecol\" el title pasaría de 65 y la SERP lo truncaría"),
+  description: z
+    .string()
+    .min(70, "una description de menos de 70 caracteres desaprovecha el snippet")
+    .max(165, "la description se trunca en la SERP pasados ~165 caracteres"),
+  keywords: z.array(z.string().min(1)).min(1).optional(),
 });
 
 export const developer_profile_schema: z.ZodType<DeveloperProfile> = z.object({

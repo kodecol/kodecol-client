@@ -59,6 +59,8 @@ export interface ProfileContact {
 export interface ProfileSeo {
   title: string;
   description: string;
+  /** Palabras clave de la página. Google las ignora; Bing y Yandex no. */
+  keywords?: readonly string[];
 }
 
 export interface DeveloperProfile {

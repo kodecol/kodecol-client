@@ -1,0 +1,264 @@
+{
+  "slug": "automatizacion-de-procesos",
+  "name": "Automatización de procesos",
+  "icon": "automation",
+  "order": 1,
+  "teaser": {
+    "title": "Automatización de procesos",
+    "description": "Eliminamos tareas repetitivas y conectamos tus herramientas para que tu operación fluya sola — menos tiempo perdido, menos errores, más resultados.",
+    "badge": "Servicio estrella",
+    "featured": true
+  },
+  "hero": {
+    "eyebrow": "Servicio estrella",
+    "headline_lead": "Automatización de procesos que le devuelve ",
+    "headline_accent": "horas a tu equipo",
+    "description": "Cada semana alguien de tu equipo copia datos de un sistema a otro, arma el mismo informe y persigue aprobaciones por chat. Convertimos ese trabajo repetitivo en flujos que corren solos, quedan registrados y no se equivocan, para que las personas vuelvan a lo que sí necesita criterio.",
+    "chips": [
+      "Integraciones entre sistemas",
+      "Flujos y bots",
+      "Reportes automáticos",
+      "Alertas y aprobaciones"
+    ],
+    "primary_cta": {
+      "label": "Automatizar mi proceso",
+      "whatsapp_message": "Hola Kodecol, quiero automatizar un proceso de mi empresa."
+    },
+    "secondary_cta_label": "Ver qué incluye"
+  },
+  "problem": {
+    "eyebrow": "El problema que resolvemos",
+    "title": "El costo invisible de hacerlo a mano.",
+    "description": "No aparece en ninguna línea del estado de resultados, pero se paga todos los meses: en horas de gente cara, en errores que se descubren tarde y en decisiones tomadas con datos de la semana pasada.",
+    "items": [
+      {
+        "title": "Horas que no vuelven",
+        "description": "Copiar y pegar entre Excel, el ERP y el correo se come días completos al mes de personas que contrataste para pensar, no para transcribir."
+      },
+      {
+        "title": "Errores que cuestan caro",
+        "description": "Un dígito mal digitado en una factura, un pedido que nunca se cargó, un cliente que quedó sin respuesta. El error manual siempre aparece en el peor momento."
+      },
+      {
+        "title": "Sistemas que no se hablan",
+        "description": "El CRM no sabe qué pasó en el chat, contabilidad no sabe qué despachó bodega, y siempre hay alguien haciendo de puente a mano entre dos pantallas."
+      },
+      {
+        "title": "Cero trazabilidad",
+        "description": "Cuando algo falla, nadie sabe quién aprobó qué ni cuándo. Sin registro no hay mejora posible: solo conversaciones sobre de quién fue la culpa."
+      }
+    ],
+    "closing_note": "Automatizamos para liberar a las personas, no para reemplazarlas sin criterio."
+  },
+  "deliverables": {
+    "eyebrow": "Qué incluye",
+    "title": "Lo que recibes, no lo que prometemos.",
+    "description": "Cada automatización se entrega funcionando dentro de tu operación, documentada en español y con alguien de tu equipo capaz de sostenerla sin depender de nosotros.",
+    "items": [
+      {
+        "title": "Mapa del proceso actual",
+        "description": "Antes de automatizar, entendemos. Levantamos el proceso tal como ocurre hoy y marcamos exactamente dónde se está perdiendo el tiempo.",
+        "items": [
+          "Diagrama del flujo real, no del que dice el manual",
+          "Puntos de fuga cuantificados en horas al mes",
+          "Priorización por retorno: qué automatizar primero"
+        ]
+      },
+      {
+        "title": "Integraciones entre tus sistemas",
+        "description": "Conectamos las herramientas que ya usas para que el dato viaje solo, en el sentido que necesite el negocio y sin nadie haciendo de puente.",
+        "items": [
+          "Conexión vía API con ERP, CRM, e-commerce o facturación",
+          "Sincronización en uno o dos sentidos, según el caso",
+          "Manejo de errores, reintentos y cola de pendientes"
+        ]
+      },
+      {
+        "title": "Flujos automáticos",
+        "description": "La lógica de tu operación, escrita una sola vez y ejecutada siempre igual, sin depender de que alguien se acuerde de hacerlo.",
+        "items": [
+          "Disparadores por evento, formulario o calendario",
+          "Reglas de negocio y validaciones antes de escribir el dato",
+          "Aprobaciones por WhatsApp o correo, con registro de quién aprobó"
+        ]
+      },
+      {
+        "title": "Reportes y alertas",
+        "description": "El dato consolidado llega solo a quien tiene que decidir, sin que nadie dedique la mañana del lunes a armarlo en una hoja de cálculo.",
+        "items": [
+          "Tableros con la información ya cruzada",
+          "Alertas cuando un indicador se sale del rango",
+          "Envíos programados por correo o chat"
+        ]
+      },
+      {
+        "title": "Documentación y capacitación",
+        "description": "Un proceso automatizado que solo entiende el proveedor es una dependencia, no una solución. Por eso entregamos el conocimiento con el flujo.",
+        "items": [
+          "Manual del flujo en español, con capturas",
+          "Sesión de capacitación al equipo responsable",
+          "Acompañamiento durante las primeras semanas en producción"
+        ]
+      },
+      {
+        "title": "Monitoreo y soporte",
+        "description": "Un flujo vivo necesita quien lo mire. Si una ejecución falla, se sabe en el momento y no tres semanas después por un cliente molesto.",
+        "items": [
+          "Registro de cada ejecución, con su resultado",
+          "Notificación automática cuando un flujo falla",
+          "Ajustes cuando el proceso del negocio cambia"
+        ]
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Cuatro pasos, sin sorpresas de alcance.",
+    "description": "El precio y el alcance se cierran antes de escribir la primera línea de código. Si en el diagnóstico concluimos que automatizar no te conviene todavía, te lo decimos y ahí termina.",
+    "steps": [
+      {
+        "title": "Diagnóstico",
+        "description": "Nos sentamos con quien ejecuta el proceso, no solo con quien lo dirige. Salimos con el flujo mapeado y las horas que se están perdiendo, medidas.",
+        "duration": "3 a 5 días"
+      },
+      {
+        "title": "Propuesta y alcance cerrado",
+        "description": "Qué se automatiza, qué no, con qué herramientas y cuánto cuesta. Un solo documento, sin letra menuda ni bolsas de horas abiertas.",
+        "duration": "2 días"
+      },
+      {
+        "title": "Construcción por entregas",
+        "description": "Construimos por partes y te mostramos cada avance funcionando. Nada de desaparecer dos meses y volver con una sorpresa que no era lo que pediste.",
+        "duration": "2 a 6 semanas"
+      },
+      {
+        "title": "Puesta en marcha y acompañamiento",
+        "description": "Salimos a producción con el flujo monitoreado, tu equipo capacitado y nosotros pendientes de las primeras ejecuciones con datos reales.",
+        "duration": "Continuo"
+      }
+    ]
+  },
+  "technologies": {
+    "eyebrow": "Con qué lo construimos",
+    "title": "Herramientas elegidas por el problema, no por la moda.",
+    "description": "Si tu caso se resuelve con una herramienta de orquestación, no te vendemos un desarrollo a la medida. Y si de verdad necesita código propio, lo escribimos bien.",
+    "groups": [
+      {
+        "title": "Orquestación de flujos",
+        "items": ["n8n", "Make", "Zapier", "Apache Airflow"]
+      },
+      {
+        "title": "Backend e integraciones",
+        "items": ["Python", "FastAPI", "Node.js", "NestJS", "APIs REST", "Webhooks"]
+      },
+      {
+        "title": "Datos y reportes",
+        "items": ["PostgreSQL", "MySQL", "Google Sheets API", "Metabase", "Power BI"]
+      },
+      {
+        "title": "Canales de contacto",
+        "items": ["WhatsApp Business API", "Correo transaccional", "Telegram", "Slack"]
+      },
+      {
+        "title": "Infraestructura y despliegue",
+        "items": ["Docker", "GitHub Actions", "AWS", "Servidor propio o del cliente"]
+      }
+    ],
+    "note": "Cuando un sistema no expone API, lo decimos de frente y evaluamos alternativas antes de cobrarte por intentarlo."
+  },
+  "results": {
+    "eyebrow": "Lo que cambia",
+    "title": "Resultados que se miden en horas y en pesos.",
+    "description": "La automatización no se justifica sola: se justifica con el tiempo que devuelve y con los errores que deja de producir. Eso se mide antes y después, no se promete.",
+    "metrics": [
+      {
+        "value": "Hasta 80%",
+        "label": "menos tiempo en tareas repetitivas",
+        "description": "En procesos de digitación y consolidación, que son los que más horas consumen."
+      },
+      {
+        "value": "24/7",
+        "label": "el flujo no descansa",
+        "description": "Los pedidos de la madrugada y del domingo entran igual que los del martes a las diez."
+      },
+      {
+        "value": "Trazable",
+        "label": "cada ejecución queda registrada",
+        "description": "Quién disparó qué, cuándo y con qué resultado. Auditable sin pedirle capturas a nadie."
+      },
+      {
+        "value": "Semanas",
+        "label": "no meses, para el primer flujo en producción",
+        "description": "Entregamos por partes: el primer proceso devuelve horas antes de terminar el proyecto."
+      }
+    ],
+    "use_cases": [
+      {
+        "sector": "Comercio",
+        "title": "Del chat al ERP, sin digitar",
+        "description": "Los pedidos que llegan por WhatsApp se registran solos en el sistema, con validación de inventario y confirmación automática al cliente.",
+        "result": "El equipo comercial dejó de transcribir y volvió a vender."
+      },
+      {
+        "sector": "Servicios",
+        "title": "Facturación y cartera automáticas",
+        "description": "Facturas generadas y enviadas al cierre de cada ciclo, con recordatorios escalonados de cobro y alerta interna cuando una cuenta se vence.",
+        "result": "Menos días de cartera y cero facturas olvidadas."
+      },
+      {
+        "sector": "Operación y logística",
+        "title": "El reporte diario que se arma solo",
+        "description": "Los datos de varias fuentes se cruzan cada madrugada y el informe de operación llega a gerencia antes de la primera reunión del día.",
+        "result": "Horas de armado manual convertidas en un correo puntual."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Lo que nos preguntan antes de empezar.",
+    "description": "Las dudas que aparecen siempre en la primera llamada, respondidas aquí para que no tengas que preguntarlas ni esperar a una reunión para saberlo.",
+    "items": [
+      {
+        "question": "¿Cuánto cuesta automatizar un proceso?",
+        "answer": "Depende de cuántos sistemas hay que conectar y de qué tan complejas son las reglas del negocio. Un flujo puntual, como pasar los pedidos de WhatsApp al ERP, suele resolverse en dos a cuatro semanas; automatizar una operación completa toma más. El diagnóstico no tiene costo y de él sale un alcance con precio cerrado: sabes cuánto vas a pagar antes de que escribamos la primera línea de código."
+      },
+      {
+        "question": "¿En cuánto tiempo veo resultados?",
+        "answer": "Entregamos por partes, así que el primer flujo suele estar corriendo en producción entre la segunda y la cuarta semana. No esperamos a terminar el proyecto completo para que empieces a recuperar horas: cada entrega que sale ya está devolviendo tiempo mientras construimos la siguiente."
+      },
+      {
+        "question": "¿Se integra con el sistema que ya uso?",
+        "answer": "Casi siempre sí. Trabajamos con ERPs, CRMs, plataformas de e-commerce, facturación electrónica, Google Workspace y WhatsApp Business API, entre otros. Lo que necesitamos es que el sistema exponga una API o una base de datos accesible. Si no la tiene, lo revisamos en el diagnóstico, te proponemos alternativas y, si no es viable, te lo decimos antes de cobrarte por intentarlo."
+      },
+      {
+        "question": "¿La automatización va a reemplazar a mi equipo?",
+        "answer": "No es lo que buscamos. Automatizamos el trabajo que no necesita criterio (digitar, copiar, consolidar, recordar) para que tu equipo se dedique a lo que sí lo necesita: vender, decidir, atender bien. En la práctica, las empresas con las que trabajamos no reducen personal: reubican horas que se estaban yendo en tareas que ninguna persona debería estar haciendo."
+      },
+      {
+        "question": "¿Qué pasa si el flujo falla o mi proceso cambia?",
+        "answer": "Todo flujo que entregamos queda monitoreado: si una ejecución falla, se registra y se notifica, no se pierde en silencio. Y como los procesos del negocio cambian, dejamos la automatización documentada y preparada para ajustarse. El acompañamiento posterior a la salida a producción está incluido, y después puedes mantenerlo con nosotros o con tu propio equipo."
+      }
+    ]
+  },
+  "closing": {
+    "title": "¿Qué proceso te está robando horas?",
+    "description": "Cuéntanos cuál es y te decimos si se puede automatizar, cómo y cuánto costaría. El diagnóstico no tiene costo y la respuesta honesta a veces es «todavía no».",
+    "primary_cta": {
+      "label": "Hablemos por WhatsApp",
+      "whatsapp_message": "Hola Kodecol, quiero automatizar un proceso de mi empresa."
+    },
+    "secondary_cta_label": "Solicitar cotización",
+    "note": "Respondemos el mismo día hábil. Sin formularios eternos ni llamadas de venta."
+  },
+  "seo": {
+    "title": "Automatización de procesos empresariales",
+    "description": "Automatizamos los procesos manuales de tu empresa: integraciones entre sistemas, flujos, reportes y alertas. Diagnóstico sin costo y alcance con precio cerrado.",
+    "keywords": [
+      "automatización de procesos",
+      "automatización empresarial Colombia",
+      "integración de sistemas",
+      "RPA",
+      "automatización con n8n"
+    ]
+  }
+}

@@ -22,6 +22,10 @@ const profiles: ReadonlyMap<string, DeveloperProfile> = new Map(
 export class LocalDeveloperProfileRepository
   implements DeveloperProfileRepository
 {
+  get_all(): readonly DeveloperProfile[] {
+    return [...profiles.values()];
+  }
+
   get_all_slugs(): readonly string[] {
     return [...profiles.keys()];
   }

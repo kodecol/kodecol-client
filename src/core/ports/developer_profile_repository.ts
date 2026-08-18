@@ -6,6 +6,8 @@ import type { DeveloperProfile } from "../domain/developer_profile";
  * sin tocar features ni app (solo cambia la factoría del adaptador).
  */
 export interface DeveloperProfileRepository {
+  /** Todos los perfiles: lo consume la página índice /equipo. */
+  get_all(): readonly DeveloperProfile[];
   get_all_slugs(): readonly string[];
   get_by_slug(slug: string): DeveloperProfile | null;
 }

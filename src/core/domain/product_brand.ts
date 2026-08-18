@@ -103,6 +103,10 @@ export interface BrandDetail {
 export interface BrandSeo {
   title: string;
   description: string;
+  /** Palabras clave de la página. Google las ignora; Bing y Yandex no. */
+  keywords?: readonly string[];
+  /** Categoría schema.org del producto. Por defecto `BusinessApplication`. */
+  application_category?: string;
 }
 
 export interface ProductBrand {

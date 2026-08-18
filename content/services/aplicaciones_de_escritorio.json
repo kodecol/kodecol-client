@@ -1,0 +1,264 @@
+{
+  "slug": "aplicaciones-de-escritorio",
+  "name": "Apps de escritorio",
+  "icon": "desktop",
+  "order": 5,
+  "teaser": {
+    "title": "Apps de escritorio",
+    "description": "Software robusto para operaciones internas, productividad y control.",
+    "badge": null,
+    "featured": false
+  },
+  "hero": {
+    "eyebrow": "Software para el puesto de trabajo",
+    "headline_lead": "Software de escritorio para operaciones que ",
+    "headline_accent": "no pueden parar",
+    "description": "Hay trabajo que no cabe en el navegador: puntos de venta que deben facturar aunque se caiga internet, equipos que dependen de una impresora o un lector específico, y operarios que necesitan atajos de teclado para no perder segundos en cada registro. Para eso seguimos construyendo aplicaciones de escritorio.",
+    "chips": [
+      "Windows, macOS y Linux",
+      "Funciona sin internet",
+      "Hardware conectado",
+      "Actualización automática"
+    ],
+    "primary_cta": {
+      "label": "Quiero una app de escritorio",
+      "whatsapp_message": "Hola Kodecol, necesito una aplicación de escritorio para mi operación."
+    },
+    "secondary_cta_label": "Ver qué incluye"
+  },
+  "problem": {
+    "eyebrow": "El problema que resolvemos",
+    "title": "No todo cabe en una pestaña del navegador.",
+    "description": "Llevar todo a la nube fue buena idea hasta que la operación se detiene porque el proveedor de internet tuvo una mañana mala, o porque el navegador no puede hablar con la balanza.",
+    "items": [
+      {
+        "title": "Sin internet, sin operación",
+        "description": "Un sistema en la nube deja el mostrador parado cuando se cae la conexión, y en un punto de venta cada minuto sin facturar es dinero que no entra."
+      },
+      {
+        "title": "El navegador no habla con el hardware",
+        "description": "Impresoras fiscales, balanzas, lectores de códigos o torniquetes necesitan acceso directo al equipo que el navegador no da o da a medias."
+      },
+      {
+        "title": "Interfaces lentas para trabajo repetitivo",
+        "description": "Quien registra doscientas operaciones al día necesita teclado y respuesta instantánea, no esperar a que cargue una pantalla entre cada registro."
+      },
+      {
+        "title": "Instalaciones que envejecen distinto",
+        "description": "Sin actualización automática, cada equipo termina con una versión diferente y el soporte se convierte en adivinar qué está corriendo cada quien."
+      }
+    ],
+    "closing_note": "Escritorio cuando el caso lo pide, nube cuando conviene. La decisión es del problema, no de la moda."
+  },
+  "deliverables": {
+    "eyebrow": "Qué incluye",
+    "title": "Una aplicación que se instala y se sostiene sola.",
+    "description": "Construir la aplicación es la mitad; que se instale sin fricción, se actualice sola y se pueda diagnosticar a distancia es lo que decide si el proyecto sobrevive al primer mes.",
+    "items": [
+      {
+        "title": "Aplicación multiplataforma",
+        "description": "Una sola base de código que se compila para Windows, macOS y Linux, respetando las convenciones de cada sistema en menús, atajos y ventanas.",
+        "items": [
+          "Instaladores firmados para cada sistema operativo",
+          "Atajos de teclado y navegación sin ratón",
+          "Múltiples ventanas y trabajo en varias pantallas"
+        ]
+      },
+      {
+        "title": "Operación sin conexión",
+        "description": "La aplicación guarda todo en una base de datos local y sincroniza con el servidor cuando hay red, sin que el operario tenga que hacer nada.",
+        "items": [
+          "Base de datos local en el equipo",
+          "Cola de sincronización y resolución de conflictos",
+          "Indicador visible del estado de conexión"
+        ]
+      },
+      {
+        "title": "Integración con hardware",
+        "description": "Comunicación directa con los equipos que ya tiene tu operación, que suele ser la razón por la que una aplicación web no era una opción.",
+        "items": [
+          "Impresoras de tirilla, fiscales y de etiquetas",
+          "Lectores de códigos de barras y QR",
+          "Balanzas, cajones monederos y puertos serie"
+        ]
+      },
+      {
+        "title": "Seguridad y permisos",
+        "description": "Control de quién puede hacer qué dentro de la aplicación, con registro de las acciones sensibles para poder auditar lo que ocurrió.",
+        "items": [
+          "Usuarios, roles y permisos por función",
+          "Registro de auditoría de operaciones críticas",
+          "Cifrado de los datos guardados en el equipo"
+        ]
+      },
+      {
+        "title": "Actualización automática",
+        "description": "Publicamos una versión y los equipos se actualizan solos la próxima vez que arrancan, sin visitar puestos ni pedirle nada al usuario.",
+        "items": [
+          "Actualización silenciosa en segundo plano",
+          "Reversión a la versión anterior si algo falla",
+          "Control de qué equipos reciben cada versión"
+        ]
+      },
+      {
+        "title": "Soporte y diagnóstico",
+        "description": "Cuando algo falla en un puesto, hay que poder saber qué pasó sin desplazarse hasta la sede ni pedirle capturas de pantalla a nadie.",
+        "items": [
+          "Registro de errores enviado al servidor",
+          "Exportación de diagnóstico con un clic",
+          "Documentación de instalación y operación"
+        ]
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Del puesto de trabajo real al instalador.",
+    "description": "Empezamos mirando cómo se trabaja hoy en el mostrador o en la bodega, con el hardware que hay y la conexión que hay. Diseñar esto desde una oficina siempre sale mal.",
+    "steps": [
+      {
+        "title": "Levantamiento en sitio",
+        "description": "Vemos el puesto de trabajo real: qué equipos hay, cómo es la conexión, cuántas operaciones por hora y qué atajos usa quien lleva años ahí.",
+        "duration": "1 semana"
+      },
+      {
+        "title": "Diseño y prueba de hardware",
+        "description": "Validamos pronto la comunicación con impresoras, lectores o balanzas, que es el riesgo técnico que puede tumbar el proyecto entero.",
+        "duration": "1 a 2 semanas"
+      },
+      {
+        "title": "Desarrollo por entregas",
+        "description": "Entregamos instaladores de prueba desde temprano para que el equipo real los use en un puesto real y nos diga qué sobra y qué falta.",
+        "duration": "5 a 12 semanas"
+      },
+      {
+        "title": "Despliegue y capacitación",
+        "description": "Instalamos en los puestos, capacitamos al personal y acompañamos los primeros días de operación con datos reales y clientes esperando.",
+        "duration": "1 a 2 semanas"
+      }
+    ]
+  },
+  "technologies": {
+    "eyebrow": "Con qué lo construimos",
+    "title": "Herramientas que sostienen un puesto de trabajo.",
+    "description": "Priorizamos que la aplicación arranque rápido, consuma poco y se pueda distribuir sin depender del área de sistemas del cliente para cada actualización.",
+    "groups": [
+      {
+        "title": "Aplicación",
+        "items": ["Electron", "TypeScript", "React", "Tauri"]
+      },
+      {
+        "title": "Datos locales",
+        "items": ["SQLite", "Sincronización incremental", "Cifrado en disco"]
+      },
+      {
+        "title": "Backend y sincronización",
+        "items": ["Node.js", "NestJS", "PostgreSQL", "APIs REST"]
+      },
+      {
+        "title": "Hardware y periféricos",
+        "items": ["Impresión ESC/POS", "Puerto serie y USB", "Lectores HID", "Impresión de etiquetas"]
+      },
+      {
+        "title": "Distribución",
+        "items": ["Instaladores firmados", "Actualización automática", "GitHub Actions"]
+      }
+    ],
+    "note": "Si tu operación tiene buena conexión y no toca hardware, una aplicación web te va a salir más barata de mantener."
+  },
+  "results": {
+    "eyebrow": "Lo que cambia",
+    "title": "La operación deja de depender del internet.",
+    "description": "El cambio se nota el primer día que se cae la conexión y nadie se entera, porque el mostrador siguió facturando y todo se sincronizó solo cuando volvió la red.",
+    "metrics": [
+      {
+        "value": "Sigue operando",
+        "label": "aunque se caiga internet",
+        "description": "Base de datos local y sincronización automática al reconectar."
+      },
+      {
+        "value": "Instantáneo",
+        "label": "sin esperas entre operaciones",
+        "description": "Respuesta local, pensada para quien registra cientos de veces al día."
+      },
+      {
+        "value": "Sola",
+        "label": "la aplicación se actualiza",
+        "description": "Sin visitar puestos ni depender de que el usuario haga algo."
+      },
+      {
+        "value": "Conectada",
+        "label": "habla con tu hardware",
+        "description": "Impresoras, lectores y balanzas que el navegador no alcanza."
+      }
+    ],
+    "use_cases": [
+      {
+        "sector": "Retail y alimentación",
+        "title": "Punto de venta que no se detiene",
+        "description": "Facturación, impresión de tirilla y control de caja funcionando en local, con sincronización al servidor central en cuanto hay conexión disponible.",
+        "result": "Cero ventas perdidas por caídas de internet."
+      },
+      {
+        "sector": "Producción y bodega",
+        "title": "Registro de planta con lector",
+        "description": "Estaciones de trabajo que escanean, pesan e imprimen etiquetas sin salir del teclado, con la información consolidada al sistema central.",
+        "result": "Trazabilidad de producción sin papel intermedio."
+      },
+      {
+        "sector": "Servicios internos",
+        "title": "Herramienta de operación a la medida",
+        "description": "Aplicación interna que reúne en una sola ventana lo que antes eran cuatro sistemas y una hoja de cálculo, con permisos por rol y auditoría.",
+        "result": "Menos saltos entre pantallas y menos errores de copia."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Lo que se pregunta sobre software de escritorio.",
+    "description": "Si todavía tiene sentido, cuánto pesa, cómo se actualiza y qué pasa con el hardware existente. Las preguntas reales de quien tiene una operación que sostener.",
+    "items": [
+      {
+        "question": "¿Todavía tiene sentido una aplicación de escritorio?",
+        "answer": "Cuando la operación no puede parar si se cae internet, cuando hay que hablar con hardware como impresoras fiscales, balanzas o lectores, o cuando alguien hace cientos de registros al día y necesita respuesta instantánea con el teclado, sí. Fuera de esos casos, casi siempre conviene más una aplicación web. Te lo decimos en el levantamiento: no vendemos escritorio por defecto."
+      },
+      {
+        "question": "¿Funciona en Windows, Mac y Linux?",
+        "answer": "Sí. Trabajamos con una sola base de código que compilamos para los tres sistemas, respetando las convenciones de cada uno en menús, atajos y comportamiento de ventanas. En la práctica la mayoría de operaciones en Colombia son Windows, así que ahí ponemos el foco de pruebas, pero los instaladores para los otros sistemas salen del mismo proyecto sin costo adicional de desarrollo."
+      },
+      {
+        "question": "¿Cómo se actualiza en todos los equipos?",
+        "answer": "Con actualización automática. Publicamos una versión nueva y cada equipo la descarga e instala solo la próxima vez que arranca la aplicación, sin que nadie tenga que visitar los puestos ni pedirle nada al usuario. Además se puede controlar qué equipos reciben cada versión, para probar primero en un punto antes de desplegar a todos, y volver atrás si algo sale mal."
+      },
+      {
+        "question": "¿Se integra con la impresora y el lector que ya tengo?",
+        "answer": "En general sí, y es justo lo que una aplicación web no puede hacer bien. Trabajamos con impresoras de tirilla y de etiquetas por ESC/POS, lectores de códigos, balanzas por puerto serie y cajones monederos. En el levantamiento revisamos los modelos concretos que tienes y validamos la comunicación en las primeras semanas, antes de construir todo lo demás encima."
+      },
+      {
+        "question": "¿Los datos quedan solo en el equipo?",
+        "answer": "No: quedan en el equipo para poder trabajar sin conexión, pero se sincronizan con el servidor central en cuanto hay red. Así cada puesto es autónomo y al mismo tiempo la información consolidada está disponible para gerencia y para el resto de sistemas. Los datos guardados localmente van cifrados, y el acceso dentro de la aplicación se controla por usuario y rol."
+      }
+    ]
+  },
+  "closing": {
+    "title": "¿Tu operación se detiene sin internet?",
+    "description": "Cuéntanos cómo trabajan hoy y con qué equipos. Te decimos si el caso pide escritorio o si se resuelve mejor en la web, y qué tomaría montarlo.",
+    "primary_cta": {
+      "label": "Hablemos por WhatsApp",
+      "whatsapp_message": "Hola Kodecol, necesito una aplicación de escritorio para mi operación."
+    },
+    "secondary_cta_label": "Solicitar cotización",
+    "note": "Revisamos tu hardware actual antes de proponer nada. La compatibilidad se valida, no se supone."
+  },
+  "seo": {
+    "title": "Desarrollo de aplicaciones de escritorio a la medida",
+    "description": "Software de escritorio para Windows, macOS y Linux que opera sin internet, se integra con impresoras y lectores, y se actualiza automáticamente.",
+    "keywords": [
+      "aplicaciones de escritorio a la medida",
+      "software punto de venta offline",
+      "desarrollo con Electron",
+      "software para operación interna",
+      "integración con impresoras fiscales"
+    ]
+  }
+}

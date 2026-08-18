@@ -1,0 +1,264 @@
+{
+  "slug": "inteligencia-artificial-a-la-medida",
+  "name": "IA a la medida",
+  "icon": "ai",
+  "order": 2,
+  "teaser": {
+    "title": "IA a la medida",
+    "description": "Chatbots, agentes, IA generativa y análisis predictivo para tu negocio.",
+    "badge": null,
+    "featured": false
+  },
+  "hero": {
+    "eyebrow": "Inteligencia artificial aplicada",
+    "headline_lead": "Inteligencia artificial que ",
+    "headline_accent": "no inventa datos",
+    "description": "Un modelo que se equivoca con seguridad es peor que no tener nada. Construimos agentes y asistentes donde la IA entiende e interpreta, pero los números, los precios y las confirmaciones los calcula tu sistema. Es la misma arquitectura con la que operamos Axi Connect en producción.",
+    "chips": [
+      "Agentes conversacionales",
+      "Asistentes con tus documentos",
+      "Análisis predictivo",
+      "Clasificación automática"
+    ],
+    "primary_cta": {
+      "label": "Explorar mi caso de IA",
+      "whatsapp_message": "Hola Kodecol, quiero explorar un caso de inteligencia artificial para mi empresa."
+    },
+    "secondary_cta_label": "Ver qué incluye"
+  },
+  "problem": {
+    "eyebrow": "El problema que resolvemos",
+    "title": "Todo el mundo quiere IA. Casi nadie sabe para qué.",
+    "description": "La conversación suele empezar por la herramienta y no por el problema, y así es fácil terminar pagando por un chatbot que responde bonito y no resuelve nada. Nosotros empezamos por el otro lado.",
+    "items": [
+      {
+        "title": "Modelos que alucinan",
+        "description": "Un asistente que se inventa un precio o promete un descuento que no existe no es un experimento simpático: es una venta perdida y un cliente enfadado."
+      },
+      {
+        "title": "Pilotos que nunca salen a producción",
+        "description": "La demo impresiona en la sala de juntas y muere ahí, porque nadie pensó en los permisos, en el costo por consulta ni en qué pasa cuando el modelo falla."
+      },
+      {
+        "title": "Datos que la empresa no quiere soltar",
+        "description": "Subir la base de clientes a un servicio de terceros sin control de acceso ni registro de uso es un riesgo que muchas empresas no pueden asumir."
+      },
+      {
+        "title": "Costos que se disparan",
+        "description": "Sin límites de contexto ni caché, la factura mensual de tokens crece sin control y el proyecto se cancela por presupuesto, no por resultados."
+      }
+    ],
+    "closing_note": "La IA entiende e interpreta. El dato lo calcula el sistema, y un humano confirma lo que importa."
+  },
+  "deliverables": {
+    "eyebrow": "Qué incluye",
+    "title": "De la idea al agente en producción.",
+    "description": "No entregamos una demo: entregamos un sistema con límites definidos, costos previsibles y un camino claro de escalamiento a una persona cuando el modelo no sabe la respuesta.",
+    "items": [
+      {
+        "title": "Diagnóstico de viabilidad",
+        "description": "Antes de construir, revisamos si tu caso se resuelve mejor con IA, con una regla de negocio simple o con una automatización clásica más barata.",
+        "items": [
+          "Casos de uso priorizados por valor y por riesgo",
+          "Estimación de costo por consulta y al mes",
+          "Recomendación honesta cuando la IA no es la respuesta"
+        ]
+      },
+      {
+        "title": "Agentes conversacionales",
+        "description": "Asistentes que atienden por WhatsApp, web o el canal que uses, con herramientas acotadas y con reglas claras sobre qué pueden y qué no pueden hacer.",
+        "items": [
+          "Catálogo de herramientas que el agente puede invocar",
+          "Escalamiento a una persona cuando no sabe",
+          "Memoria de conversación y contexto del cliente"
+        ]
+      },
+      {
+        "title": "Asistentes sobre tus documentos",
+        "description": "Búsqueda semántica sobre manuales, contratos, políticas o historial, para que la respuesta salga de tus fuentes y siempre venga con su cita.",
+        "items": [
+          "Indexación de PDF, hojas de cálculo y bases internas",
+          "Respuestas con referencia al documento de origen",
+          "Control de acceso por rol o por área"
+        ]
+      },
+      {
+        "title": "Clasificación y extracción",
+        "description": "Modelos que leen correos, facturas o formularios y devuelven datos estructurados listos para entrar a tu sistema sin pasar por un teclado.",
+        "items": [
+          "Extracción de campos desde documentos e imágenes",
+          "Clasificación y enrutamiento automático de solicitudes",
+          "Validación contra tus reglas antes de guardar"
+        ]
+      },
+      {
+        "title": "Análisis predictivo",
+        "description": "Modelos entrenados sobre tu propia historia para anticipar demanda, rotación o riesgo, con una medida honesta de cuánto se le puede creer.",
+        "items": [
+          "Preparación y limpieza del histórico",
+          "Métricas de error explicadas en lenguaje de negocio",
+          "Reentrenamiento periódico cuando el dato cambia"
+        ]
+      },
+      {
+        "title": "Guardarraíles y observabilidad",
+        "description": "La parte que casi nadie muestra en la demo y que decide si el sistema aguanta en producción o se convierte en un problema de soporte.",
+        "items": [
+          "Límites de gasto y de longitud de contexto",
+          "Registro de cada consulta, respuesta y herramienta usada",
+          "Pruebas automáticas sobre las respuestas críticas"
+        ]
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Primero el caso, después el modelo.",
+    "description": "Empezamos por el problema de negocio y por el dato disponible. La elección del modelo es de las últimas decisiones, no de las primeras, y casi nunca es la que más titulares tiene.",
+    "steps": [
+      {
+        "title": "Descubrimiento del caso",
+        "description": "Entendemos qué decisión o qué conversación quieres mejorar, qué datos existen hoy y qué pasa si el sistema se equivoca. De ahí sale el alcance real.",
+        "duration": "1 semana"
+      },
+      {
+        "title": "Prueba de concepto acotada",
+        "description": "Construimos la parte más riesgosa primero, con datos reales, para saber pronto si la idea funciona. Si no funciona, lo sabes barato y a tiempo.",
+        "duration": "2 a 3 semanas"
+      },
+      {
+        "title": "Construcción con guardarraíles",
+        "description": "Convertimos la prueba en un sistema con límites, registro, manejo de errores y escalamiento humano, integrado con las herramientas que ya usas.",
+        "duration": "4 a 10 semanas"
+      },
+      {
+        "title": "Producción y ajuste",
+        "description": "Salimos con métricas de calidad y de costo a la vista, y ajustamos con las conversaciones reales, que siempre enseñan más que cualquier prueba.",
+        "duration": "Continuo"
+      }
+    ]
+  },
+  "technologies": {
+    "eyebrow": "Con qué lo construimos",
+    "title": "Modelos y piezas que ya operamos nosotros.",
+    "description": "Lo que aparece aquí es lo que usamos en Axi Connect, nuestro propio SaaS en producción. No recomendamos arquitecturas que no hayamos sostenido con clientes reales encima.",
+    "groups": [
+      {
+        "title": "Modelos de lenguaje",
+        "items": ["Claude (Sonnet y Haiku)", "GPT", "Modelos abiertos autoalojados"]
+      },
+      {
+        "title": "Orquestación de agentes",
+        "items": ["Llamado a herramientas", "Colas con BullMQ", "Node / TypeScript", "Python"]
+      },
+      {
+        "title": "Búsqueda semántica",
+        "items": ["PostgreSQL con pgvector", "Embeddings", "Reordenamiento de resultados"]
+      },
+      {
+        "title": "Voz y multimedia",
+        "items": ["ElevenLabs", "Transcripción de audio", "Lectura de imágenes"]
+      },
+      {
+        "title": "Datos y despliegue",
+        "items": ["PostgreSQL", "Redis", "Docker", "AWS"]
+      }
+    ],
+    "note": "Si tu caso se resuelve con una regla de negocio de diez líneas, te lo decimos y nos ahorramos los dos el modelo."
+  },
+  "results": {
+    "eyebrow": "Lo que cambia",
+    "title": "Menos espera, menos digitación, más criterio.",
+    "description": "La IA bien aplicada no se nota como magia: se nota en que nadie espera dos días por una respuesta y en que el equipo dejó de leer correos para copiar tres campos a un formulario.",
+    "metrics": [
+      {
+        "value": "Segundos",
+        "label": "para la primera respuesta",
+        "description": "El cliente recibe atención inmediata a cualquier hora, no un «te contactamos pronto»."
+      },
+      {
+        "value": "El dato no pasa por la IA",
+        "label": "los cálculos los hace tu sistema",
+        "description": "Precios, inventario y confirmaciones salen del servidor, no de un modelo generativo."
+      },
+      {
+        "value": "Con cita",
+        "label": "cada respuesta apunta a su fuente",
+        "description": "En los asistentes documentales, quien pregunta puede ir a verificar el original."
+      },
+      {
+        "value": "Costo previsible",
+        "label": "límites de gasto desde el día uno",
+        "description": "Tope por consulta y por mes, con alerta antes de llegar al techo."
+      }
+    ],
+    "use_cases": [
+      {
+        "sector": "Comercio conversacional",
+        "title": "Un agente que vende sin inventar",
+        "description": "Atiende por WhatsApp, arma el pedido consultando el inventario real y deja la confirmación de la venta pagada en manos de una persona.",
+        "result": "Atención inmediata sin riesgo de prometer lo que no hay."
+      },
+      {
+        "sector": "Servicios profesionales",
+        "title": "El manual que responde preguntas",
+        "description": "Un asistente indexa políticas y contratos internos y responde con la cita del documento, en vez de mandar a la gente a buscar en una carpeta compartida.",
+        "result": "Consultas internas resueltas sin interrumpir a nadie."
+      },
+      {
+        "sector": "Administración",
+        "title": "Facturas que se leen solas",
+        "description": "El sistema extrae proveedor, montos e impuestos de cada factura recibida, valida contra las reglas contables y deja el registro listo para aprobación.",
+        "result": "Digitación eliminada y errores detectados antes de contabilizar."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Lo que preguntan antes de meterse con IA.",
+    "description": "Las dudas legítimas que aparecen cuando alguien evalúa inteligencia artificial en serio, con respuestas concretas y sin el entusiasmo de folleto que se estila en este tema.",
+    "items": [
+      {
+        "question": "¿Cómo evitan que la IA invente datos?",
+        "answer": "Con una frontera dura: el modelo interpreta lo que dice la persona y decide qué herramienta usar, pero no calcula nada crítico. Los precios los devuelve tu servidor, el inventario lo consulta tu base de datos y las confirmaciones de venta las hace un humano. Si el modelo no sabe algo, la instrucción es escalar a una persona, nunca improvisar. Es el mismo principio con el que opera Axi Connect en producción."
+      },
+      {
+        "question": "¿Mis datos se usan para entrenar modelos de terceros?",
+        "answer": "No, si se configura bien. Los proveedores serios ofrecen modos de uso empresarial donde el contenido no se usa para entrenamiento, y esa es la configuración que aplicamos por defecto. Para casos con requisitos más estrictos evaluamos modelos abiertos autoalojados en tu propia infraestructura, donde el dato no sale de tus servidores. Lo definimos en el diagnóstico, según qué información va a tocar el sistema."
+      },
+      {
+        "question": "¿Cuánto cuesta operar un sistema de IA cada mes?",
+        "answer": "Depende del volumen de consultas y del tamaño del contexto que necesite cada una, pero es previsible y se estima antes de construir. En el diagnóstico calculamos el costo por consulta y lo proyectamos a tu volumen mensual. Además dejamos topes de gasto configurados y alertas antes de alcanzarlos, para que la factura nunca sea una sorpresa a fin de mes."
+      },
+      {
+        "question": "¿Necesito tener muchos datos para empezar?",
+        "answer": "Para agentes conversacionales y asistentes documentales, no: basta con la información que ya tienes, como catálogo, manuales o políticas. Para análisis predictivo sí hace falta histórico, y ahí somos claros desde el principio: si no hay suficiente dato o el que hay es de mala calidad, el modelo no va a servir y te lo decimos antes de cobrarte por descubrirlo."
+      },
+      {
+        "question": "¿Qué pasa cuando el modelo no sabe responder?",
+        "answer": "Escala a una persona, y esa ruta se diseña desde el principio, no se improvisa después. El sistema detecta cuándo está fuera de su alcance, entrega la conversación con todo el contexto a quien corresponda y registra el caso. Esos casos son además la mejor fuente de mejora: cada escalamiento nos dice qué le falta al agente para la siguiente versión."
+      }
+    ]
+  },
+  "closing": {
+    "title": "¿Tienes un caso o solo la curiosidad?",
+    "description": "Las dos cosas sirven para empezar. Cuéntanos qué te gustaría resolver y te decimos si la inteligencia artificial es la herramienta adecuada o si hay un camino más simple.",
+    "primary_cta": {
+      "label": "Hablemos por WhatsApp",
+      "whatsapp_message": "Hola Kodecol, quiero explorar un caso de inteligencia artificial para mi empresa."
+    },
+    "secondary_cta_label": "Solicitar cotización",
+    "note": "Si tu caso no necesita IA, te lo decimos. Nos interesa el resultado, no vender el modelo."
+  },
+  "seo": {
+    "title": "Desarrollo de inteligencia artificial a la medida",
+    "description": "Agentes conversacionales, asistentes sobre tus documentos y análisis predictivo. IA aplicada con guardarraíles: el dato lo calcula tu sistema, no el modelo.",
+    "keywords": [
+      "inteligencia artificial a la medida",
+      "agentes de IA",
+      "chatbot con inteligencia artificial",
+      "IA generativa empresas",
+      "desarrollo de IA Colombia"
+    ]
+  }
+}

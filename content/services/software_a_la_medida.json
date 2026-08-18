@@ -1,0 +1,264 @@
+{
+  "slug": "software-a-la-medida",
+  "name": "Software a la medida",
+  "icon": "custom",
+  "order": 6,
+  "teaser": {
+    "title": "Software a la medida",
+    "description": "ERP, CRM, portales y plataformas internas hechos a tu necesidad.",
+    "badge": null,
+    "featured": false
+  },
+  "hero": {
+    "eyebrow": "Plataformas y sistemas propios",
+    "headline_lead": "Software hecho para cómo trabaja ",
+    "headline_accent": "tu empresa",
+    "description": "Llega un punto en que el sistema enlatado ya no da y la operación vive en hojas de cálculo paralelas que solo entiende una persona. Ahí tiene sentido construir: un ERP, un CRM o un portal que se ajuste a tu proceso real, en vez de obligar a tu equipo a torcer el proceso para que quepa en el software.",
+    "chips": [
+      "ERP y CRM",
+      "Portales de clientes",
+      "Plataformas internas",
+      "Integración con lo que ya tienes"
+    ],
+    "primary_cta": {
+      "label": "Construyamos mi plataforma",
+      "whatsapp_message": "Hola Kodecol, quiero construir una plataforma a la medida para mi empresa."
+    },
+    "secondary_cta_label": "Ver qué incluye"
+  },
+  "problem": {
+    "eyebrow": "El problema que resolvemos",
+    "title": "Cuando el software enlatado ya no alcanza.",
+    "description": "Casi todas las empresas empiezan con una herramienta genérica, y funciona hasta que deja de funcionar. El síntoma siempre es el mismo: la operación real ya no vive en el sistema.",
+    "items": [
+      {
+        "title": "La verdad está en un Excel",
+        "description": "El sistema oficial dice una cosa y la hoja de cálculo que mantiene alguien del equipo dice otra, y todos saben cuál de las dos es la que se usa."
+      },
+      {
+        "title": "Licencias que crecen sin parar",
+        "description": "El costo por usuario al mes sube con cada persona que entra, y a los tres años ya se pagó varias veces lo que habría costado construirlo."
+      },
+      {
+        "title": "Procesos torcidos para caber",
+        "description": "El equipo aprende a engañar al sistema con campos que significan otra cosa, porque el flujo real nunca estuvo contemplado en el producto."
+      },
+      {
+        "title": "Islas que no se conectan",
+        "description": "Facturación, inventario y comercial son tres sistemas distintos, y la consolidación la hace una persona a mano el último día del mes."
+      }
+    ],
+    "closing_note": "Construir a la medida no es siempre la respuesta. Cuando no lo es, te lo decimos."
+  },
+  "deliverables": {
+    "eyebrow": "Qué incluye",
+    "title": "Una plataforma que tu equipo puede sostener.",
+    "description": "El objetivo no es entregarte un sistema del que dependas de nosotros para siempre, sino uno documentado, con código tuyo, que otro equipo pueda tomar si algún día quieres cambiar de proveedor.",
+    "items": [
+      {
+        "title": "Levantamiento del proceso",
+        "description": "Documentamos cómo funciona hoy la operación de verdad, incluidas las excepciones y los atajos, que es donde vive la complejidad real del negocio.",
+        "items": [
+          "Mapa de procesos y actores por área",
+          "Reglas de negocio y sus excepciones",
+          "Priorización de qué construir primero"
+        ]
+      },
+      {
+        "title": "Módulos a la medida",
+        "description": "Construimos lo que tu operación necesita, no un catálogo genérico: cada módulo responde a un proceso que ya existe y que hoy duele en algún lado.",
+        "items": [
+          "Inventario, compras, ventas o facturación según el caso",
+          "Flujos de aprobación con registro de quién y cuándo",
+          "Reglas de negocio configurables sin tocar código"
+        ]
+      },
+      {
+        "title": "Portal de clientes o proveedores",
+        "description": "Una puerta de entrada para que terceros consulten y gestionen lo suyo sin llamar por teléfono ni pedirle un informe a alguien de tu equipo.",
+        "items": [
+          "Acceso con roles y permisos diferenciados",
+          "Consulta de estado, documentos e historial",
+          "Notificaciones automáticas por correo o WhatsApp"
+        ]
+      },
+      {
+        "title": "Integraciones con lo existente",
+        "description": "La plataforma nueva convive con lo que ya funciona en vez de reemplazarlo todo de golpe, que es como fracasan la mayoría de estos proyectos.",
+        "items": [
+          "Conexión con contabilidad y facturación electrónica",
+          "Sincronización con e-commerce y canales de venta",
+          "Importación del histórico desde el sistema actual"
+        ]
+      },
+      {
+        "title": "Reportes y tableros",
+        "description": "La información que hoy se arma a mano el último día del mes, disponible en cualquier momento y ya cruzada entre áreas.",
+        "items": [
+          "Tableros por rol con los indicadores de cada área",
+          "Exportación a Excel y PDF para lo que haga falta",
+          "Alertas cuando un indicador se sale del rango"
+        ]
+      },
+      {
+        "title": "Entrega y autonomía",
+        "description": "El código, la documentación y los accesos son tuyos desde el primer día. Si un día quieres seguir con otro equipo, puedes hacerlo sin pelear.",
+        "items": [
+          "Repositorio y servidores a nombre de tu empresa",
+          "Documentación técnica y manual de usuario",
+          "Capacitación al equipo y traspaso ordenado"
+        ]
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Por módulos, nunca de golpe.",
+    "description": "Reemplazar el sistema entero en un fin de semana es la forma más confiable de que salga mal. Vamos módulo por módulo, conviviendo con lo que ya existe hasta que deja de hacer falta.",
+    "steps": [
+      {
+        "title": "Descubrimiento del proceso",
+        "description": "Trabajamos con quienes ejecutan cada área para entender el flujo real y sus excepciones, no el que aparece en el manual de calidad.",
+        "duration": "2 a 4 semanas"
+      },
+      {
+        "title": "Arquitectura y plan por módulos",
+        "description": "Definimos qué se construye primero según dónde duele más, cómo convive con los sistemas actuales y qué se migra en cada etapa.",
+        "duration": "1 a 2 semanas"
+      },
+      {
+        "title": "Construcción iterativa",
+        "description": "Cada módulo sale a producción cuando está listo, con usuarios reales usándolo mientras construimos el siguiente y ajustando sobre la marcha.",
+        "duration": "3 a 12 meses"
+      },
+      {
+        "title": "Migración y estabilización",
+        "description": "Traemos el histórico, acompañamos el cierre del primer periodo completo en el sistema nuevo y dejamos al equipo operando sin nosotros encima.",
+        "duration": "1 a 2 meses"
+      }
+    ]
+  },
+  "technologies": {
+    "eyebrow": "Con qué lo construimos",
+    "title": "Tecnología aburrida, que es la que aguanta años.",
+    "description": "En un sistema que va a vivir una década, elegir lo estable y bien documentado vale más que elegir lo último. Nada aquí es exótico y todo tiene comunidad detrás.",
+    "groups": [
+      {
+        "title": "Backend",
+        "items": ["Node.js", "NestJS", "Python", "Laravel", "Java / Spring"]
+      },
+      {
+        "title": "Frontend",
+        "items": ["Next.js", "React", "Angular", "Vue", "TypeScript"]
+      },
+      {
+        "title": "Datos",
+        "items": ["PostgreSQL", "MySQL", "Redis", "Migraciones versionadas"]
+      },
+      {
+        "title": "Integraciones",
+        "items": ["Facturación electrónica DIAN", "Pasarelas de pago", "APIs REST", "Webhooks"]
+      },
+      {
+        "title": "Infraestructura",
+        "items": ["Docker", "AWS", "GitHub Actions", "Servidor propio del cliente"]
+      }
+    ],
+    "note": "Si un producto del mercado resuelve el 90% de tu caso, te lo decimos: sale más barato configurarlo que construirlo."
+  },
+  "results": {
+    "eyebrow": "Lo que cambia",
+    "title": "Un solo lugar donde está la verdad.",
+    "description": "El cambio más grande no es tecnológico: es que se acaban las tres versiones de la misma cifra y las reuniones para decidir cuál de todas es la buena.",
+    "metrics": [
+      {
+        "value": "Una fuente",
+        "label": "se acaban los Excel paralelos",
+        "description": "La operación vuelve a vivir dentro del sistema, no al lado."
+      },
+      {
+        "value": "Sin licencias",
+        "label": "el costo no crece con cada usuario",
+        "description": "El sistema es tuyo: sumar personas no cambia lo que pagas al mes."
+      },
+      {
+        "value": "Tu proceso",
+        "label": "el software se adapta, no al revés",
+        "description": "Incluidas las excepciones que ningún producto genérico contempla."
+      },
+      {
+        "value": "Tuyo",
+        "label": "código, datos y accesos",
+        "description": "Puedes cambiar de proveedor sin empezar de cero."
+      }
+    ],
+    "use_cases": [
+      {
+        "sector": "Distribución",
+        "title": "Del Excel compartido al sistema único",
+        "description": "Inventario, pedidos y facturación en una sola plataforma conectada con contabilidad, reemplazando las hojas paralelas que mantenía cada área.",
+        "result": "Cifras que cuadran sin consolidación manual."
+      },
+      {
+        "sector": "Servicios",
+        "title": "Portal que descarga al equipo de soporte",
+        "description": "Los clientes consultan estado, documentos e historial por su cuenta, con notificaciones automáticas en cada cambio relevante de su caso.",
+        "result": "Menos llamadas de consulta y respuestas más rápidas."
+      },
+      {
+        "sector": "Salud y administración",
+        "title": "Gestión con trazabilidad completa",
+        "description": "Flujos de aprobación con roles definidos y registro de auditoría de cada acción sensible, sobre un histórico migrado del sistema anterior.",
+        "result": "Auditorías resueltas con el sistema, no con carpetas."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Lo que se pregunta antes de construir.",
+    "description": "Cuándo conviene, cuánto cuesta frente a un producto del mercado, qué pasa con el sistema actual y de quién es el código. Las preguntas que deciden el proyecto.",
+    "items": [
+      {
+        "question": "¿Cuándo conviene construir en vez de comprar?",
+        "answer": "Cuando tu proceso es una ventaja competitiva y ningún producto del mercado lo contempla, cuando el costo de licencias por usuario ya supera lo que costaría construir, o cuando la operación real vive en hojas de cálculo paralelas al sistema oficial. Si un producto del mercado resuelve el noventa por ciento de tu caso, casi siempre sale mejor configurarlo y te lo vamos a decir aunque signifique no vender el proyecto."
+      },
+      {
+        "question": "¿Cuánto cuesta comparado con un ERP del mercado?",
+        "answer": "La inversión inicial es mayor, pero no hay licencias por usuario al mes. El punto de equilibrio suele estar entre el segundo y el tercer año, y depende mucho de cuántas personas lo van a usar: con equipos grandes se cruza antes. En el descubrimiento hacemos esa cuenta con tus números reales y te la mostramos, incluso si el resultado es que no conviene construir."
+      },
+      {
+        "question": "¿Hay que apagar el sistema actual desde el primer día?",
+        "answer": "No, y sería mala idea. Trabajamos por módulos: la plataforma nueva convive con lo que ya tienes, integrándose donde hace falta, y cada módulo entra en producción cuando está probado. El sistema anterior se va desocupando de a poco hasta que deja de tener uso. Así el riesgo se reparte en el tiempo en vez de concentrarse en un fin de semana de migración."
+      },
+      {
+        "question": "¿De quién es el código?",
+        "answer": "Tuyo, desde el primer commit. El repositorio, los servidores y todos los accesos quedan a nombre de tu empresa, y entregamos documentación técnica pensada para que otro equipo pueda tomar el proyecto. No trabajamos con esquemas donde el cliente queda atado por no tener el código: si un día quieres seguir con otro proveedor, tienes que poder hacerlo sin pelear."
+      },
+      {
+        "question": "¿Cuánto tarda un proyecto así?",
+        "answer": "El primer módulo en producción suele tomar entre dos y cuatro meses; una plataforma completa que reemplace varios sistemas, entre seis meses y un año y medio según el alcance. Como entregamos por módulos, empiezas a ver valor mucho antes del final: el objetivo es que el primer módulo ya esté resolviendo un dolor real mientras construimos el siguiente."
+      }
+    ]
+  },
+  "closing": {
+    "title": "¿Tu operación vive en hojas de cálculo?",
+    "description": "Cuéntanos qué sistemas usas hoy y dónde se rompe la cadena. Hacemos la cuenta contigo y te decimos si conviene construir o si hay un producto que ya te sirve.",
+    "primary_cta": {
+      "label": "Hablemos por WhatsApp",
+      "whatsapp_message": "Hola Kodecol, quiero construir una plataforma a la medida para mi empresa."
+    },
+    "secondary_cta_label": "Solicitar cotización",
+    "note": "Si comprar te conviene más que construir, te lo decimos aunque perdamos el proyecto."
+  },
+  "seo": {
+    "title": "Desarrollo de software a la medida en Colombia",
+    "description": "ERP, CRM, portales y plataformas internas construidos sobre tu proceso real. Entrega por módulos, integración con tus sistemas y el código siempre es tuyo.",
+    "keywords": [
+      "software a la medida Colombia",
+      "desarrollo de ERP personalizado",
+      "CRM a la medida",
+      "plataformas internas empresariales",
+      "fábrica de software Bogotá"
+    ]
+  }
+}

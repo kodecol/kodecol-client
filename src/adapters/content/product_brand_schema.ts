@@ -122,8 +122,14 @@ export const product_brand_schema: z.ZodType<ProductBrand> = z.object({
   theme: theme_schema,
   teaser: teaser_schema,
   detail: detail_schema,
+  /* Mismas longitudes SEO que los perfiles: ver developer_profile_schema.ts. */
   seo: z.object({
-    title: text,
-    description: text,
+    title: z.string().min(1).max(55, "con el sufijo \" · Kodecol\" el title pasaría de 65 y la SERP lo truncaría"),
+    description: z
+      .string()
+      .min(70, "una description de menos de 70 caracteres desaprovecha el snippet")
+      .max(165, "la description se trunca en la SERP pasados ~165 caracteres"),
+    keywords: z.array(text).min(1).optional(),
+    application_category: text.optional(),
   }),
 });

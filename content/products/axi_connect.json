@@ -1,6 +1,6 @@
 {
   "slug": "axi-connect",
-  "name": "axi connect",
+  "name": "Axi Connect",
   "isotype_src": "/images/products/axi-connect/isotype.png",
   "wordmark_src": "/images/products/axi-connect/wordmark.png",
   "gallery": [
@@ -165,7 +165,14 @@
     }
   },
   "seo": {
-    "title": "Axi Connect",
+    "title": "Axi Connect — SaaS de ventas por chat con IA",
+    "keywords": [
+      "ventas por WhatsApp",
+      "agentes de inteligencia artificial",
+      "SaaS de atención al cliente",
+      "CRM conversacional",
+      "automatización de ventas"
+    ],
     "description": "Axi Connect es el SaaS de ventas por chat con inteligencia artificial que Kodecol diseñó, construyó y opera. En producción, con tres empresas piloto en Colombia."
   }
 }

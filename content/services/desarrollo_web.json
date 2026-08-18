@@ -1,0 +1,264 @@
+{
+  "slug": "desarrollo-web",
+  "name": "Desarrollo web",
+  "icon": "web",
+  "order": 3,
+  "teaser": {
+    "title": "Desarrollo web",
+    "description": "Landing, e-commerce y más: sitios que convierten, con rendimiento sólido.",
+    "badge": null,
+    "featured": false
+  },
+  "hero": {
+    "eyebrow": "Sitios y plataformas web",
+    "headline_lead": "Sitios web que cargan rápido y ",
+    "headline_accent": "convierten de verdad",
+    "description": "Un sitio bonito que tarda cinco segundos en cargar pierde a la mitad de quienes lo abren desde el celular, y no aparece en Google. Construimos sitios rápidos, accesibles y medibles, pensados para que la visita termine en una conversación y no en un cierre de pestaña.",
+    "chips": [
+      "Landings y sitios corporativos",
+      "E-commerce",
+      "Portales y aplicaciones web",
+      "SEO técnico"
+    ],
+    "primary_cta": {
+      "label": "Quiero un sitio así",
+      "whatsapp_message": "Hola Kodecol, quiero desarrollar un sitio web para mi empresa."
+    },
+    "secondary_cta_label": "Ver qué incluye"
+  },
+  "problem": {
+    "eyebrow": "El problema que resolvemos",
+    "title": "Tener sitio no es lo mismo que tener presencia.",
+    "description": "La mayoría de sitios corporativos existen, cargan y no hacen nada más. Ni traen visitas de búsqueda, ni convierten a quien llega, ni le dicen a nadie qué está pasando dentro.",
+    "items": [
+      {
+        "title": "Lento en el celular",
+        "description": "Imágenes de dos megas y plantillas cargadas de complementos hacen que el sitio tarde una eternidad justo en el dispositivo desde el que entra la mayoría."
+      },
+      {
+        "title": "Invisible en Google",
+        "description": "Sin títulos únicos, sin datos estructurados y sin una estructura de URLs que se pueda indexar, el buscador no tiene por dónde entender de qué va el sitio."
+      },
+      {
+        "title": "Visitas que no se convierten",
+        "description": "Llega gente, lee y se va, porque no hay una siguiente acción evidente ni una razón clara para escribir en ese momento y no mañana."
+      },
+      {
+        "title": "Imposible de mantener",
+        "description": "Cambiar un párrafo obliga a llamar al proveedor, así que el contenido se congela el día del lanzamiento y envejece a la vista de todos."
+      }
+    ],
+    "closing_note": "Un sitio se mide por lo que genera, no por lo que le gusta a quien lo aprobó."
+  },
+  "deliverables": {
+    "eyebrow": "Qué incluye",
+    "title": "Todo lo que hace falta para que funcione.",
+    "description": "No entregamos solo el diseño implementado: entregamos el rendimiento, la indexabilidad, la accesibilidad y la medición, que es lo que separa un sitio vivo de una tarjeta de presentación cara.",
+    "items": [
+      {
+        "title": "Diseño y experiencia",
+        "description": "Una interfaz pensada primero para el celular y después para el escritorio, con una jerarquía clara que lleva a la acción sin gritarle a nadie.",
+        "items": [
+          "Diseño responsive verificado en móvil, tablet y escritorio",
+          "Sistema de componentes reutilizable para crecer después",
+          "Accesibilidad: contraste, foco visible y navegación por teclado"
+        ]
+      },
+      {
+        "title": "Rendimiento medido",
+        "description": "Optimizamos contra las métricas que Google usa para posicionar, no contra la sensación de que va rápido en la oficina con fibra.",
+        "items": [
+          "Imágenes en AVIF y WebP con tamaños adecuados",
+          "Core Web Vitals verificados en cada plantilla",
+          "Carga diferida de todo lo que no es crítico"
+        ]
+      },
+      {
+        "title": "SEO técnico completo",
+        "description": "El trabajo de fondo que hace que el buscador entienda el sitio y lo pueda mostrar bien, y que casi nunca viene incluido en una plantilla.",
+        "items": [
+          "Títulos, descripciones y URL canónica por página",
+          "Datos estructurados de schema.org",
+          "Sitemap, robots y previsualizaciones al compartir"
+        ]
+      },
+      {
+        "title": "Gestión de contenido",
+        "description": "Que cambiar un texto o publicar una entrada no dependa de nosotros. El sitio se entrega con una forma clara de actualizarlo desde dentro.",
+        "items": [
+          "Panel de administración o CMS según el caso",
+          "Roles y permisos de edición",
+          "Capacitación al equipo que lo va a usar"
+        ]
+      },
+      {
+        "title": "E-commerce cuando aplica",
+        "description": "Catálogo, carrito y pago integrados con los medios que se usan en Colombia, y conectados con tu inventario para no vender lo que no hay.",
+        "items": [
+          "Pasarelas de pago locales e internacionales",
+          "Sincronización de inventario y pedidos",
+          "Correo transaccional de confirmación y seguimiento"
+        ]
+      },
+      {
+        "title": "Analítica y despliegue",
+        "description": "El sitio sale a producción con dominio, certificado y medición funcionando, no con una promesa de configurarlo la semana siguiente.",
+        "items": [
+          "Despliegue con dominio propio y HTTPS",
+          "Analítica configurada y Search Console verificado",
+          "Copias de seguridad y monitoreo de disponibilidad"
+        ]
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Del objetivo al sitio en producción.",
+    "description": "Antes de abrir el editor definimos a quién le habla el sitio y qué queremos que haga esa persona. Todo lo demás, incluido el diseño, sale de esa respuesta.",
+    "steps": [
+      {
+        "title": "Objetivo y arquitectura",
+        "description": "Definimos a quién se dirige el sitio, qué acción buscamos y cómo se organiza el contenido en páginas y URLs que se puedan posicionar.",
+        "duration": "1 semana"
+      },
+      {
+        "title": "Diseño de la interfaz",
+        "description": "Diseñamos las plantillas clave partiendo del móvil y las revisamos contigo antes de programar nada, que es cuando cambiar sale barato.",
+        "duration": "1 a 3 semanas"
+      },
+      {
+        "title": "Desarrollo",
+        "description": "Construimos con entregas visibles: puedes entrar a ver el avance en un entorno de pruebas en vez de esperar a un lanzamiento sorpresa.",
+        "duration": "3 a 8 semanas"
+      },
+      {
+        "title": "Lanzamiento y medición",
+        "description": "Salimos con rendimiento verificado, analítica funcionando y el sitio dado de alta en Search Console para empezar a ver qué busca la gente.",
+        "duration": "1 semana"
+      }
+    ]
+  },
+  "technologies": {
+    "eyebrow": "Con qué lo construimos",
+    "title": "Herramientas modernas, sin castillo de complementos.",
+    "description": "Elegimos según el caso: un sitio de contenido no necesita lo mismo que una plataforma con sesión de usuario. Lo que no hacemos es apilar complementos hasta que algo funcione.",
+    "groups": [
+      {
+        "title": "Frontend",
+        "items": ["Next.js", "React", "Vue", "Angular", "Tailwind CSS", "TypeScript"]
+      },
+      {
+        "title": "Backend y datos",
+        "items": ["Node.js", "NestJS", "Laravel", "PostgreSQL", "MySQL"]
+      },
+      {
+        "title": "Contenido",
+        "items": ["CMS headless", "WordPress cuando tiene sentido", "Contenido en el repositorio"]
+      },
+      {
+        "title": "E-commerce y pagos",
+        "items": ["Wompi", "Mercado Pago", "PayU", "Stripe", "Shopify"]
+      },
+      {
+        "title": "Infraestructura",
+        "items": ["Vercel", "AWS", "Docker", "cPanel y hosting tradicional"]
+      }
+    ],
+    "note": "Si tu sitio se resuelve mejor con una plantilla existente y un buen contenido, lo decimos: no todo necesita desarrollo."
+  },
+  "results": {
+    "eyebrow": "Lo que cambia",
+    "title": "Más rápido, más visible, más medible.",
+    "description": "Los tres efectos van juntos y se refuerzan: un sitio rápido posiciona mejor, un sitio que posiciona recibe más visitas, y un sitio medido te dice qué hacer con ellas.",
+    "metrics": [
+      {
+        "value": "Bajo 2,5 s",
+        "label": "de carga percibida en móvil",
+        "description": "El umbral que Google considera buena experiencia para el LCP."
+      },
+      {
+        "value": "100%",
+        "label": "de páginas con metadatos propios",
+        "description": "Título, descripción, canónica y previsualización únicos en cada URL."
+      },
+      {
+        "value": "Indexable",
+        "label": "estructura pensada para buscadores",
+        "description": "URLs limpias, datos estructurados y sitemap enviado desde el día uno."
+      },
+      {
+        "value": "Editable",
+        "label": "sin depender del proveedor",
+        "description": "Tu equipo actualiza el contenido sin abrir un ticket ni esperar turno."
+      }
+    ],
+    "use_cases": [
+      {
+        "sector": "Servicios profesionales",
+        "title": "Del folleto digital al canal de contacto",
+        "description": "Un sitio corporativo reorganizado en páginas por servicio, cada una respondiendo a una búsqueda concreta y terminando en una conversación por WhatsApp.",
+        "result": "Contactos que llegan sabiendo ya qué quieren."
+      },
+      {
+        "sector": "Comercio",
+        "title": "Tienda que no vende lo que no hay",
+        "description": "Catálogo en línea sincronizado con el inventario real y con pagos locales integrados, para que el pedido entre completo y sin llamadas de confirmación.",
+        "result": "Menos cancelaciones y menos gestión manual por pedido."
+      },
+      {
+        "sector": "Educación y comunidad",
+        "title": "Contenido que trae visitas solo",
+        "description": "Estructura de contenidos pensada para búsquedas reales, con datos estructurados y buen rendimiento, que sigue trayendo tráfico meses después.",
+        "result": "Visitas de búsqueda que no dependen de pauta."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Lo que se pregunta antes de encargar un sitio.",
+    "description": "Las dudas de siempre sobre plazos, costos, plataformas y qué pasa el día después del lanzamiento, respondidas con la información que de verdad ayuda a decidir.",
+    "items": [
+      {
+        "question": "¿Cuánto tarda y cuánto cuesta un sitio web?",
+        "answer": "Una landing bien hecha suele tomar de tres a cinco semanas; un sitio corporativo con varias secciones, entre seis y diez; un e-commerce o una plataforma con sesión de usuario, más. El costo depende del número de plantillas distintas, de las integraciones y de si hace falta gestor de contenido. Cerramos alcance y precio antes de empezar, así que no hay ajustes a mitad de camino."
+      },
+      {
+        "question": "¿Por qué no usar WordPress y ya?",
+        "answer": "A veces es exactamente la respuesta correcta, y lo decimos cuando lo es: si el sitio es de contenido y tu equipo ya sabe usarlo, es una opción sensata. El problema aparece cuando se apilan diez complementos para lograr algo específico y el sitio termina lento, frágil y difícil de actualizar sin romper nada. Elegimos la herramienta según el caso, no según lo que sabemos hacer más rápido."
+      },
+      {
+        "question": "¿El sitio incluye SEO?",
+        "answer": "Incluye todo el SEO técnico: títulos y descripciones únicos por página, URL canónica, datos estructurados de schema.org, sitemap, robots, previsualizaciones al compartir en redes y rendimiento optimizado contra Core Web Vitals. Lo que no incluye es la estrategia de contenidos continua ni el link building, que son un trabajo aparte y sostenido en el tiempo. Sí dejamos el sitio preparado y medido para que ese trabajo rinda."
+      },
+      {
+        "question": "¿Puedo actualizar el contenido yo mismo?",
+        "answer": "Sí, y es parte del entregable. Según el caso montamos un CMS o un panel de administración, definimos roles de edición y capacitamos a quien vaya a usarlo. La idea es que cambiar un texto, subir una foto o publicar una entrada no dependa de nosotros ni tenga un costo asociado cada vez."
+      },
+      {
+        "question": "¿Qué pasa después del lanzamiento?",
+        "answer": "Entregamos el sitio con dominio, certificado HTTPS, copias de seguridad, analítica y Search Console configurados, más la documentación de cómo administrarlo. A partir de ahí puedes mantenerlo con tu propio equipo o contratarnos soporte y evolución. En ambos casos el código y los accesos son tuyos: no queda nada secuestrado de nuestro lado."
+      }
+    ]
+  },
+  "closing": {
+    "title": "¿Tu sitio está trabajando o solo existe?",
+    "description": "Cuéntanos qué tienes hoy y qué esperas de él. Podemos revisar el actual y decirte qué lo está frenando, o empezar de cero si es lo que tiene más sentido.",
+    "primary_cta": {
+      "label": "Hablemos por WhatsApp",
+      "whatsapp_message": "Hola Kodecol, quiero desarrollar un sitio web para mi empresa."
+    },
+    "secondary_cta_label": "Solicitar cotización",
+    "note": "Revisamos tu sitio actual sin costo y te decimos qué arreglaríamos primero."
+  },
+  "seo": {
+    "title": "Desarrollo web profesional en Colombia",
+    "description": "Sitios corporativos, landings y e-commerce rápidos, accesibles y preparados para buscadores. SEO técnico, Core Web Vitals y gestión de contenido incluidos.",
+    "keywords": [
+      "desarrollo web Colombia",
+      "diseño de páginas web Bogotá",
+      "desarrollo de e-commerce",
+      "sitios web con Next.js",
+      "SEO técnico"
+    ]
+  }
+}
