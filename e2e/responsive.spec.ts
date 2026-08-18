@@ -24,8 +24,16 @@ test.describe("responsive", () => {
     await expect(page.getByRole("button", { name: "Abrir menú" })).toBeHidden();
   });
 
-  test("sin scroll horizontal en landing y portafolio", async ({ page }) => {
-    for (const path of ["/", "/equipo/cristian-velasquez"]) {
+  test("sin scroll horizontal en las plantillas del sitio", async ({ page }) => {
+    for (const path of [
+      "/",
+      "/equipo/cristian-velasquez",
+      "/servicios",
+      "/servicios/automatizacion-de-procesos",
+      "/marcas",
+      "/marcas/axi-connect",
+      "/equipo",
+    ]) {
       await page.goto(path);
       const overflow = await page.evaluate(
         () => document.documentElement.scrollWidth - document.documentElement.clientWidth,

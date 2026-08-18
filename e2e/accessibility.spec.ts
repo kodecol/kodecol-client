@@ -2,7 +2,17 @@ import { expect, test } from "@playwright/test";
 
 /* Accesibilidad básica: un solo h1, jerarquía de headings, alt e imagen, nombres accesibles. */
 
-const PAGES = ["/", "/equipo/cristian-velasquez", "/equipo/juan"];
+const PAGES = [
+  "/",
+  "/servicios",
+  "/servicios/automatizacion-de-procesos",
+  "/servicios/desarrollo-web",
+  "/marcas",
+  "/marcas/axi-connect",
+  "/equipo",
+  "/equipo/cristian-velasquez",
+  "/equipo/juan",
+];
 
 test.describe("accesibilidad", () => {
   for (const path of PAGES) {
@@ -29,7 +39,37 @@ test.describe("accesibilidad", () => {
         await expect(images.nth(index)).toHaveAttribute("alt", /.*/);
       }
     });
+
+    test(`${path}: un solo <main> y toda <section> con nombre`, async ({ page }) => {
+      await page.goto(path);
+      await expect(page.locator("main")).toHaveCount(1);
+
+      /* Una región sin nombre no sirve de nada al navegar por landmarks. */
+      const unnamed = await page
+        .locator("section")
+        .evaluateAll((nodes) =>
+          nodes
+            .filter(
+              (node) =>
+                !node.hasAttribute("aria-labelledby") && !node.hasAttribute("aria-label"),
+            )
+            .map((node) => node.className.toString().slice(0, 60)),
+        );
+      expect(unnamed, `secciones sin nombre accesible en ${path}`).toEqual([]);
+    });
   }
+
+  test("el skip-link es el primer elemento focalizable y lleva al contenido", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    await page.keyboard.press("Tab");
+
+    const focused = page.locator(":focus");
+    await expect(focused).toHaveText("Saltar al contenido");
+    await expect(focused).toHaveAttribute("href", "#contenido");
+    await expect(page.locator("main#contenido")).toHaveCount(1);
+  });
 
   test("los enlaces de ícono tienen nombre accesible", async ({ page }) => {
     await page.goto("/");
