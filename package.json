@@ -9,8 +9,9 @@
     "lint": "eslint",
     "brand:assets": "node scripts/generate_brand_assets.mjs",
     "og:images": "node scripts/generate_og_images.mjs",
+    "og:biblioteca": "node scripts/generate_library_og.mjs",
     "images:variants": "node scripts/generate_image_variants.mjs",
-    "assets": "pnpm brand:assets && pnpm og:images && pnpm images:variants",
+    "assets": "pnpm brand:assets && pnpm og:images && pnpm og:biblioteca && pnpm images:variants",
     "deploy:build": "next build && cp public/.htaccess out/.htaccess",
     "serve:out": "node scripts/serve_out.mjs",
     "e2e": "playwright test",
@@ -19,6 +20,7 @@
   "packageManager": "pnpm@11.10.0",
   "dependencies": {
     "clsx": "^2.1.1",
+    "gsap": "^3.15.1",
     "next": "15.5.20",
     "react": "19.1.0",
     "react-dom": "19.1.0",

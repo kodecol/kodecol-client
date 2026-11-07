@@ -36,6 +36,8 @@ const CONTENT_PATHS: Readonly<Record<string, string>> = {
   "services/aplicaciones-de-escritorio":
     "content/services/aplicaciones_de_escritorio.json",
   "services/software-a-la-medida": "content/services/software_a_la_medida.json",
+  "biblioteca/guias/presione-uno": "content/biblioteca/guias/presione_uno.json",
+  "biblioteca/guias/misma-cuadra": "content/biblioteca/guias/misma_cuadra.json",
 };
 
 export function get_content_last_modified(key: string): Date | null {

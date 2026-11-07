@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import {
   get_developer_profile_repository,
+  get_library_guide_repository,
   get_product_brand_repository,
   get_service_offering_repository,
 } from "@/adapters/content";
@@ -46,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const profiles = get_developer_profile_repository();
   const brands = get_product_brand_repository();
   const services = get_service_offering_repository();
+  const guides = get_library_guide_repository();
 
   return [
     to_entry("/", null, "weekly", 1),
@@ -58,6 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...brands
       .get_all_slugs()
       .map((slug) => to_entry(`/marcas/${slug}`, `products/${slug}`, "monthly", 0.8)),
+    /* La Biblioteca: contenido público e indexable, sin registro. */
+    to_entry("/biblioteca", null, "weekly", 0.8),
+    to_entry("/biblioteca/guias", null, "weekly", 0.8),
+    ...guides
+      .get_all_slugs()
+      .map((slug) => to_entry(`/biblioteca/guias/${slug}`, `biblioteca/guias/${slug}`, "monthly", 0.8)),
     to_entry("/equipo", null, "monthly", 0.6),
     ...profiles
       .get_all_slugs()

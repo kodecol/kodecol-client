@@ -1,0 +1,242 @@
+{
+  "slug": "presione-uno",
+  "piece": "K-05",
+  "title": "Presione uno: la contestadora contra quien sí contesta",
+  "title_keyword": "contesta",
+  "summary": "Un reel vertical de 35 s para negocios que reciben llamadas y mensajes.",
+  "intro": "Tu cliente llama, contesta una máquina y le pide que presione uno. Este reel cuenta en 35 segundos lo que pasa cuando, en vez de la máquina, contesta alguien que sí resuelve. Lo hicimos con Claude Opus 5.5 y HyperFrames, y aquí está todo: el prompt, de dónde sacamos las voces y la música, y un archivo para que Claude lo haga contigo paso a paso.",
+  "topic": "video-con-ia",
+  "level": "intermedio",
+  "duration": "2 a 4 horas",
+  "made_with": [
+    "Claude Opus 5.5",
+    "HyperFrames",
+    "ElevenLabs"
+  ],
+  "published_at": "2026-11-03",
+  "video_seconds": {
+    "result": 36,
+    "published": 36
+  },
+  "before_you_start": [
+    {
+      "lead": "Claude.",
+      "text": "Lo hicimos con Claude Opus 5.5 en Claude Code, la versión de Claude que trabaja dentro de tu computador y puede crear archivos y renderizar el video.",
+      "link": {
+        "label": "claude.ai",
+        "href": "https://claude.ai"
+      }
+    },
+    {
+      "lead": "HyperFrames.",
+      "text": "Es una herramienta gratuita y de código abierto que convierte una página web animada en un video MP4. Claude escribe la animación y HyperFrames la graba cuadro por cuadro. Necesita Node.js en tu computador.",
+      "link": {
+        "label": "hyperframes.heygen.com",
+        "href": "https://hyperframes.heygen.com"
+      }
+    },
+    {
+      "lead": "ElevenLabs.",
+      "text": "Ahí salen las voces y la música. Para usarlas en publicidad necesitas un plan de pago.",
+      "link": {
+        "label": "elevenlabs.io",
+        "href": "https://elevenlabs.io"
+      }
+    },
+    {
+      "lead": "Tu voz o la de alguien de tu equipo,",
+      "text": "si quieres que el cliente del video suene real. La nuestra se grabó con un celular."
+    },
+    {
+      "lead": "Un rato para revisar el guion",
+      "text": "que Claude te propone antes de animar. Es el paso que más ahorra tiempo."
+    }
+  ],
+  "prompt": {
+    "quick": "Pega esto en Claude (lo hicimos con Claude Opus 5.5 y HyperFrames):\n\nHaz un reel vertical 9:16 de unos 35 s con HyperFrames para [tu negocio], que vende [qué vendes].\n1. Gancho: un celular acostado sobre blanco suena; detrás, gigante, «Cliente llamando».\n2. Problema: contesta una grabación, «Para continuar, presione uno. Para escu—», y alrededor flotan mensajes sin responder.\n3. Corte: la grabación se frena en seco como una cinta y una voz dice «Arreglemos esto.».\n4. Solución: contesta [quien atiende] dentro de la pantalla del celular, el cliente pide [producto] y el pedido queda separado.\n5. Cierre: decenas de mensajes respondidos, «[tu frase]» y [tu llamado a la acción].\nFondo claro, títulos grandes y planos, sin emojis. Ancla la animación a las voces reales. Muéstrame el guion con tiempos antes de animar.",
+    "full": "Actúa como director creativo y editor de video. Vamos a hacer un reel vertical con HyperFrames (HTML y GSAP que se renderizan a MP4). Nosotros lo hicimos con Claude Opus 5.5.\n\nEL NEGOCIO\n- Nombre: [tu negocio]\n- Qué vende y dónde: [qué vendes, en qué ciudad]\n- Producto del ejemplo: [un producto real]\n- Quién atiende en el video: [una persona de tu equipo o tu asistente virtual, con su nombre]\n- Frase principal: [tu mensaje en una línea]\n- Llamado a la acción: [qué quieres que haga quien lo vea]\n\nFORMATO\n- Vertical 9:16, 1080 × 1920, 60 fps, entre 30 y 40 segundos.\n- Que se entienda sin sonido en los primeros 3 segundos.\n- Fondo siempre claro. Títulos grandes, planos y anchos, como portada de revista: sin bordes, sombras ni 3D en las letras, y con aire entre ellas para que no se monten.\n- La interfaz va dentro de la pantalla del celular y es minimalista. Nada de tarjetas flotando encima del teléfono.\n- Transiciones rápidas y naturales. Cuando la cámara termina de moverse, se queda quieta para que se pueda leer la pantalla.\n\nLA HISTORIA, EN 5 ACTOS\n1. Gancho (0–3 s): un celular acostado sobre una superficie blanca y la cámara a ras de la mesa. Suena un timbre de celular común. Detrás, de pie y gigante, la frase «Cliente llamando».\n2. El problema (3–7 s): contesta una contestadora automática con voz robótica: «Gracias por llamar. Para continuar, presione uno. Para escu—». La imagen se enfría y alrededor flotan mensajes de clientes sin responder, cada uno con su hora.\n3. El corte (7–8 s): la grabación se frena en seco, como una cinta que se detiene (0,2 s). Cae un velo claro con desenfoque y una voz dice «Arreglemos esto.», que también aparece grande en pantalla.\n4. La solución (8–24 s): ahora contesta [quien atiende], dentro de la pantalla del celular, con su nombre, una onda de voz y la transcripción por turnos. El cliente pide [producto]; le confirman que hay y cuándo le llega, y le preguntan «¿Te lo separo?». El cliente responde «¡Sí, de una!». El pedido aparece en la misma pantalla, con «Pago por confirmar». La cámara se acerca al pedido.\n5. La escala y el cierre (24–36 s): decenas de tarjetas de mensajes que se van respondiendo en onda, de arriba abajo. Las del centro llevan mensajes reales y un avatar con iniciales; las lejanas van en boceto. Aparece «[tu frase principal]». Cierra con [tu llamado a la acción] y el logo. El último cuadro empalma con el primero para que el bucle no se note.\n\nEL SONIDO\n- Tres voces: la contestadora robótica, [quien atiende] y el cliente. Puedes generarlas con ElevenLabs o grabarlas tú.\n- Un timbre de celular real y reconocible, no sintetizado.\n- La música entra con el «¡Sí, de una!» y sigue hasta el final, por debajo de las voces.\n- Volumen final a −14 LUFS.\n- Graba o genera primero las voces y ancla todos los tiempos de la animación a ellas, no al revés.\n\nLAS REGLAS\n- No inventes cifras, clientes ni testimonios. Si un precio o un negocio es de ejemplo, que diga «de ejemplo» en pantalla.\n- Nada de emojis: usa íconos reales.\n- Si quien atiende es un asistente virtual, que en pantalla diga «Atendida por un asistente virtual».\n- Solo usa logos que tengas permiso de usar.\n- Antes de animar, muéstrame el guion con tiempos. Antes de renderizar, espera mi OK.",
+    "fields": [
+      {
+        "id": "negocio",
+        "label": "Tu negocio",
+        "placeholder": "Tienda La Esquina",
+        "tokens": [
+          "[tu negocio]"
+        ]
+      },
+      {
+        "id": "que-vendes",
+        "label": "Qué vendes y dónde",
+        "placeholder": "ropa para hombre en Cali",
+        "tokens": [
+          "[qué vendes]",
+          "[qué vendes, en qué ciudad]"
+        ]
+      },
+      {
+        "id": "producto",
+        "label": "Un producto",
+        "placeholder": "la chaqueta negra talla M",
+        "tokens": [
+          "[un producto real]",
+          "[producto]"
+        ]
+      },
+      {
+        "id": "atiende",
+        "label": "Quién atiende",
+        "placeholder": "Sofía, de nuestro equipo",
+        "tokens": [
+          "[quien atiende]",
+          "[una persona de tu equipo o tu asistente virtual, con su nombre]"
+        ]
+      },
+      {
+        "id": "frase",
+        "label": "Tu frase",
+        "placeholder": "Cada mensaje es una venta",
+        "tokens": [
+          "[tu frase]",
+          "[tu mensaje en una línea]",
+          "[tu frase principal]"
+        ]
+      },
+      {
+        "id": "llamado",
+        "label": "Tu llamado",
+        "placeholder": "Escríbenos por WhatsApp",
+        "tokens": [
+          "[tu llamado a la acción]",
+          "[qué quieres que haga quien lo vea]"
+        ]
+      }
+    ]
+  },
+  "steps": [
+    {
+      "title": "El brief",
+      "text": "Le contamos a Claude la idea en una línea: «tu cliente llama, le contesta una máquina, y eso cuesta ventas». Le pedimos tres historias posibles y elegimos esta."
+    },
+    {
+      "title": "El guion con tiempos",
+      "text": "Claude propuso los cinco actos con segundos exactos. Lo ajustamos dos veces antes de animar una sola escena."
+    },
+    {
+      "title": "Primero las voces",
+      "text": "Generamos la contestadora y a Sofía, y grabamos al cliente. Con las voces listas, Claude midió cada palabra y ancló la animación a ellas. Por eso todo calza."
+    },
+    {
+      "title": "La animación",
+      "text": "Claude escribió las escenas en HyperFrames: el celular en 3D, la llamada dentro de la pantalla, el corte de cinta y la ola de mensajes. Las revisamos en la vista previa y pedimos cambios en lenguaje normal."
+    },
+    {
+      "title": "La música y los efectos",
+      "text": "La música entra justo con «¡Sí, de una!». El timbre y los efectos van en su segundo exacto."
+    },
+    {
+      "title": "El render",
+      "text": "Sacamos el video a 60 cuadros por segundo y con el volumen al nivel de Instagram (−14 LUFS)."
+    },
+    {
+      "title": "Para Instagram",
+      "text": "Pusimos el reel en un monitor vertical y lo grabamos con el celular, con un letrero arriba. Ese es el video que viste."
+    }
+  ],
+  "sources": {
+    "title": "De dónde salieron las voces, la música y los efectos",
+    "groups": [
+      {
+        "title": "Voces · ElevenLabs",
+        "items": [
+          {
+            "lead": "La contestadora:",
+            "text": "una voz robótica de la biblioteca de voces de ElevenLabs. Buscamos una que sonara a grabación de conmutador, plana y sin emoción."
+          },
+          {
+            "lead": "Quien atiende (Sofía):",
+            "text": "una voz femenina cálida y cercana de la misma biblioteca, en español latino. La elegimos escuchando varias con la frase real del guion, no con la frase de muestra."
+          },
+          {
+            "lead": "«Arreglemos esto.»:",
+            "text": "otra voz de ElevenLabs, firme y corta."
+          },
+          {
+            "lead": "El cliente (Andrés):",
+            "text": "no es IA. Lo grabó una persona del equipo con el celular y limpiamos el audio con Auphonic, que quita el ruido y empareja el volumen. Una voz real al lado de las generadas hace que todo suene más creíble."
+          },
+          {
+            "lead": "Truco:",
+            "text": "genera cada frase por separado y en varias tomas, y quédate con la que suene más natural."
+          }
+        ]
+      },
+      {
+        "title": "Música · Eleven Music",
+        "items": [
+          {
+            "text": "Es una pista instrumental «old money drill»: piano elegante, cuerdas en pizzicato, clavecín y bajos 808, a 142 bpm."
+          },
+          {
+            "text": "No la sacamos de una biblioteca: la generamos por secciones para que cada cambio cayera donde lo necesitábamos. El golpe entra con el pedido, el groove sigue con la ola de mensajes y el final resuelve con el logo."
+          },
+          {
+            "text": "Entra en el segundo 21, cuando el cliente dice «¡Sí, de una!». Antes solo hay voces y efectos, y eso hace que el cambio se sienta."
+          }
+        ]
+      },
+      {
+        "title": "Efectos · Freesound y Pixabay",
+        "items": [
+          {
+            "text": "El timbre del celular es «Cell Ringtone», de Freesound, con licencia CC0 (dominio público): un timbre real y reconocible, no uno sintetizado."
+          },
+          {
+            "text": "La vibración, el clic, el brillo y las subidas son de dominio público (CC0) o de la licencia de Pixabay, que permite uso comercial sin dar crédito. Varios vienen incluidos en HyperFrames."
+          }
+        ]
+      }
+    ],
+    "rule": "Antes de usar un sonido, mira su licencia. CC0 y Pixabay se usan libres; CC BY obliga a dar crédito en la descripción del post."
+  },
+  "lessons": [
+    {
+      "title": "Graba primero las voces y ancla la animación a ellas, no al revés.",
+      "text": "Si animas primero, nada calza."
+    },
+    {
+      "title": "Fondo claro y títulos planos.",
+      "text": "Se leen al instante en el celular, incluso sin sonido, y los primeros 3 segundos tienen que entenderse sin audio."
+    },
+    {
+      "title": "La interfaz va dentro de la pantalla del celular.",
+      "text": "Las tarjetas flotando encima se ven falsas."
+    },
+    {
+      "title": "No inventes cifras, clientes ni testimonios.",
+      "text": "Si algo es de ejemplo, que diga «de ejemplo» en pantalla. Y si quien atiende es un asistente virtual, dilo."
+    },
+    {
+      "title": "Nada de emojis: usa íconos reales.",
+      "text": "El video se ve mucho más profesional."
+    }
+  ],
+  "download": {
+    "title": "Llévate la guía completa para Claude",
+    "text": "Un solo archivo .md con la historia, el formato, las voces, la música, los efectos, las reglas y el orden de trabajo. Dáselo a Claude al empezar y te guiará paso a paso, pidiéndote tu OK antes de animar y antes de renderizar.",
+    "usage": "En Claude Code, ponlo en la carpeta del proyecto y escribe: Lee presione-uno.claude.md y empecemos. En claude.ai, adjúntalo al chat."
+  },
+  "closing": {
+    "title": "¿Prefieres que lo hagamos nosotros?",
+    "title_keyword": "nosotros",
+    "text": "En Kodecol hacemos videos, automatizaciones y software con IA para empresas. Cuéntanos tu negocio y te decimos cómo lo haríamos.",
+    "whatsapp_message": "Hola, vi la guía Presione uno en la Biblioteca de Kodecol y quiero un video así para mi negocio."
+  },
+  "related": [
+    "misma-cuadra"
+  ],
+  "legal": "Claude y Claude Opus son marcas de Anthropic. HyperFrames es un proyecto de código abierto de HeyGen. ElevenLabs, Freesound, Pixabay y Auphonic pertenecen a sus dueños. Kodecol no está afiliada a ninguno de ellos: los mencionamos porque son las herramientas con las que hicimos el video. El negocio, los nombres y los pedidos del video son de ejemplo.",
+  "seo": {
+    "title": "Presione uno: el prompt del reel de la contestadora",
+    "description": "El prompt, el paso a paso y las voces con que hicimos el reel «Presione uno» con Claude Opus 5.5 y HyperFrames. Cópialo y hazlo con tu negocio."
+  }
+}

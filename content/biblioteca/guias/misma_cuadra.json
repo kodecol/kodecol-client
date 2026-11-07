@@ -1,0 +1,267 @@
+{
+  "slug": "misma-cuadra",
+  "piece": "K-19",
+  "title": "Misma cuadra: el negocio que siempre está lleno",
+  "title_keyword": "lleno",
+  "summary": "Un reel cinematográfico de 60 s para negocios que reciben reservas o pedidos.",
+  "intro": "Dos negocios en la misma cuadra, con el mismo menú y los mismos precios, pero uno siempre está lleno. Este reel cuenta por qué en 60 segundos, con una ciudad 3D de noche, cámara de cine y narración de principio a fin. Lo hicimos con Claude Opus 5.5 y HyperFrames, y aquí está todo: el prompt, de dónde sacamos la voz, la música y los sonidos de la ciudad, y un archivo para que Claude lo haga contigo paso a paso. Sirve para restaurantes y para cualquier negocio que reciba reservas o pedidos.",
+  "topic": "video-con-ia",
+  "level": "avanzado",
+  "duration": "4 a 8 horas",
+  "made_with": [
+    "Claude Opus 5.5",
+    "HyperFrames",
+    "three.js",
+    "ElevenLabs"
+  ],
+  "published_at": "2026-11-06",
+  "video_seconds": {
+    "result": 64,
+    "published": 41
+  },
+  "before_you_start": [
+    {
+      "lead": "Claude.",
+      "text": "Lo hicimos con Claude Opus 5.5 en Claude Code, la versión de Claude que trabaja dentro de tu computador y puede crear archivos y renderizar el video.",
+      "link": {
+        "label": "claude.ai",
+        "href": "https://claude.ai"
+      }
+    },
+    {
+      "lead": "HyperFrames.",
+      "text": "Es una herramienta gratuita y de código abierto que convierte una página web animada en un video MP4. Necesita Node.js.",
+      "link": {
+        "label": "hyperframes.heygen.com",
+        "href": "https://hyperframes.heygen.com"
+      }
+    },
+    {
+      "lead": "three.js.",
+      "text": "Es la librería 3D con la que Claude construye la ciudad. Se instala sola con el proyecto y no tienes que saber usarla.",
+      "link": {
+        "label": "threejs.org",
+        "href": "https://threejs.org"
+      }
+    },
+    {
+      "lead": "ElevenLabs.",
+      "text": "De ahí salen la narración y la música. Para usarlas en publicidad necesitas un plan de pago.",
+      "link": {
+        "label": "elevenlabs.io",
+        "href": "https://elevenlabs.io"
+      }
+    },
+    {
+      "lead": "Un computador con tarjeta de video.",
+      "text": "La ciudad 3D con desenfoque de movimiento se renderiza mucho más rápido con GPU."
+    },
+    {
+      "lead": "Paciencia con el guion.",
+      "text": "Es la guía más ambiciosa de la Biblioteca: revisa el guion y el storyboard antes de animar."
+    }
+  ],
+  "prompt": {
+    "quick": "Pega esto en Claude (lo hicimos con Claude Opus 5.5 y HyperFrames):\n\nHaz un reel vertical 9:16 de unos 60 s con HyperFrames para [tu negocio] en [tu ciudad].\nIdea: «Misma cuadra. Dos negocios. Mismo menú, mismos precios. Pero uno siempre está lleno.»\n1. Gancho: ciudad 3D de noche vista desde arriba; dos locales iguales: uno se llena de luz y gente, el otro se apaga.\n2. Problema: viernes, 7:42 p. m.; tres clientes escriben por WhatsApp, Instagram y llamada. En el local vacío nadie contesta y la libreta tiene dos reservas a la misma hora.\n3. Giro: en el lleno, [quien atiende] responde en segundos, ofrece horas libres y confirma.\n4. Cierre: la última mesa confirmada y [tu llamado a la acción].\nRojo y negro con neón, cámara de cine con motion blur, narración de principio a fin y subtítulos grandes. Muéstrame el guion con tiempos antes de animar.",
+    "full": "Actúa como director creativo, director de fotografía y editor de video. Vamos a hacer un reel vertical cinematográfico con HyperFrames (HTML, GSAP y three.js que se renderizan a MP4). Nosotros lo hicimos con Claude Opus 5.5.\n\nEL NEGOCIO\n- Nombre: [tu negocio]\n- Qué hace y dónde: [qué vendes o qué servicio das, en qué ciudad]\n- Qué se reserva o se pide: [mesas, citas, pedidos…]\n- Quién atiende en el video: [una persona de tu equipo o tu asistente virtual, con su nombre]\n- Frase de cierre: [tu mensaje en una línea]\n- Llamado a la acción: [qué quieres que haga quien lo vea]\n\nFORMATO\n- Vertical 9:16, 1080 × 1920, 60 fps, entre 55 y 65 segundos.\n- Narrado de principio a fin por una sola voz, con subtítulos grandes de dos tamaños (la palabra clave más grande y en color).\n- Estética de cine de noche: rojo y negro con neón, luces cálidas en las ventanas, niebla suave y bloom.\n- Una ciudad 3D hecha en código (sin modelos descargados): manzanas, calles con carros y dos locales iguales lado a lado, vistos desde arriba en isométrico.\n- Cámara de cine: motion blur real (varias submuestras por cuadro), profundidad de campo, tomas a ras de calle y movimientos rápidos entre escenas. Cuando la cámara se detiene, se queda quieta para que se pueda leer.\n\nLA HISTORIA\n1. Gancho (0–9 s): la ciudad de noche desde arriba. «Misma cuadra. Dos [negocios]. Mismas mesas. Mismo menú. Mismos precios. Pero uno siempre está lleno.» Uno se llena de luz y gente; el otro se apaga. «¿Sabes por qué? Porque tiene un sistema.»\n2. El problema (9–30 s): «Viernes, 7:42 p. m.» Tres personas quieren reservar: una por WhatsApp, otra por Instagram y otra llama. En el local vacío el celular vibra y nadie lo ve, el teléfono suena y nadie contesta, y en la libreta hay dos reservas a la misma hora.\n3. El giro (30–41 s): en el lleno contesta [quien atiende], en segundos y en el canal que cada uno prefiere. Ofrece las horas libres, confirma la mesa, y la agenda no deja que se pisen dos reservas. Las pantallas van en oscuro, como una app real.\n4. Más tarde (41–52 s): «11:47 p. m. El local ya cerró… pero sigue reservando.» Un día antes, una llamada recuerda la reserva y el cliente confirma de viva voz.\n5. Cierre (52–64 s): «Misma cuadra. Mismo menú. La diferencia no está en la cocina. Está en el sistema.» Luego [frase de cierre], [llamado a la acción] y el logo.\n\nEL SONIDO\n- Narración: una voz de ElevenLabs, natural y con ritmo de tráiler, en el español de tu país. Genera dos tomas completas y elige la mejor.\n- Música: una pista instrumental de tráiler oscuro generada por secciones (Eleven Music), con un golpe grave justo en «lleno», tensión en el problema, entrada completa en el giro, respiro a las 11:47 y clímax en el cierre.\n- Ambiente: ciudad de noche, tráfico lejano, murmullo de restaurante, cubiertos, un teléfono viejo sonando, una persiana que baja. Solo sonidos de dominio público (CC0).\n- La música baja cuando habla la voz. Volumen final a −14 LUFS.\n- Graba primero la narración y ancla todos los tiempos de la animación a ella, no al revés.\n\nLAS REGLAS\n- No inventes cifras, clientes ni testimonios. Nombres, horas y precios son de ejemplo.\n- Muestra solo lo que tu negocio o tu sistema hace de verdad.\n- Nada de emojis: usa íconos reales.\n- Solo usa logos que tengas permiso de usar.\n- Antes de animar, muéstrame el guion con tiempos y un storyboard. Antes de renderizar, espera mi OK.",
+    "fields": [
+      {
+        "id": "negocio",
+        "label": "Tu negocio",
+        "placeholder": "Norte Cocina",
+        "tokens": [
+          "[tu negocio]"
+        ]
+      },
+      {
+        "id": "ciudad",
+        "label": "Tu ciudad",
+        "placeholder": "Medellín",
+        "tokens": [
+          "[tu ciudad]"
+        ]
+      },
+      {
+        "id": "que-haces",
+        "label": "Qué haces y dónde",
+        "placeholder": "restaurante en Medellín",
+        "tokens": [
+          "[qué vendes o qué servicio das, en qué ciudad]"
+        ]
+      },
+      {
+        "id": "reservas",
+        "label": "Qué te reservan o piden",
+        "placeholder": "mesas",
+        "tokens": [
+          "[mesas, citas, pedidos…]"
+        ]
+      },
+      {
+        "id": "atiende",
+        "label": "Quién atiende",
+        "placeholder": "Laura, de nuestro equipo",
+        "tokens": [
+          "[quien atiende]",
+          "[una persona de tu equipo o tu asistente virtual, con su nombre]"
+        ]
+      },
+      {
+        "id": "frase",
+        "label": "Tu frase",
+        "placeholder": "La diferencia está en el sistema",
+        "tokens": [
+          "[tu mensaje en una línea]",
+          "[frase de cierre]"
+        ]
+      },
+      {
+        "id": "llamado",
+        "label": "Tu llamado",
+        "placeholder": "Reserva por WhatsApp",
+        "tokens": [
+          "[tu llamado a la acción]",
+          "[qué quieres que haga quien lo vea]",
+          "[llamado a la acción]"
+        ]
+      }
+    ]
+  },
+  "steps": [
+    {
+      "title": "El brief",
+      "text": "«Dos negocios iguales en la misma cuadra y uno siempre está lleno.» Le pedimos a Claude tres historias y elegimos la de la misma noche, con el momento de las 11:47 p. m."
+    },
+    {
+      "title": "El guion y el storyboard",
+      "text": "Claude escribió la narración completa y un storyboard escena por escena antes de tocar el 3D."
+    },
+    {
+      "title": "Primero la narración",
+      "text": "Generamos dos tomas completas en ElevenLabs y elegimos la que tenía mejor ritmo. Claude midió cada palabra y ancló cada corte, cada subtítulo y cada golpe de música a esas marcas."
+    },
+    {
+      "title": "La ciudad 3D",
+      "text": "Claude construyó la ciudad en código con three.js: manzanas, calles, carros, ventanas encendidas, los dos restaurantes con mesas y comensales, y la luz de neón. Sin descargar modelos."
+    },
+    {
+      "title": "La cámara de cine",
+      "text": "La segunda versión sumó motion blur real (12 submuestras por cuadro), profundidad de campo, tomas a ras de calle y latigazos entre escenas. Es lo que lo hace sentir de cine."
+    },
+    {
+      "title": "Las pantallas",
+      "text": "El chat y la agenda se ven como una app real, en oscuro y con datos de ejemplo."
+    },
+    {
+      "title": "El sonido",
+      "text": "Música generada por secciones y más de quince sonidos de ciudad y restaurante, todos de dominio público, mezclados por escena."
+    },
+    {
+      "title": "El render",
+      "text": "60 cuadros por segundo, revisado cuadro a cuadro para que la ciudad no titile, y el volumen a −14 LUFS."
+    },
+    {
+      "title": "Para Instagram",
+      "text": "Lo pusimos en un monitor vertical y lo grabamos con el celular. El letrero de arriba sigue la perspectiva del monitor. Ese es el video que viste."
+    }
+  ],
+  "sources": {
+    "title": "De dónde salieron la voz, la música y los sonidos",
+    "groups": [
+      {
+        "title": "Narración · ElevenLabs",
+        "items": [
+          {
+            "text": "Una sola voz de la biblioteca de ElevenLabs, con el modelo eleven_v3 y una estabilidad de 0,5: natural, con ritmo de tráiler y sin sonar a locutor de radio."
+          },
+          {
+            "text": "Generamos dos tomas completas del texto y elegimos la mejor."
+          },
+          {
+            "text": "La firma robótica del final es otra voz de la biblioteca."
+          },
+          {
+            "lead": "Truco:",
+            "text": "escribe la narración como se habla, con puntos suspensivos donde quieras pausa («y nadie lo ve…»). El modelo los respeta."
+          }
+        ]
+      },
+      {
+        "title": "Música · Eleven Music",
+        "items": [
+          {
+            "text": "Es una pista de tráiler oscuro híbrido: metales y cuerdas graves, sintetizadores electrónicos oscuros, golpes de sub-bajo y subidas metálicas."
+          },
+          {
+            "text": "La generamos por secciones calzadas a la narración: ciudad, golpe en «lleno», noche, frío, entrada completa en «Aquí contesta…», respiro a las 11:47, subida en el recordatorio y clímax en el cierre."
+          },
+          {
+            "text": "La adelantamos 0,8 s para que el golpe cayera justo en la palabra «lleno»."
+          }
+        ]
+      },
+      {
+        "title": "Sonidos de la ciudad · Freesound (CC0)",
+        "items": [
+          {
+            "text": "Todos tienen licencia CC0, así que se usan sin dar crédito."
+          },
+          {
+            "text": "Ambiente de ciudad de noche y tráfico lejano; murmullo y risas de restaurante, ambiente de café, platos y cubiertos."
+          },
+          {
+            "text": "Carros pasando, uno sobre calle mojada; un teléfono viejo sonando y una sirena lejana."
+          },
+          {
+            "text": "Un marcador y un garabato (la libreta), una persiana metálica que baja (el local que cierra), un neón que se enciende y dos golpes graves de cine."
+          },
+          {
+            "text": "Cada uno se colocó en su segundo exacto y la mezcla sube y baja por escena."
+          }
+        ]
+      }
+    ],
+    "rule": "Antes de usar un sonido, mira su licencia en la página de Freesound y filtra por CC0 al buscar."
+  },
+  "lessons": [
+    {
+      "title": "La narración manda.",
+      "text": "Con la voz lista primero, cada corte y cada subtítulo cae solo en su lugar."
+    },
+    {
+      "title": "El motion blur es la diferencia entre «animación» y «cine».",
+      "text": "Pídelo con submuestras por cuadro, no como un desenfoque falso."
+    },
+    {
+      "title": "Si la ciudad titila, son caras 3D encimadas.",
+      "text": "Separa un poco las piezas o pide un búfer de profundidad logarítmico. Revisa siempre el render terminado, no solo la vista previa."
+    },
+    {
+      "title": "Muestra solo lo que tu sistema hace de verdad.",
+      "text": "Nada de funciones inventadas, aunque se vean bien en pantalla."
+    },
+    {
+      "title": "Fusiona las piezas repetidas de la ciudad en una sola malla por tipo.",
+      "text": "Así carga rápido y no se cae el navegador."
+    }
+  ],
+  "download": {
+    "title": "Llévate la guía completa para Claude",
+    "text": "Un solo archivo .md con la historia, la ciudad 3D, la cámara, la narración, la música, los sonidos, las reglas y el orden de trabajo. Dáselo a Claude al empezar y te guiará paso a paso, pidiéndote tu OK antes de animar y antes de renderizar.",
+    "usage": "En Claude Code, ponlo en la carpeta del proyecto y escribe: Lee misma-cuadra.claude.md y empecemos. En claude.ai, adjúntalo al chat."
+  },
+  "closing": {
+    "title": "¿Prefieres que lo hagamos nosotros?",
+    "title_keyword": "nosotros",
+    "text": "En Kodecol hacemos videos, automatizaciones y software con IA para empresas. Cuéntanos tu negocio y te decimos cómo lo haríamos.",
+    "whatsapp_message": "Hola, vi la guía Misma cuadra en la Biblioteca de Kodecol y quiero un video así para mi negocio."
+  },
+  "related": [
+    "presione-uno"
+  ],
+  "legal": "Claude y Claude Opus son marcas de Anthropic. HyperFrames es un proyecto de código abierto de HeyGen; three.js es de código abierto (MIT). ElevenLabs y Freesound pertenecen a sus dueños. Kodecol no está afiliada a ninguno de ellos: los mencionamos porque son las herramientas con las que hicimos el video. Los negocios, los nombres, las horas y los precios del video son de ejemplo.",
+  "seo": {
+    "title": "Misma cuadra: el prompt del reel cinematográfico",
+    "description": "El prompt, el paso a paso, la voz y los sonidos con que hicimos el reel «Misma cuadra» con Claude Opus 5.5, HyperFrames y three.js. Hazlo con tu negocio."
+  }
+}
