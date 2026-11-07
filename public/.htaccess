@@ -8,6 +8,17 @@
 # .html) y solo al final la reescritura interna a .html. Invertirlo provoca
 # bucles de redirección.
 
+# ── 0. Carpetas ───────────────────────────────────────────────────────────────
+# Nunca listar el contenido de una carpeta. Y sin barra automática: el export de
+# Next deja biblioteca.html junto a la carpeta biblioteca/ (ahí viven sus
+# subpáginas); con DirectorySlash el servidor añadía la barra y listaba la
+# carpeta en vez de servir la página. Si el servidor ignora DirectorySlash, el
+# paso 4 igual sirve la página para «/biblioteca/».
+Options -Indexes
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
 RewriteEngine On
 RewriteBase /
 
@@ -33,9 +44,10 @@ RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
 # ── 4. URLs limpias: /marcas/axi-connect sirve marcas/axi-connect.html ────────
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [L]
+# La página gana sobre la carpeta del mismo nombre (ver el paso 0): /biblioteca
+# y /biblioteca/ sirven biblioteca.html, nunca el contenido de biblioteca/.
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
 
 ErrorDocument 404 /404.html
 
