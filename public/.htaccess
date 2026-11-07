@@ -29,6 +29,12 @@ RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^ https://kodecol.co%{REQUEST_URI} [R=301,L]
 
+# ── 1b. Enlaces cortos de la Biblioteca: /g/<slug> → la guía con sus utm ──────
+# Un solo 301 directo a la URL final (con o sin barra). Las reglas las escribe
+# scripts/build_htaccess.mjs en out/.htaccess a partir de content/biblioteca/guias:
+# una guía nueva trae su enlace corto sola. Aquí solo queda el hueco.
+# @enlaces-cortos
+
 # ── 2. Sin barra final (salvo la raíz) ────────────────────────────────────────
 # /marcas/axi-connect/ y /marcas/axi-connect servirían el mismo contenido en dos
 # URLs distintas. El <link rel="canonical"> apunta siempre a la forma sin barra.

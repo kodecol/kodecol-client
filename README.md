@@ -37,7 +37,7 @@ pnpm e2e          # tests E2E con Playwright (desktop + mobile)
 
 pnpm assets       # regenera assets derivados: marca, OG images y variantes AVIF/WebP
 pnpm serve:out    # sirve out/ emulando el .htaccess de producción (:4321)
-pnpm deploy:build # build + copia del .htaccess a out/
+pnpm deploy:build # build + out/.htaccess con los enlaces cortos /g/<slug> (scripts/build_htaccess.mjs)
 ```
 
 > `pnpm e2e` construye el sitio y lo sirve desde `out/`. **`next start` no funciona** con

@@ -12,7 +12,7 @@
     "og:biblioteca": "node scripts/generate_library_og.mjs",
     "images:variants": "node scripts/generate_image_variants.mjs",
     "assets": "pnpm brand:assets && pnpm og:images && pnpm og:biblioteca && pnpm images:variants",
-    "deploy:build": "next build && cp public/.htaccess out/.htaccess",
+    "deploy:build": "next build && node scripts/build_htaccess.mjs",
     "serve:out": "node scripts/serve_out.mjs",
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui"
