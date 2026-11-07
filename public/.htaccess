@@ -12,11 +12,11 @@ RewriteEngine On
 RewriteBase /
 
 # ── 1. Host y esquema canónicos ───────────────────────────────────────────────
-# Un solo salto para http, para www y para http+www: todo cae en https://kodecol.com.
+# Un solo salto para http, para www y para http+www: todo cae en https://kodecol.co.
 # El host va escrito a mano porque este sitio solo se despliega en ese dominio.
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
-RewriteRule ^ https://kodecol.com%{REQUEST_URI} [R=301,L]
+RewriteRule ^ https://kodecol.co%{REQUEST_URI} [R=301,L]
 
 # ── 2. Sin barra final (salvo la raíz) ────────────────────────────────────────
 # /marcas/axi-connect/ y /marcas/axi-connect servirían el mismo contenido en dos

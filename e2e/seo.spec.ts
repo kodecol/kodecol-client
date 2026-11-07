@@ -12,7 +12,7 @@ import { expect, test } from "@playwright/test";
   final ni devuelve el 404 con su código de estado.
 */
 
-const BASE = "https://kodecol.com";
+const BASE = "https://kodecol.co";
 
 interface SeoRoute {
   path: string;

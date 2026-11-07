@@ -27,7 +27,7 @@ export const SITE_CONFIG = {
   title: "Kodecol — Tecnología con propósito",
   description:
     "Fábrica de software en Colombia. Diseñamos y desarrollamos productos digitales con inteligencia artificial y pensamiento estratégico para resolver problemas reales.",
-  base_url: "https://kodecol.com",
+  base_url: "https://kodecol.co",
   tagline: "Tecnología con propósito.",
   sub_tagline: "Fábrica de software · Crecimiento consciente.",
   whatsapp_number: "573224970950",

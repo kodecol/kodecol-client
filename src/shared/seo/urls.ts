@@ -5,8 +5,8 @@ import { SITE_CONFIG } from "@/shared/config/site_config";
  *
  * Regla única: NINGUNA ruta lleva barra final, ni siquiera la raíz. No es un
  * capricho — Next normaliza así el `<link rel="canonical">` (con
- * `trailingSlash: false`), y si el sitemap escribiera `https://kodecol.com/`
- * mientras el canonical dice `https://kodecol.com`, los dos documentos estarían
+ * `trailingSlash: false`), y si el sitemap escribiera `https://kodecol.co/`
+ * mientras el canonical dice `https://kodecol.co`, los dos documentos estarían
  * declarando cosas distintas sobre la misma página.
  *
  * El canonical, el `og:url`, el `<loc>` del sitemap y los `@id` del JSON-LD
