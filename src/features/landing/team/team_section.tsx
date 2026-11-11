@@ -37,7 +37,10 @@ export function TeamSection() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {content.members.map((member, index) => (
-            <Reveal key={member.slug} delay={index * 100}>
+            /* h-full: la celda del grid se estira, pero sin esto la tarjeta
+               encogía al contenido y las columnas quedaban a distinta altura.
+               La key va por nombre: el slug es null en quien no tiene ficha. */
+            <Reveal key={member.name} delay={index * 100} className="h-full">
               <TeamMemberCard member={member} />
             </Reveal>
           ))}

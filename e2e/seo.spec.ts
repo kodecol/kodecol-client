@@ -58,7 +58,7 @@ const ROUTES: readonly SeoRoute[] = [
     og_type: "profile",
     expected_types: ["Organization", "WebSite", "ProfilePage", "BreadcrumbList", "Person"],
   },
-  { path: "/equipo/juan", og_type: "profile", expected_types: ["ProfilePage", "Person"] },
+  /* /equipo/juan: perfil oculto temporalmente */
   ...SERVICE_SLUGS.map((slug) => ({
     path: `/servicios/${slug}`,
     og_type: "website",
@@ -136,7 +136,7 @@ test.describe("SEO técnico", () => {
 
       /* Absoluta: las redes sociales no resuelven rutas relativas. */
       const image = await meta_content(page, "og:image");
-      expect(image).toMatch(/^https:\/\/kodecol\.com\//);
+      expect(image).toMatch(/^https:\/\/kodecol\.co\//);
       expect(await meta_content(page, "og:image:width")).toBe("1200");
       expect(await meta_content(page, "og:image:height")).toBe("630");
     });

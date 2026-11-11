@@ -1,7 +1,9 @@
 import type { DeveloperProfile } from "@/core/domain/developer_profile";
 import type { DeveloperProfileRepository } from "@/core/ports/developer_profile_repository";
 import cristian_raw from "@content/developers/cristian.json";
-import juan_raw from "@content/developers/juan.json";
+/* Juan oculto temporalmente: descomentar este import y su entrada en
+   `raw_profiles` lo devuelve a la crew y a /equipo/juan. */
+// import juan_raw from "@content/developers/juan.json";
 import { developer_profile_schema } from "./developer_profile_schema";
 
 /*
@@ -10,7 +12,7 @@ import { developer_profile_schema } from "./developer_profile_schema";
   señalando el campo — gate de calidad de contenido, no un bug.
 */
 
-const raw_profiles: readonly unknown[] = [cristian_raw, juan_raw];
+const raw_profiles: readonly unknown[] = [cristian_raw /*, juan_raw */];
 
 const profiles: ReadonlyMap<string, DeveloperProfile> = new Map(
   raw_profiles.map((raw) => {

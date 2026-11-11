@@ -64,11 +64,11 @@ test.describe("secciones de la landing", () => {
     await expect(
       section.getByRole("heading", { name: "Cristian David Velásquez" }),
     ).toBeVisible();
+    /* Juan David Herrera está oculto: ver local_developer_profile_repository.ts */
     await expect(
       section.getByRole("heading", { name: "Juan David Herrera" }),
-    ).toBeVisible();
+    ).toHaveCount(0);
     await expect(section.getByText("Python", { exact: true })).toBeVisible();
-    await expect(section.getByText("Angular", { exact: true })).toBeVisible();
   });
 
   test("cta final: titular y doble CTA", async ({ page }) => {

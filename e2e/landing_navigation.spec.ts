@@ -11,9 +11,13 @@ test.describe("navegación de la landing", () => {
     const nav = page.getByRole("navigation", { name: "Navegación principal" });
     await expect(nav).toBeVisible();
 
+    /* En mobile los enlaces viven en el panel hamburguesa, que se monta con un
+       portal en <body> (fuera del <nav>) para escapar del backdrop-filter. */
+    let links = nav;
     if (isMobile) {
-      /* En mobile los enlaces viven en el panel hamburguesa */
       await nav.getByRole("button", { name: "Abrir menú" }).click();
+      links = page.getByRole("navigation", { name: "Navegación mobile" });
+      await expect(links).toBeVisible();
     }
 
     const labels = [
@@ -25,7 +29,7 @@ test.describe("navegación de la landing", () => {
       "Equipo",
     ];
     for (const label of labels) {
-      await expect(nav.getByRole("link", { name: label, exact: true })).toBeVisible();
+      await expect(links.getByRole("link", { name: label, exact: true })).toBeVisible();
     }
   });
 

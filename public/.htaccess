@@ -14,7 +14,7 @@
 # subpáginas); con DirectorySlash el servidor añadía la barra y listaba la
 # carpeta en vez de servir la página. Si el servidor ignora DirectorySlash, el
 # paso 4 igual sirve la página para «/biblioteca/».
-Options -Indexes
+Options -Indexes -MultiViews
 <IfModule mod_dir.c>
   DirectorySlash Off
 </IfModule>

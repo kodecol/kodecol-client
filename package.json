@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "start": "next start -p 3005",
+    "start": "node -e \"console.error('Con output: \\\"export\\\" no hay servidor Node.\\\\nUsa: pnpm deploy:build && pnpm serve:out'); process.exit(1)\"",
     "lint": "eslint",
     "brand:assets": "node scripts/generate_brand_assets.mjs",
     "og:images": "node scripts/generate_og_images.mjs",

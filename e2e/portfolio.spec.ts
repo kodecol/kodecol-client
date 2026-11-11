@@ -8,7 +8,7 @@ test.describe("portafolio dinámico", () => {
     await expect(
       page.getByRole("heading", { level: 1, name: "Cristian David Velásquez García" }),
     ).toBeVisible();
-    await expect(page.getByText("Full Stack Developer · Líder Técnico")).toBeVisible();
+    await expect(page.getByText("Fundador y CTO")).toBeVisible();
     await expect(page.getByText("años de experiencia")).toBeVisible();
     await expect(
       page.getByRole("link", { name: /Descargar CV/ }).first(),
@@ -17,7 +17,9 @@ test.describe("portafolio dinámico", () => {
     await expect(page.getByRole("link", { name: "LinkedIn" })).toHaveCount(0);
   });
 
-  test("juan: misma plantilla con sus datos, idiomas y redes", async ({ page }) => {
+  test.skip("juan: misma plantilla con sus datos, idiomas y redes", async ({ page }) => {
+    /* Perfil oculto: ver local_developer_profile_repository.ts. Al descomentarlo,
+       quitar este skip. */
     await page.goto("/equipo/juan");
     await expect(
       page.getByRole("heading", { level: 1, name: "Juan David Herrera Ramírez" }),
@@ -61,7 +63,7 @@ test.describe("portafolio dinámico", () => {
   });
 
   test("la top bar vuelve al equipo de la landing", async ({ page }) => {
-    await page.goto("/equipo/juan");
+    await page.goto("/equipo/cristian-velasquez");
     await page.getByRole("link", { name: "← Equipo" }).click();
     await expect(page).toHaveURL(/\/#equipo/);
   });

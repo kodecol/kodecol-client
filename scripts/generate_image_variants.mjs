@@ -28,6 +28,9 @@ const FIXED_SOURCES = [
   { path: "public/images/logo/isotipo-3d-trim.png", width: 382 },
   { path: "public/images/products/axi-connect/isotype.png", width: 400 },
   { path: "public/images/products/axi-connect/wordmark.png", width: 660 },
+  /* Miembros de la crew sin ficha propia: no tienen JSON en content/developers/,
+     así que read_profile_photos() no los ve y hay que listarlos aquí. */
+  { path: "public/images/team/juan_carlos_lopez_v2.png", width: 460 },
 ];
 
 /*

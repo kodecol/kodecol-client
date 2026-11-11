@@ -11,7 +11,7 @@ const PAGES = [
   "/marcas/axi-connect",
   "/equipo",
   "/equipo/cristian-velasquez",
-  "/equipo/juan",
+  /* /equipo/juan: perfil oculto temporalmente */
 ];
 
 test.describe("accesibilidad", () => {
