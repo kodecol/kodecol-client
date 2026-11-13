@@ -1,0 +1,271 @@
+{
+  "slug": "el-mismo-dia",
+  "piece": "K-22",
+  "title": "El mismo día: el WhatsApp que no se pierde",
+  "title_keyword": "no se pierde",
+  "summary": "Un reel de 40 s con un celular 3D para negocios que venden por WhatsApp.",
+  "intro": "Te acaban de restringir el WhatsApp de tu negocio, con todos tus clientes adentro. Este reel cuenta cómo se llega ahí, copiando y pegando la misma promoción trescientas veces, y cómo es ese mismo día cuando un asistente contesta la foto, el audio y el seguimiento. Todo pasa en un solo celular 3D, con la cámara entrando a cada función, en 40 segundos. Lo hicimos con Claude Fable 5.2 y HyperFrames, y aquí está todo: el prompt, de dónde sacamos las voces, la música y los sonidos, y un archivo para que Claude lo haga contigo paso a paso.",
+  "topic": "video-con-ia",
+  "level": "avanzado",
+  "duration": "4 a 8 horas",
+  "made_with": [
+    "Claude Fable 5.2",
+    "HyperFrames",
+    "three.js",
+    "ElevenLabs"
+  ],
+  "published_at": "2026-11-12",
+  "video_seconds": {
+    "result": 41,
+    "published": 41
+  },
+  "before_you_start": [
+    {
+      "lead": "Claude.",
+      "text": "Lo hicimos con Claude Fable 5.2 en Claude Code, la versión de Claude que trabaja dentro de tu computador y puede crear archivos y renderizar el video.",
+      "link": {
+        "label": "claude.ai",
+        "href": "https://claude.ai"
+      }
+    },
+    {
+      "lead": "HyperFrames.",
+      "text": "Es una herramienta gratuita y de código abierto que convierte una página web animada en un video MP4. Necesita Node.js.",
+      "link": {
+        "label": "hyperframes.heygen.com",
+        "href": "https://hyperframes.heygen.com"
+      }
+    },
+    {
+      "lead": "three.js.",
+      "text": "Es la librería 3D con la que se mueve el celular. Se instala sola con el proyecto.",
+      "link": {
+        "label": "threejs.org",
+        "href": "https://threejs.org"
+      }
+    },
+    {
+      "lead": "Un modelo 3D de celular",
+      "text": "con licencia que permita usarlo en publicidad (GLB). La pantalla se dibuja aparte, así que el modelo solo necesita el cuerpo."
+    },
+    {
+      "lead": "ElevenLabs.",
+      "text": "De ahí salen las tres voces y la música. Para usarlas en publicidad necesitas un plan de pago.",
+      "link": {
+        "label": "elevenlabs.io",
+        "href": "https://elevenlabs.io"
+      }
+    },
+    {
+      "lead": "Un computador con tarjeta de video.",
+      "text": "El desenfoque de movimiento se renderiza mucho más rápido con GPU."
+    }
+  ],
+  "prompt": {
+    "quick": "Pega esto en Claude (lo hicimos con Claude Fable 5.2 y HyperFrames):\n\nHaz un reel vertical 9:16 de 35 a 40 s con HyperFrames para [tu negocio] en [tu ciudad].\nGancho: «Te acaban de restringir el WhatsApp de tu negocio. Con todos tus clientes adentro.»\n1. Dolor: un contador sube a 300 mensajes copiados y pegados a mano, hasta «Número restringido.»\n2. Giro: el mismo día, con [tu asistente]: un cliente manda la foto de [tu producto] y recibe precio y tallas; manda un audio y le contestan con voz; a quien no volvió le escriben primero.\n3. Cierre: la promoción sale por el canal oficial y [tu llamado a la acción].\nUn celular 3D es el protagonista y la cámara se acerca a cada función. Ritmo rápido, una pregunta abre cada bloque, narración de principio a fin y subtítulos grandes. Muéstrame el guion con tiempos antes de animar.",
+    "full": "Actúa como director creativo, director de fotografía y editor de video. Vamos a hacer un reel vertical cinematográfico con HyperFrames (HTML, GSAP y three.js que se renderizan a MP4). Nosotros lo hicimos con Claude Fable 5.2.\n\nEL NEGOCIO\n- Nombre: [tu negocio]\n- Qué vende y dónde: [qué vendes, en qué ciudad]\n- El producto de la foto: [un producto llamativo, con su precio y sus tallas o variantes]\n- Quién atiende: [tu asistente o una persona de tu equipo, con su nombre]\n- La clienta o el cliente: [un nombre de ejemplo]\n- Llamado a la acción: [qué quieres que haga quien lo vea]\n\nFORMATO\n- Vertical 9:16, 1080 × 1920, 60 fps, entre 35 y 40 segundos.\n- Un solo celular 3D es el protagonista de principio a fin. Nada de paneles ni gráficos al lado: la cámara es la que se acerca a cada función de la pantalla.\n- La pantalla del celular se dibuja en un lienzo 2D (no HTML dentro del 3D), con un chat oscuro que se parece a una app real.\n- Dos mundos de color: rojo de alerta para el día a mano y el color de tu marca para el día con [quien atiende].\n- Letreros gigantes de pie detrás del celular, desenfoque de movimiento real y subtítulos de dos tamaños (la palabra clave más grande y en color).\n- Un cambio cada 2 a 4 s. Cada bloque abre con una pregunta que el plano siguiente responde.\n\nLA HISTORIA\n1. Gancho (0–5 s): sobrevuelo del celular acostado. «Te acaban de restringir el WhatsApp de tu negocio… con todos tus clientes adentro.» En «restringir» todo se pone rojo y cae «Número restringido.» detrás. Luego la cámara sube para leer la pantalla.\n2. Por qué (5–9 s): «¿Por qué? Copiaste y pegaste la misma promoción… ¡trescientas veces!» Un contador corre de 0 a 300 mientras sale un enjambre de burbujas grises.\n3. Rebobinado (9–12 s): el celular da una vuelta, el enjambre regresa y el mundo cambia de color. «Ahora mira el mismo día… con [quien atiende].» Aquí entra la música completa.\n4. La foto (12–16 s): [la clienta] manda la foto de [tu producto]; un barrido la reconoce y la respuesta trae el precio.\n5. El audio (16–23 s): «¿Y si pregunta por audio?» Una nota de voz de la clienta y la respuesta con voz, con la onda moviéndose.\n6. El seguimiento (23–27 s): «¿No volvió a escribir?» [quien atiende] escribe primero, ella dice que sí y se arma el pedido.\n7. La promoción (27–31 s): «¿Y tu promoción? Sale sin copiar ni pegar, por el canal oficial.» Trescientos mensajes salen en filas ordenadas.\n8. Cierre (31–39 s): el encuadre del gancho con «Todo al día.», el logo y [llamado a la acción].\n\nEL SONIDO\n- Narrador: una voz de ElevenLabs con eleven_multilingual_v2 (estabilidad 0,3, estilo 0,5, velocidad 1,1). Genera la narración COMPLETA en una sola toma y córtala por frases; frase por frase, algunas terminan «arriba».\n- Dos voces más: la clienta en una nota de voz (filtrada como audio de WhatsApp) y la respuesta de [quien atiende].\n- Música: Eleven Music por secciones, 120 bpm: alarma oscura, tensión que sube, entrada completa justo en el cambio de mundo y un cierre cálido con un golpe final.\n- Efectos digitales: vibración, impactos graves, barridos, tecleo, clics suaves. Nada de campanas.\n- La música baja cuando hablan las voces. Volumen final a −14 LUFS.\n\nLAS REGLAS\n- No prometas lo que no pasa: no digas que nunca te van a bloquear; muestra lo que el sistema hace de verdad.\n- El aviso de restricción es genérico, sin la interfaz ni los logos de otras apps.\n- Nombres, cifras y precios son de ejemplo. Nada de emojis: usa íconos reales.\n- Antes de animar, muéstrame el guion con tiempos y un storyboard. Antes de renderizar, espera mi OK.",
+    "fields": [
+      {
+        "id": "negocio",
+        "label": "Tu negocio",
+        "placeholder": "Norte Studio",
+        "tokens": [
+          "[tu negocio]"
+        ]
+      },
+      {
+        "id": "ciudad",
+        "label": "Tu ciudad",
+        "placeholder": "Cali",
+        "tokens": [
+          "[tu ciudad]"
+        ]
+      },
+      {
+        "id": "que-vendes",
+        "label": "Qué vendes y dónde",
+        "placeholder": "ropa de mujer en Cali",
+        "tokens": [
+          "[qué vendes, en qué ciudad]"
+        ]
+      },
+      {
+        "id": "producto",
+        "label": "Tu producto",
+        "placeholder": "gabardina roja, tallas S a L",
+        "tokens": [
+          "[tu producto]",
+          "[un producto llamativo, con su precio y sus tallas o variantes]"
+        ]
+      },
+      {
+        "id": "atiende",
+        "label": "Quién atiende",
+        "placeholder": "Sofía, nuestra asistente",
+        "tokens": [
+          "[quien atiende]",
+          "[tu asistente]",
+          "[tu asistente o una persona de tu equipo, con su nombre]"
+        ]
+      },
+      {
+        "id": "cliente",
+        "label": "Tu cliente de ejemplo",
+        "placeholder": "Laura",
+        "tokens": [
+          "[la clienta]",
+          "[un nombre de ejemplo]"
+        ]
+      },
+      {
+        "id": "llamado",
+        "label": "Tu llamado",
+        "placeholder": "Escríbenos por WhatsApp",
+        "tokens": [
+          "[tu llamado a la acción]",
+          "[qué quieres que haga quien lo vea]",
+          "[llamado a la acción]"
+        ]
+      }
+    ]
+  },
+  "steps": [
+    {
+      "title": "El dolor primero",
+      "text": "Descartamos historias de una sola función. El gancho tenía que doler hoy: el número restringido por copiar y pegar la promoción. Contestar a mano y los envíos masivos son la causa."
+    },
+    {
+      "title": "El guion corto",
+      "text": "La primera versión duraba 65 s. La cortamos a 38,7 s con ciclos de retención: cada bloque abre con una pregunta («¿Por qué?», «¿Y si pregunta por audio?», «¿No volvió a escribir?», «¿Y tu promoción?»)."
+    },
+    {
+      "title": "Primero las voces",
+      "text": "La narración salió en una sola toma y la cortamos por frases. Cada corte, cada subtítulo y el drop de la música se anclaron a esas marcas."
+    },
+    {
+      "title": "El celular protagonista",
+      "text": "Sin paneles al lado: el celular gira, se levanta y la cámara entra a la foto, al audio, al pedido y a la promoción."
+    },
+    {
+      "title": "La pantalla en un lienzo 2D",
+      "text": "El chat se dibuja en un lienzo y se pega a la pantalla del modelo. Así se ve igual en la vista previa y en el render."
+    },
+    {
+      "title": "El cambio de mundo",
+      "text": "El rebobinado da una vuelta completa al celular y el color pasa del rojo al de la marca justo en el drop de la música."
+    },
+    {
+      "title": "El sonido",
+      "text": "Música por secciones a 120 bpm, rearmada por compases para que cada corte caiga en el tiempo, más efectos digitales."
+    },
+    {
+      "title": "El render",
+      "text": "60 cuadros por segundo con la máxima calidad, revisado para que la pantalla no parpadee, y el volumen a −14 LUFS."
+    },
+    {
+      "title": "Para Instagram",
+      "text": "Lo pusimos en un monitor vertical y lo grabamos con el celular. El letrero de arriba sigue la perspectiva del monitor. Ese es el video que viste."
+    }
+  ],
+  "sources": {
+    "title": "De dónde salieron las voces, la música y los sonidos",
+    "groups": [
+      {
+        "title": "Las tres voces · ElevenLabs",
+        "items": [
+          {
+            "lead": "El narrador:",
+            "text": "una voz natural y cercana de la biblioteca de ElevenLabs, con eleven_multilingual_v2, estabilidad 0,3, estilo 0,5 y velocidad 1,1."
+          },
+          {
+            "lead": "La clienta:",
+            "text": "una voz femenina joven con eleven_v3, filtrada para que suene como nota de voz de WhatsApp."
+          },
+          {
+            "lead": "La asistente:",
+            "text": "otra voz femenina, cálida y segura, con eleven_v3."
+          },
+          {
+            "lead": "Truco:",
+            "text": "genera la narración completa en una sola toma y córtala por frases. Si la generas frase por frase, algunas terminan con la entonación «arriba», como si faltara algo."
+          }
+        ]
+      },
+      {
+        "title": "Música · Eleven Music",
+        "items": [
+          {
+            "text": "Una pista electrónica cinematográfica oscura y premium a 120 bpm exactos, en tonalidad menor: sub-bajo profundo, bombo seco y sintetizadores de cristal."
+          },
+          {
+            "text": "La pedimos por secciones (alarma, tensión, drop y resolución) y la rearmamos por compases para calzar los cortes, porque Eleven Music no siempre respeta las secciones."
+          },
+          {
+            "text": "El drop cae justo cuando el mundo cambia de color."
+          }
+        ]
+      },
+      {
+        "title": "Efectos y foto",
+        "items": [
+          {
+            "text": "Vibración del celular, impactos graves, barridos, tecleo, clics suaves, un brillo y un pop, todos CC0 o de licencia libre."
+          },
+          {
+            "text": "Los tonos, los subgraves y el sonido del rebobinado los sintetizamos con código."
+          },
+          {
+            "text": "Todos digitales: nada de campanas ni timbres metálicos."
+          },
+          {
+            "lead": "La foto del producto:",
+            "text": "una foto de Unsplash con su licencia, recortada a la prenda."
+          }
+        ]
+      }
+    ],
+    "rule": "Antes de usar un sonido o una foto, mira su licencia. Para usar las voces y la música de ElevenLabs en publicidad necesitas un plan de pago."
+  },
+  "lessons": [
+    {
+      "title": "El gancho que duele hoy gana.",
+      "text": "«Te acaban de restringir el WhatsApp» detiene más que «tienes 47 chats sin responder»."
+    },
+    {
+      "title": "Menos es más.",
+      "text": "Bajar de 65 a 38,7 s y abrir cada bloque con una pregunta sostiene la retención."
+    },
+    {
+      "title": "El protagonista es uno.",
+      "text": "Con el celular solo en cuadro y la cámara entrando a cada función, se entiende todo sin gráficos."
+    },
+    {
+      "title": "Nada en pantalla que cambie más de unas 4 veces por segundo.",
+      "text": "Las burbujas que cambiaban más rápido se veían como parpadeo en el video terminado."
+    },
+    {
+      "title": "Una sola toma de voz.",
+      "text": "Suena mucho más natural que frases sueltas pegadas."
+    }
+  ],
+  "download": {
+    "title": "Llévate la guía completa para Claude",
+    "text": "Un solo archivo .md con la historia, el celular 3D, la cámara, las voces, la música, los efectos, las reglas y el orden de trabajo. Dáselo a Claude al empezar y te guiará paso a paso, pidiéndote tu OK antes de animar y antes de renderizar.",
+    "usage": "En Claude Code, ponlo en la carpeta del proyecto y escribe: Lee el-mismo-dia.claude.md y empecemos. En claude.ai, adjúntalo al chat."
+  },
+  "closing": {
+    "title": "¿Prefieres que lo hagamos nosotros?",
+    "title_keyword": "nosotros",
+    "text": "En Kodecol hacemos videos, automatizaciones y software con IA para empresas. Cuéntanos tu negocio y te decimos cómo lo haríamos.",
+    "whatsapp_message": "Hola, vi la guía El mismo día en la Biblioteca de Kodecol y quiero un video así para mi negocio."
+  },
+  "related": [
+    "misma-cuadra",
+    "presione-uno"
+  ],
+  "legal": "Claude y Claude Fable son marcas de Anthropic. HyperFrames es un proyecto de código abierto de HeyGen; three.js es de código abierto (MIT). WhatsApp es una marca de Meta. ElevenLabs y Unsplash pertenecen a sus dueños. Kodecol no está afiliada a ninguno de ellos: los mencionamos porque son las herramientas con las que hicimos el video. Los negocios, los nombres, las cifras y los precios del video son de ejemplo.",
+  "seo": {
+    "title": "El mismo día: el prompt del reel con un celular 3D",
+    "description": "El prompt, el paso a paso, las voces y la música con que hicimos el reel «El mismo día» con Claude Fable 5.2, HyperFrames y three.js. Hazlo con tu negocio."
+  }
+}

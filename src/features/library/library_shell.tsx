@@ -22,7 +22,7 @@ interface LibraryShellProps {
 }
 
 const LEGAL_DEFAULT =
-  "Claude y Claude Opus son marcas de Anthropic. Kodecol no está afiliada a Anthropic ni a las demás herramientas que mencionamos: las nombramos porque son las que usamos de verdad.";
+  "Claude, Claude Opus y Claude Fable son marcas de Anthropic. Kodecol no está afiliada a Anthropic ni a las demás herramientas que mencionamos: las nombramos porque son las que usamos de verdad.";
 
 /**
  * Marco de la Biblioteca: barra propia con la miga de pan, efectos y pie.

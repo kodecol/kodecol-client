@@ -1,5 +1,6 @@
 import type { LibraryGuide } from "@/core/domain/library_guide";
 import type { LibraryGuideRepository } from "@/core/ports/library_guide_repository";
+import el_mismo_dia_raw from "@content/biblioteca/guias/el_mismo_dia.json";
 import misma_cuadra_raw from "@content/biblioteca/guias/misma_cuadra.json";
 import presione_uno_raw from "@content/biblioteca/guias/presione_uno.json";
 import { library_guide_schema } from "./library_guide_schema";
@@ -10,7 +11,7 @@ import { library_guide_schema } from "./library_guide_schema";
   + sus medios en public/biblioteca/guias/<slug>.
 */
 
-const raw_guides: readonly unknown[] = [presione_uno_raw, misma_cuadra_raw];
+const raw_guides: readonly unknown[] = [presione_uno_raw, misma_cuadra_raw, el_mismo_dia_raw];
 
 const guides: readonly LibraryGuide[] = raw_guides
   .map((raw) => library_guide_schema.parse(raw))
