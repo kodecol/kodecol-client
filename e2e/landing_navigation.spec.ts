@@ -20,14 +20,7 @@ test.describe("navegación de la landing", () => {
       await expect(links).toBeVisible();
     }
 
-    const labels = [
-      "Inicio",
-      "Cotizaciones",
-      "Servicios",
-      "Marcas propias",
-      "Nosotros",
-      "Equipo",
-    ];
+    const labels = ["Servicios", "Proyectos", "Axi Connect", "Biblioteca", "Equipo"];
     for (const label of labels) {
       await expect(links.getByRole("link", { name: label, exact: true })).toBeVisible();
     }
@@ -54,10 +47,10 @@ test.describe("navegación de la landing", () => {
     await expect(float).toHaveAttribute("href", /wa\.me/);
   });
 
-  test("'Ver portafolio' navega al portafolio del desarrollador", async ({ page }) => {
+  test("'Ver perfil completo' navega al portafolio del desarrollador", async ({ page }) => {
     await page.goto("/");
     await page
-      .getByRole("link", { name: "Ver portafolio" })
+      .getByRole("link", { name: "Ver perfil completo" })
       .first()
       .click();
     await expect(page).toHaveURL(/\/equipo\/cristian/);

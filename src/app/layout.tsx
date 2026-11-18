@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Sora } from "next/font/google";
+import { Instrument_Serif, Inter_Tight, Poppins, Sora } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from "@/shared/analytics/google_analytics";
 import { SITE_CONFIG } from "@/shared/config/site_config";
@@ -13,10 +13,27 @@ const sora = Sora({
   display: "swap",
 });
 
+/* Estética motion Kodecol (K-24): titulares y palabra gigante en Inter Tight,
+   entradas en Instrument Serif itálica. Ver docs/DESIGN.md §8. */
+const inter_tight = Inter_Tight({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const instrument_serif = Instrument_Serif({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
@@ -62,7 +79,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${sora.variable} ${poppins.variable} antialiased`}>
+      <body
+        className={`${sora.variable} ${poppins.variable} ${inter_tight.variable} ${instrument_serif.variable} antialiased`}
+      >
         <SkipLink />
         {children}
         <WhatsappFloat />

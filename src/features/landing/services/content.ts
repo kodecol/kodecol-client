@@ -1,15 +1,14 @@
 import type { ServicesContent } from "./types";
 
-/* Copy fiel al mockup (sección #servicios, bento A: estrella + apoyos).
-   Los seis servicios los aporta el repositorio; aquí solo vive el marco. */
+/* Copy de la sección #servicios (atmósfera Cielo). Los seis servicios los aporta
+   el repositorio; aquí solo vive el marco. */
 export const SERVICES_CONTENT = {
-  eyebrow: "Lo que construimos",
-  title: "Soluciones que se sienten, que se usan y que generan resultados.",
+  eyebrow: "Servicios",
+  title_lead: "Seis formas de ",
+  title_accent: "crecer con software.",
   subtitle:
-    "Desde una automatización puntual hasta un producto digital completo. Diseñamos cada solución para resolver un problema real y generar valor tangible.",
-  card_link_label: "Ver servicio",
-  cta_lead: "¿No ves lo que buscas? ",
-  cta_emphasis: "Cuéntanos tu idea",
-  cta_tail: " y la construimos contigo.",
-  cta_link_label: "Hablemos →",
+    "Empezamos por el problema, nunca por la herramienta. Y si tu caso no necesita lo que vendemos, te lo decimos.",
+  cta_lead: "¿No sabes cuál necesitas?",
+  cta_text: " Cuéntanos el problema con tus palabras. Te decimos qué haríamos, aunque la respuesta sea «todavía no».",
+  cta_label: "Escríbenos",
 } as const satisfies ServicesContent;

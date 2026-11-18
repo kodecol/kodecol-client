@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {
+  get_client_project_repository,
   get_developer_profile_repository,
   get_product_brand_repository,
   get_service_offering_repository,
@@ -7,6 +8,8 @@ import {
 import { FinalCtaSection } from "@/features/landing/final_cta/final_cta_section";
 import { HeroSection } from "@/features/landing/hero/hero_section";
 import { OwnBrandsSection } from "@/features/landing/own_brands/own_brands_section";
+import { ProcessSection } from "@/features/landing/process/process_section";
+import { ProjectsSection } from "@/features/landing/projects/projects_section";
 import { ServicesSection } from "@/features/landing/services/services_section";
 import { TeamSection } from "@/features/landing/team/team_section";
 import { WhyKodecolSection } from "@/features/landing/why_kodecol/why_kodecol_section";
@@ -22,6 +25,7 @@ import {
   build_website_node,
 } from "@/shared/seo/site_nodes";
 import { build_absolute_url } from "@/shared/seo/urls";
+import type { CurvedBandImage } from "@/shared/ui/curved_band";
 import { Footer } from "@/shared/ui/footer";
 import { Navbar } from "@/shared/ui/navbar";
 import { MAIN_CONTENT_ID } from "@/shared/ui/skip_link";
@@ -49,6 +53,19 @@ export default function LandingPage() {
   const brands = get_product_brand_repository().get_all();
   const services = get_service_offering_repository().get_all();
   const profiles = get_developer_profile_repository().get_all();
+  const projects = get_client_project_repository().get_all();
+
+  /* La banda curva del héroe: capturas reales de cada proyecto, intercaladas,
+     más la de cada marca propia que tenga captura. Variante WebP 1x ya generada. */
+  const work_images: CurvedBandImage[] = [];
+  for (let round = 0; round < 3; round++) {
+    for (const project of projects) {
+      const shot = project.detail.desktop_shots[round];
+      if (shot) work_images.push({ src: `${shot.src_base}.webp`, alt: shot.alt });
+    }
+    const capture = brands[round]?.detail.hero_capture;
+    if (capture) work_images.push({ src: `${capture.src_base}.webp`, alt: capture.alt });
+  }
 
   const canonical = build_absolute_url("/");
   const organization = build_organization_node();
@@ -118,10 +135,12 @@ export default function LandingPage() {
       />
       <Navbar current_href="/#inicio" />
       <main id={MAIN_CONTENT_ID}>
-        <HeroSection />
+        <HeroSection work_images={work_images} />
         <ServicesSection services={services} />
-        <WhyKodecolSection />
+        <ProjectsSection projects={projects} />
         <OwnBrandsSection brands={brands} />
+        <WhyKodecolSection />
+        <ProcessSection />
         <TeamSection />
         <FinalCtaSection />
       </main>

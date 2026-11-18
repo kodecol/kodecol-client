@@ -53,6 +53,16 @@ const ROUTES: readonly SeoRoute[] = [
     expected_types: ["Organization", "WebSite", "WebPage", "BreadcrumbList", "SoftwareApplication"],
   },
   {
+    path: "/proyectos",
+    og_type: "website",
+    expected_types: ["Organization", "WebSite", "CollectionPage", "BreadcrumbList", "ItemList"],
+  },
+  ...["neon-night", "the-brothers-inc", "ducks-machine"].map((slug) => ({
+    path: `/proyectos/${slug}`,
+    og_type: "website",
+    expected_types: ["Organization", "WebSite", "WebPage", "BreadcrumbList", "CreativeWork"],
+  })),
+  {
     path: "/equipo/cristian-velasquez",
     /* Una persona no es un sitio web. */
     og_type: "profile",

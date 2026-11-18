@@ -10,6 +10,9 @@
 export const LIBRARY_PATH = "/biblioteca";
 export const GUIDES_PATH = "/biblioteca/guias";
 
+/** La guía cuyo video final se ve en la pantalla del computador de la portada. */
+export const LIBRARY_MONITOR_GUIDE = "presione-uno";
+
 export const build_guide_path = (slug: string) => `${GUIDES_PATH}/${slug}`;
 
 export interface GuideMedia {

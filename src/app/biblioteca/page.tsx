@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { get_library_guide_repository } from "@/adapters/content";
+import { build_service_links } from "@/shared/config/service_links";
+import { get_library_guide_repository, get_service_offering_repository } from "@/adapters/content";
 import { LibraryIndexTemplate } from "@/features/library/library_index_template";
 import { LIBRARY_PATH } from "@/features/library/library_paths";
 import { build_page_metadata } from "@/shared/seo/build_page_metadata";
@@ -47,7 +48,7 @@ export default function LibraryPage() {
           ]),
         ])}
       />
-      <LibraryIndexTemplate guides={guides} />
+      <LibraryIndexTemplate guides={guides} service_links={build_service_links(get_service_offering_repository().get_all())} />
     </>
   );
 }

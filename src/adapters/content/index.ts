@@ -1,7 +1,9 @@
+import type { ClientProjectRepository } from "@/core/ports/client_project_repository";
 import type { DeveloperProfileRepository } from "@/core/ports/developer_profile_repository";
 import type { LibraryGuideRepository } from "@/core/ports/library_guide_repository";
 import type { ProductBrandRepository } from "@/core/ports/product_brand_repository";
 import type { ServiceOfferingRepository } from "@/core/ports/service_offering_repository";
+import { LocalClientProjectRepository } from "./local_client_project_repository";
 import { LocalDeveloperProfileRepository } from "./local_developer_profile_repository";
 import { LocalLibraryGuideRepository } from "./local_library_guide_repository";
 import { LocalProductBrandRepository } from "./local_product_brand_repository";
@@ -25,4 +27,8 @@ export function get_service_offering_repository(): ServiceOfferingRepository {
 
 export function get_library_guide_repository(): LibraryGuideRepository {
   return new LocalLibraryGuideRepository();
+}
+
+export function get_client_project_repository(): ClientProjectRepository {
+  return new LocalClientProjectRepository();
 }

@@ -1,16 +1,19 @@
 import Link from "next/link";
 import type { LibraryGuide } from "@/core/domain/library_guide";
+import type { NavLink } from "@/shared/config/site_config";
 import { GUIDE_LEVEL_LABELS } from "@/core/domain/library_guide";
 import { OrbitCarousel, type OrbitItem } from "@/shared/ui/orbit_carousel";
-import { Backdrop } from "./backdrop";
 import { LibraryFolder } from "./library_folder";
-import { build_guide_path, format_duration, format_guide_date, get_guide_media, LIBRARY_BACKDROPS } from "./library_paths";
+import { build_guide_path, format_duration, format_guide_date, get_guide_media, LIBRARY_BACKDROPS, LIBRARY_MONITOR_GUIDE } from "./library_paths";
 import { LIBRARY_SECTIONS } from "./library_sections";
 import { LibraryShell } from "./library_shell";
+import { LibraryStage } from "./library_stage";
+import { RetroMonitor } from "./retro_monitor";
 import { ClosingSection } from "./sections/closing_section";
 
 interface LibraryIndexTemplateProps {
   guides: readonly LibraryGuide[];
+  service_links?: readonly NavLink[];
 }
 
 /** Los dos videos de cada guía en el anillo: el video final y su publicación en Instagram. */
@@ -40,36 +43,57 @@ export function build_orbit_items(guides: readonly LibraryGuide[]): OrbitItem[] 
 }
 
 /** kodecol.co/biblioteca: la portada, las carpetas de las secciones y los videos en órbita. */
-export function LibraryIndexTemplate({ guides }: LibraryIndexTemplateProps) {
+export function LibraryIndexTemplate({ guides, service_links }: LibraryIndexTemplateProps) {
   const latest = guides[0];
+  /* En la pantalla del computador va el video final de «Presione uno» (decisión de
+     Cristian, 18 nov. 2026); si esa guía no existiera, la más reciente. */
+  const monitor_guide = guides.find((guide) => guide.slug === LIBRARY_MONITOR_GUIDE) ?? latest;
   const sections = LIBRARY_SECTIONS.filter((section) => section.slug !== "guias" || guides.length > 0);
 
   return (
-    <LibraryShell crumbs={[{ label: "Biblioteca" }]} context="biblioteca">
-      <section className="lib-hero" aria-labelledby="biblioteca-titulo">
-        <Backdrop media={LIBRARY_BACKDROPS.hero} priority />
-        <div className="lib-hero-shade" aria-hidden="true" />
-        <div className="lib-wrap lib-hero-in">
-          <p className="lib-kicker">Biblioteca Kodecol</p>
-          <h1 id="biblioteca-titulo" className="lib-display">
-            Construye con <em className="lib-clave">IA</em>.
-          </h1>
-          <p className="lib-lede">
-            Guías, prompts y recursos para construir con IA. Lo que usamos de verdad, listo para que lo hagas con tu negocio.
-          </p>
-          <div className="lib-hero-meta">
-            <span className="lib-chip">
-              {guides.length} {guides.length === 1 ? "guía" : "guías"}
-            </span>
-            {latest ? <span className="lib-chip">Actualizada el {format_guide_date(latest.published_at)}</span> : null}
-            <span className="lib-chip">Gratis y sin registro</span>
-          </div>
-          <a className="lib-scrollcue" href="#secciones">
-            <i aria-hidden="true" />
+    <LibraryShell crumbs={[{ label: "Biblioteca" }]} context="biblioteca" service_links={service_links} day_hero>
+      <LibraryStage
+        labelled_by="biblioteca-titulo"
+        heading="Construye con IA"
+        backdrop={LIBRARY_BACKDROPS.hero}
+        priority
+        atmosphere="day"
+        word_size="clamp(150px, 26vw, 430px)"
+        word_reveal={0.74}
+        top={<p className="lib-kicker">Biblioteca Kodecol</p>}
+        entry="construye con"
+        word="IA."
+        object={
+          monitor_guide ? (
+            <RetroMonitor
+              video={get_guide_media(monitor_guide.slug).result_video}
+              poster={get_guide_media(monitor_guide.slug).result_poster}
+            />
+          ) : null
+        }
+      >
+        <p className="lib-lede">
+          Guías, prompts y recursos para construir con IA. Lo que usamos de verdad, listo para que lo hagas con tu negocio.
+        </p>
+        <div className="lib-hero-meta">
+          <span className="lib-chip">
+            {guides.length} {guides.length === 1 ? "guía" : "guías"}
+          </span>
+          {latest ? <span className="lib-chip">Actualizada el {format_guide_date(latest.published_at)}</span> : null}
+          <span className="lib-chip">Gratis y sin registro</span>
+        </div>
+        <div className="lib-stage-actions">
+          <Link href="/biblioteca/guias" className="lib-btn lib-btn--menta">
+            Ver las guías
+            <svg className="lib-ico" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </Link>
+          <a className="lib-btn lib-btn--linea" href="#secciones">
             Abre una carpeta
           </a>
         </div>
-      </section>
+      </LibraryStage>
 
       <section id="secciones" className="lib-sec" aria-labelledby="secciones-titulo">
         <div className="lib-wrap">

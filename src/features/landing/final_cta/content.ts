@@ -1,21 +1,21 @@
 import { SITE_CONFIG } from "@/shared/config/site_config";
 
 interface FinalCtaContent {
-  eyebrow: string;
   title: string;
+  entry: string;
+  word: string;
   subtitle: string;
   primary_label: string;
-  secondary_label: string;
   contact_line: string;
 }
 
-/* Copy fiel al mockup (sección #cotizaciones, CTA final). */
+/* Copy del cierre (#cotizaciones). Una sola acción: WhatsApp. */
 export const FINAL_CTA_CONTENT = {
-  eyebrow: "Empecemos",
-  title: "¿Listo para construir futuro?",
+  title: "¿Qué quieres construir?",
+  entry: "¿qué quieres",
+  word: "construir?",
   subtitle:
-    "En un mundo que exige más con menos, ayudamos a tu empresa a evolucionar con inteligencia, propósito y tecnología con propósito.",
+    "Cuéntanos el problema. Desde la primera conversación sales con claridad sobre qué hacer, aunque no sea con nosotros.",
   primary_label: "Hablemos por WhatsApp",
-  secondary_label: "Solicitar cotización",
-  contact_line: `wa.me/${SITE_CONFIG.whatsapp_number} · ${SITE_CONFIG.email}`,
+  contact_line: `WhatsApp +57 ${SITE_CONFIG.whatsapp_display} · Bogotá, Colombia`,
 } as const satisfies FinalCtaContent;

@@ -27,6 +27,9 @@ const CONTENT_PATHS: Readonly<Record<string, string>> = {
   "developers/cristian-velasquez": "content/developers/cristian.json",
   "developers/juan": "content/developers/juan.json",
   "products/axi-connect": "content/products/axi_connect.json",
+  "projects/neon-night": "content/projects/neon_night.json",
+  "projects/the-brothers-inc": "content/projects/the_brothers_inc.json",
+  "projects/ducks-machine": "content/projects/ducks_machine.json",
   "services/automatizacion-de-procesos":
     "content/services/automatizacion_de_procesos.json",
   "services/inteligencia-artificial-a-la-medida":

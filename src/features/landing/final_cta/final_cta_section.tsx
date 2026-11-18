@@ -1,64 +1,52 @@
+import { CANVAS_PALETTE as P } from "@/shared/config/canvas_palette";
 import { SITE_CONFIG } from "@/shared/config/site_config";
 import { Button } from "@/shared/ui/button";
-import { Eyebrow } from "@/shared/ui/eyebrow";
+import { GiantWord } from "@/shared/ui/giant_word";
 import { Reveal } from "@/shared/ui/reveal";
+import { StaticPicture } from "@/shared/ui/static_picture";
+import { VelarisGradient } from "@/shared/ui/velaris_gradient";
 import { WhatsappIcon } from "@/shared/ui/whatsapp_icon";
 import { FINAL_CTA_CONTENT } from "./content";
 
 /**
- * CTA final (#cotizaciones): tarjeta centrada con gradiente radial verde, borde menta
- * y glow pulsante; "Solicitar cotización" es un mailto (fiel al mockup, sin formulario).
+ * CTA final (#cotizaciones): gradiente vivo en los verdes de la marca y el
+ * lockup motion (K-24) con «construir?» pasando detrás del isotipo 3D.
  */
 export function FinalCtaSection() {
   const content = FINAL_CTA_CONTENT;
 
   return (
-    <section
-      id="cotizaciones"
-      aria-labelledby="cotizaciones-title"
-      className="bg-surface-1 px-6 pb-[120px] pt-24 md:pt-[110px]"
-    >
-      <Reveal className="mx-auto max-w-[980px]">
-        <div
-          className="relative overflow-hidden rounded-2xl border border-border-accent px-6 py-14 text-center md:px-10 md:py-[72px]"
-          style={{
-            background:
-              "radial-gradient(120% 140% at 50% 0%, rgba(0,115,92,.55), rgba(1,75,77,.30) 55%, rgba(4,17,15,.6))",
-          }}
-        >
-          {/* Glow superior pulsante */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-[-120px] h-[240px] w-[520px] -translate-x-1/2 animate-kc-pulse rounded-full"
-            style={{
-              background:
-                "radial-gradient(circle, rgba(52,224,161,.30), transparent 70%)",
-            }}
+    <section id="cotizaciones" aria-labelledby="cotizaciones-title" className="px-6 pb-[120px] pt-10">
+      <Reveal className="mx-auto max-w-[1200px]">
+        <div className="relative isolate grid min-h-[560px] place-items-center overflow-hidden rounded-[40px] border border-border-default text-center">
+          <VelarisGradient
+            background={P.bg}
+            colors={[P.green_300, P.green_600, P.green_900, P.cream_200]}
+            className="-z-10"
           />
-
-          <div className="relative flex flex-col items-center gap-6">
-            <Eyebrow>{content.eyebrow}</Eyebrow>
-            <h2
-              id="cotizaciones-title"
-              className="font-sora text-4xl font-bold tracking-[-0.01em] text-text-primary md:text-[52px]"
-            >
+          <div className="grid justify-items-center gap-[22px] px-6 py-[70px]">
+            <h2 id="cotizaciones-title" className="sr-only">
               {content.title}
             </h2>
-            <p className="max-w-[640px] text-lg leading-relaxed text-green-100">
-              {content.subtitle}
-            </p>
-            <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
-              <Button href={SITE_CONFIG.whatsapp_url} external>
-                <WhatsappIcon size={20} />
-                {content.primary_label}
-              </Button>
-              <Button href={`mailto:${SITE_CONFIG.email}`} variant="secondary" external>
-                {content.secondary_label}
-              </Button>
+            <div aria-hidden className="relative grid justify-items-center">
+              <p className="relative z-[3] font-serif text-[clamp(32px,4vw,56px)] italic leading-none tracking-[-0.02em] text-cream-ink">
+                {content.entry}
+              </p>
+              <GiantWord text={content.word} className="z-[1] mt-[0.04em] text-[clamp(76px,15vw,220px)]" />
+              <StaticPicture
+                src_base="/images/logo/isotipo-3d-trim"
+                alt=""
+                width={382}
+                height={492}
+                className="relative z-[2] -mt-[clamp(60px,11vw,170px)] h-auto w-[clamp(120px,13vw,190px)] animate-kc-float drop-shadow-[0_30px_60px_rgb(0_0_0/.6)]"
+              />
             </div>
-            <p className="mt-4 font-mono text-[13px] text-text-brandmark">
-              {content.contact_line}
-            </p>
+            <p className="max-w-[58ch] text-lg leading-relaxed text-green-100">{content.subtitle}</p>
+            <Button href={SITE_CONFIG.whatsapp_url} external>
+              <WhatsappIcon size={20} />
+              {content.primary_label}
+            </Button>
+            <p className="select-all font-mono text-[13px] text-text-brandmark">{content.contact_line}</p>
           </div>
         </div>
       </Reveal>

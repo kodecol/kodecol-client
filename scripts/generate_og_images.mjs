@@ -152,10 +152,11 @@ async function main() {
   );
   const logo = await sharp(imagotipo).resize({ width: 220 }).png().toBuffer();
 
-  const [services, brands, profiles] = await Promise.all([
+  const [services, brands, profiles, projects] = await Promise.all([
     read_json_dir("content/services"),
     read_json_dir("content/products"),
     read_json_dir("content/developers"),
+    read_json_dir("content/projects"),
   ]);
 
   /* ── Índices ── */
@@ -198,6 +199,37 @@ async function main() {
       logo,
     ),
   );
+
+  await write_png(
+    `${og_dir}/proyectos.png`,
+    await render_card(
+      {
+        font_faces,
+        eyebrow: "Proyectos",
+        title: "Hecho aquí. Funcionando allá afuera.",
+        subtitle: "Sitios y productos que Kodecol construyó para clientes reales.",
+        accent: BRAND.mint_500,
+      },
+      logo,
+    ),
+  );
+
+  /* ── Proyectos de clientes ── */
+  for (const project of projects) {
+    await write_png(
+      `${og_dir}/proyectos-${project.slug}.png`,
+      await render_card(
+        {
+          font_faces,
+          eyebrow: `${project.sector} · ${project.city}`,
+          title: project.name,
+          subtitle: `${project.detail.headline_lead} ${project.detail.headline_accent}`,
+          accent: BRAND.mint_500,
+        },
+        logo,
+      ),
+    );
+  }
 
   /* ── Servicios ── */
   for (const service of services) {

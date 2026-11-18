@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/shared/lib/cn";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "ink";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps {
@@ -21,6 +21,8 @@ const variant_classes: Record<ButtonVariant, string> = {
     "bg-glass-fill text-text-primary border border-border-default backdrop-blur-[16px] hover:border-border-accent hover:bg-surface-3/60 hover:-translate-y-0.5",
   ghost:
     "text-text-primary hover:text-mint-500",
+  /* CTA primario sobre la atmósfera Cielo: pill petróleo con texto claro (DESIGN.md §7). */
+  ink: "bg-ink-petrol text-cream-50 hover:-translate-y-0.5 hover:bg-green-950",
 };
 
 const size_classes: Record<ButtonSize, string> = {
@@ -29,7 +31,7 @@ const size_classes: Record<ButtonSize, string> = {
   lg: "px-9 py-4.5 text-base",
 };
 
-/** Botón pill del sistema: primario (menta), secundario (glass) o ghost. Siempre es un enlace. */
+/** Botón pill del sistema: primario (menta), secundario (glass), ghost o tinta (Cielo). Siempre es un enlace. */
 export function Button({
   href,
   children,

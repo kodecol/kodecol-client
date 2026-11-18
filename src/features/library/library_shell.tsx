@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { SITE_CONFIG } from "@/shared/config/site_config";
-import { KodecolLogo } from "@/shared/ui/kodecol_mark";
+import type { NavLink } from "@/shared/config/site_config";
+import { Footer } from "@/shared/ui/footer";
+import { Navbar } from "@/shared/ui/navbar";
 import { MAIN_CONTENT_ID } from "@/shared/ui/skip_link";
 import { LibraryEffects } from "./library_effects";
-import { GUIDES_PATH, LIBRARY_PATH } from "./library_paths";
-import { TrackedLink } from "./tracked_link";
+import { LIBRARY_PATH } from "./library_paths";
 
 export interface Crumb {
   label: string;
@@ -17,87 +17,52 @@ interface LibraryShellProps {
   /** Nota legal de la página (marcas de terceros). */
   legal?: string;
   progress?: boolean;
-  /** Para la medición del botón de WhatsApp de la barra. */
+  /** Para la medición (se conserva por compatibilidad con las plantillas). */
   context: string;
+  /** Columna de servicios del footer del sitio. */
+  service_links?: readonly NavLink[];
+  /** El héroe es de día (cielo claro): la miga de pan va en tinta oscura. */
+  day_hero?: boolean;
 }
 
 const LEGAL_DEFAULT =
   "Claude, Claude Opus y Claude Fable son marcas de Anthropic. Kodecol no está afiliada a Anthropic ni a las demás herramientas que mencionamos: las nombramos porque son las que usamos de verdad.";
 
 /**
- * Marco de la Biblioteca: barra propia con la miga de pan, efectos y pie.
- * Aquí manda la estética «tecnología + naturaleza»; fuera de /biblioteca el
- * sitio sigue con su sistema de siempre.
+ * Marco de la Biblioteca: el mismo navbar y footer del resto del sitio (la
+ * Biblioteca está en el menú), la miga de pan bajo el navbar y los efectos
+ * propios de la sección (grano, barra de progreso de lectura).
  */
-export function LibraryShell({ crumbs, children, legal = LEGAL_DEFAULT, progress = false, context }: LibraryShellProps) {
+export function LibraryShell({ crumbs, children, legal = LEGAL_DEFAULT, progress = false, service_links, day_hero = false }: LibraryShellProps) {
   return (
     <div className="lib">
       <LibraryEffects progress={progress} />
-      <header className="lib-top">
-        <div className="lib-wrap lib-top-in">
-          <Link href="/" aria-label="Kodecol, inicio" className="flex shrink-0">
-            <KodecolLogo />
-          </Link>
-          <nav aria-label="Ruta" className="lib-crumbs">
-            <span className="sep" aria-hidden="true">
-              /
-            </span>
-            {crumbs.map((crumb, index) => {
-              const last = index === crumbs.length - 1;
-              /* En el celular solo se ven la Biblioteca y la página actual. */
-              const hide = !last && index > 0 ? "hide-sm" : undefined;
-              return (
-                <span key={crumb.label} className={`contents ${hide ?? ""}`}>
-                  {last || !crumb.href ? (
-                    <span aria-current={last ? "page" : undefined} className={hide}>
-                      {crumb.label}
-                    </span>
-                  ) : (
-                    <Link href={crumb.href} className={hide}>
-                      {crumb.label}
-                    </Link>
-                  )}
-                  {!last ? (
-                    <span className={`sep ${hide ?? ""}`} aria-hidden="true">
-                      /
-                    </span>
-                  ) : null}
+      <Navbar current_href={LIBRARY_PATH} />
+      <nav aria-label="Ruta" className={day_hero ? "lib-crumbs lib-crumbs-bar lib-crumbs-bar--day" : "lib-crumbs lib-crumbs-bar"}>
+        <div className="lib-wrap">
+          <Link href="/">Inicio</Link>
+          {crumbs.map((crumb, index) => {
+            const last = index === crumbs.length - 1;
+            return (
+              <span key={crumb.label} className="contents">
+                <span className="sep" aria-hidden="true">
+                  /
                 </span>
-              );
-            })}
-          </nav>
-          <TrackedLink
-            className="lib-top-cta"
-            href={SITE_CONFIG.whatsapp_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            event_name="biblioteca_whatsapp"
-            event_params={{ origen: `barra-${context}` }}
-            aria-label="Escríbenos por WhatsApp"
-          >
-            <svg className="lib-ico" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z" />
-            </svg>
-            <span>Escríbenos</span>
-          </TrackedLink>
+                {last || !crumb.href ? (
+                  <span aria-current={last ? "page" : undefined}>{crumb.label}</span>
+                ) : (
+                  <Link href={crumb.href}>{crumb.label}</Link>
+                )}
+              </span>
+            );
+          })}
         </div>
-      </header>
+      </nav>
 
       <main id={MAIN_CONTENT_ID}>{children}</main>
 
-      <footer className="lib-wrap lib-foot">
-        <div className="lib-foot-row">
-          <KodecolLogo />
-          <nav aria-label="Biblioteca">
-            <Link href={LIBRARY_PATH}>Biblioteca</Link>
-            <Link href={GUIDES_PATH}>Guías</Link>
-            <Link href="/servicios">Servicios</Link>
-            <Link href="/">Kodecol</Link>
-          </nav>
-        </div>
-        <p className="lib-legal">{legal}</p>
-        <p>© 2026 {SITE_CONFIG.legal.business_name}</p>
-      </footer>
+      <p className="lib-wrap lib-legal">{legal}</p>
+      <Footer service_links={service_links} />
     </div>
   );
 }

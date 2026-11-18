@@ -33,7 +33,7 @@ export function Navbar({ current_href }: NavbarProps) {
           <KodecolLogo />
         </Link>
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-7 lg:flex">
           {/* Una navegación es una lista: así el lector anuncia cuántos destinos hay. */}
           <ul className="flex items-center gap-7">
             {SITE_CONFIG.nav_links.map((link) => {
@@ -63,7 +63,7 @@ export function Navbar({ current_href }: NavbarProps) {
             rel="noopener noreferrer"
             className="ml-2 inline-flex min-h-11 items-center gap-1 rounded-full bg-mint-500 px-6 py-2.5 text-sm font-semibold text-text-on-accent shadow-glow-accent-strong transition-[background-color,transform] duration-fast ease-kodecol hover:-translate-y-0.5 hover:bg-mint-400"
           >
-            Contáctanos <span aria-hidden>→</span>
+            Cotiza por WhatsApp <span aria-hidden>→</span>
           </a>
         </div>
 

@@ -1,5 +1,6 @@
 import type { BrandDetail } from "@/core/domain/product_brand";
 import { Reveal } from "@/shared/ui/reveal";
+import { BrandClip } from "../brand_clip";
 import { BrandSectionHeading } from "./brand_section_heading";
 
 interface PrinciplesSectionProps {
@@ -31,13 +32,16 @@ export function PrinciplesSection({ principles }: PrinciplesSectionProps) {
 
         <div className="grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:gap-16">
           <Reveal>
-            <p className="max-w-[20ch] font-sora text-[22px] font-semibold leading-[1.26] tracking-[-0.02em] text-[var(--brand-ink)] md:text-[32px]">
+            <p className="max-w-[22ch] font-serif text-[clamp(26px,2.8vw,38px)] italic leading-[1.2] text-[var(--brand-ink)]">
               {principles.quote_lead}
               <span className="text-[var(--brand-accent)]">
                 {principles.quote_accent}
               </span>
               .
             </p>
+            {principles.clip ? (
+              <BrandClip clip={principles.clip} className="mt-8 rounded-2xl border border-[var(--brand-line)]" />
+            ) : null}
           </Reveal>
 
           <ol className="flex flex-col">

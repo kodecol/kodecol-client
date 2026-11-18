@@ -1,5 +1,12 @@
 import { cn } from "@/shared/lib/cn";
 
+/** Fuente alternativa por media query (dirección de arte: otra imagen en celular). */
+export interface StaticPictureSource {
+  media: string;
+  /** Ruta SIN extensión, con sus variantes AVIF/WebP generadas. */
+  src_base: string;
+}
+
 interface StaticPictureProps {
   /** Ruta SIN extensión: `/images/team/cristian_hero`. */
   src_base: string;
@@ -16,6 +23,8 @@ interface StaticPictureProps {
   fill?: boolean;
   /** Para efectos que no tienen clase de Tailwind, como `mask-image`. */
   style?: React.CSSProperties;
+  /** Imágenes alternativas por media query, en orden de prioridad. */
+  sources?: readonly StaticPictureSource[];
 }
 
 /**
@@ -39,12 +48,27 @@ export function StaticPicture({
   className,
   fill = false,
   style,
+  sources = [],
 }: StaticPictureProps) {
-  const srcset = (extension: string) =>
-    `${src_base}.${extension} 1x, ${src_base}@2x.${extension} 2x`;
+  const srcset = (extension: string, base = src_base) =>
+    `${base}.${extension} 1x, ${base}@2x.${extension} 2x`;
 
   return (
     <picture>
+      {sources.map((source) => [
+        <source
+          key={`${source.media}-avif`}
+          media={source.media}
+          type="image/avif"
+          srcSet={srcset("avif", source.src_base)}
+        />,
+        <source
+          key={`${source.media}-webp`}
+          media={source.media}
+          type="image/webp"
+          srcSet={srcset("webp", source.src_base)}
+        />,
+      ])}
       <source type="image/avif" srcSet={srcset("avif")} />
       <source type="image/webp" srcSet={srcset("webp")} />
       <img

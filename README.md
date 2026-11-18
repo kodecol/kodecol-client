@@ -1,16 +1,17 @@
 # Kodecol Web
 
-Sitio corporativo de **Kodecol** — *Tecnología con proposito.* Landing page + portafolios
+Sitio corporativo de **Kodecol** — *Tecnología con propósito.* Landing page + portafolios
 dinámicos de la crew, construido con **Next.js 15 (App Router) + TypeScript + Tailwind CSS 4**.
 
 ## Documentos clave
 
 | Documento | Qué contiene |
 |---|---|
-| [`architecture.md`](./architecture.md) | Reglas del proyecto (leer **siempre** antes de cualquier feature) |
-| [`DESIGN.md`](./DESIGN.md) | Filosofía y reglas de diseño (dark premium, glass, bento) |
+| [`architecture.md`](./docs/architecture.md) | Reglas del proyecto (leer **siempre** antes de cualquier feature) |
+| [`docs/business/KNOWLEDGE_BASE.md`](./docs/business/KNOWLEDGE_BASE.md) | Negocio: qué hace Kodecol, qué vende, filosofía, concepto de marca y voz |
+| [`DESIGN.md`](./docs/DESIGN.md) | Filosofía y reglas de diseño (híbrido orgánico: naturaleza + tecnología retro, glass, bento) |
 | [`docs/DESIGN-SYSTEM.md`](./docs/DESIGN-SYSTEM.md) | Valores exactos de los tokens |
-| [`architecture.md` §10](./architecture.md) | Reglas de SEO técnico, datos estructurados y assets |
+| [`architecture.md` §10](./docs/architecture.md) | Reglas de SEO técnico, datos estructurados y assets |
 
 ## Arquitectura (resumen)
 

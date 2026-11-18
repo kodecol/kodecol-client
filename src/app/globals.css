@@ -26,6 +26,17 @@
   --color-mint-600: #1fc98c;
   --color-mint-700: #18a876;
 
+  /* ── Atmósfera Cielo (dirección orgánica, DESIGN-SYSTEM §11) ── */
+  --color-sky-50: #f3f7f6;
+  --color-sky-100: #e4eeec;
+  --color-sky-200: #c9dcda;
+  --color-cream-50: #faf7f0;
+  --color-cream-200: #ede6d6;
+  --color-ink-petrol: #0e2a26;
+  --color-ink-petrol-muted: #3f5a55;
+  /* Crema de la tipografía motion (K-24): la palabra gigante y las entradas */
+  --color-cream-ink: #f6f2e8;
+
   /* ── Superficies dark con matiz verde ──────────────────── */
   --color-bg: #04110f;
   --color-surface-1: #081a16;
@@ -60,6 +71,10 @@
   /* ── Tipografía ────────────────────────────────────────── */
   --font-sora: var(--font-sora), system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-poppins: var(--font-poppins), system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Titulares y palabra gigante (K-24) */
+  --font-display: var(--font-display), system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Entradas y remates en itálica: condimento, nunca cuerpo (DESIGN.md §8) */
+  --font-serif: var(--font-serif), "Iowan Old Style", Georgia, serif;
 
   /* ── Radios ────────────────────────────────────────────── */
   --radius-sm: 8px;
@@ -128,6 +143,25 @@
   /* Deriva de las columnas del campo 3D de marcas propias */
   --animate-kc-drift-down: kc-drift-down 10s ease-in-out infinite alternate;
   --animate-kc-drift-up: kc-drift-up 15s ease-in-out infinite alternate;
+  /* Motion editorial (K-24) */
+  --animate-kc-blink: kc-blink 1.6s ease-in-out infinite;
+  --animate-kc-ping: kc-ping 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+
+  @keyframes kc-blink {
+    50% {
+      opacity: 0.35;
+    }
+  }
+  @keyframes kc-ping {
+    from {
+      transform: scale(0.8);
+      opacity: 0.9;
+    }
+    to {
+      transform: scale(2.2);
+      opacity: 0;
+    }
+  }
 
   @keyframes kc-pulse {
     0%,
@@ -227,6 +261,47 @@ body {
   transform: translateY(0);
 }
 
+/*
+  Palabra gigante (estética motion Kodecol, K-24): una capa desenfocada y otra
+  nítida enmascarada al centro. La palabra va ENTRE el fondo y el objeto
+  recortado de la escena, así que pasa "detrás" del computador o de la persona.
+  El desenfoque se anima con --kc-giant-blur (shared/ui/giant_word.tsx).
+*/
+@property --kc-giant-blur {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 11px;
+}
+.kc-giant {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 0.86;
+  color: var(--color-cream-ink);
+}
+.kc-giant__blur {
+  display: block;
+  filter: blur(var(--kc-giant-blur));
+  opacity: 0.88;
+}
+.kc-giant__sharp {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 4%, #000 33%, #000 67%, transparent 96%);
+  mask-image: linear-gradient(90deg, transparent 4%, #000 33%, #000 67%, transparent 96%);
+}
+.kc-giant[data-state="hidden"] {
+  opacity: 0;
+  --kc-giant-blur: 35px;
+}
+.kc-giant[data-state="shown"] {
+  transition:
+    opacity 1.6s var(--ease-kodecol),
+    --kc-giant-blur 1.6s var(--ease-kodecol);
+}
+
 /* Accesibilidad: sin animaciones si el usuario reduce movimiento */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -241,5 +316,9 @@ body {
   [data-reveal] {
     opacity: 1;
     transform: none;
+  }
+  .kc-giant[data-state="hidden"] {
+    opacity: 1;
+    --kc-giant-blur: 11px;
   }
 }

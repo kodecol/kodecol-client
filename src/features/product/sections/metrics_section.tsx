@@ -1,67 +1,66 @@
-import type { BrandDetail } from "@/core/domain/product_brand";
+import type { ProductBrand } from "@/core/domain/product_brand";
 import { cn } from "@/shared/lib/cn";
 import { Reveal } from "@/shared/ui/reveal";
+import { WarpCarousel } from "@/shared/ui/warp_carousel";
+import { build_brand_warp_cards } from "../brand_warp_cards";
 import { BrandSectionHeading } from "./brand_section_heading";
 
 interface MetricsSectionProps {
-  metrics: BrandDetail["metrics"];
+  brand: ProductBrand;
 }
 
-/** Bento de cifras de ingeniería: lo que un folleto de producto nunca muestra. */
-export function MetricsSection({ metrics }: MetricsSectionProps) {
+/**
+ * Cifras de ingeniería: lo que un folleto de producto nunca muestra. Las
+ * destacadas giran en el carrusel warp con la paleta de la marca; todas van
+ * además como lista de definición (el canvas es decorativo). Al lado, los
+ * canales con su estado real, sin prometer lo que no hay.
+ */
+export function MetricsSection({ brand }: MetricsSectionProps) {
+  const { metrics, channels } = brand.detail;
+
   return (
-    <section
-      aria-labelledby="metricas-title"
-      className="px-6 py-24"
-    >
-      <div className="mx-auto max-w-[1160px]">
-        <BrandSectionHeading
-          id="metricas-title"
-          eyebrow={metrics.eyebrow}
-          title={metrics.title}
-          description={metrics.description}
-        />
-
-        {/*
-          Un <dl> solo admite dt/dd, opcionalmente envueltos en UN <div>. Antes la
-          cadena era dl > div(Reveal) > div > dt,dd — dos niveles — así que la
-          asociación término/definición no era válida. Ahora la tarjeta es el
-          propio Reveal (que ya renderiza un div) y no hay otro div dentro.
-
-          El label tampoco se duplica: era sr-only en el <dt> y visible en un <p>,
-          de modo que un lector de pantalla lo anunciaba dos veces. Ahora el <dt>
-          es el label visible y el orden visual (cifra arriba) lo da `order`.
-        */}
-        <dl className="grid grid-cols-2 gap-3.5 md:grid-cols-4">
-          {metrics.items.map((metric, index) => (
-            <Reveal
-              key={metric.label}
-              delay={index * 50}
-              className={cn(
-                "flex h-full flex-col gap-1.5 rounded-lg border p-5",
-                metric.featured
-                  ? "border-[var(--brand-accent)]/30 bg-[var(--brand-accent)]/10"
-                  : "border-[var(--brand-line)] bg-[var(--brand-surface)]",
-                /* La última celda ocupa el resto de la fila para cerrar la grilla */
-                index === metrics.items.length - 1 && "col-span-2",
-              )}
-            >
-              <dt className="order-2 text-xs leading-snug text-[var(--brand-ink-muted)]">
-                {metric.label}
-              </dt>
-              <dd
-                className={cn(
-                  "order-1 font-mono text-[28px] font-medium leading-none tabular-nums md:text-[36px]",
-                  metric.featured
-                    ? "text-[var(--brand-accent)]"
-                    : "text-[var(--brand-ink)]",
-                )}
-              >
-                {metric.value}
-              </dd>
-            </Reveal>
-          ))}
-        </dl>
+    <section aria-labelledby="metricas-title" className="px-6 py-24">
+      <div className="mx-auto grid max-w-[1160px] items-center gap-12 lg:grid-cols-[.8fr_1.2fr]">
+        <div>
+          <BrandSectionHeading
+            id="metricas-title"
+            eyebrow={metrics.eyebrow}
+            title={metrics.title}
+            description={metrics.description}
+          />
+          {channels && channels.length > 0 ? (
+            <ul className="-mt-4 grid gap-2.5">
+              {channels.map((channel) => (
+                <li
+                  key={channel.name}
+                  className="flex justify-between gap-3 rounded-[14px] border border-[var(--brand-line)] bg-[var(--brand-surface)] px-[18px] py-3.5 text-sm text-[var(--brand-ink)]"
+                >
+                  {channel.name}
+                  <span className={cn("text-xs", channel.live ? "text-[var(--brand-accent)]" : "text-[var(--brand-ink-dim)]")}>
+                    {channel.status}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+        <Reveal>
+          <WarpCarousel
+            cards={build_brand_warp_cards(brand)}
+            background={brand.theme.ground}
+            aria_label={`${brand.name} en cifras`}
+            className="aspect-[5/4] w-full rounded-[28px] max-lg:aspect-auto max-lg:h-[460px]"
+          />
+          {/* Un <dl> solo admite dt/dd, opcionalmente envueltos en UN div. */}
+          <dl className="sr-only">
+            {metrics.items.map((metric) => (
+              <div key={metric.label}>
+                <dt>{metric.label}</dt>
+                <dd>{metric.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
       </div>
     </section>
   );

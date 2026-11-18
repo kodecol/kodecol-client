@@ -32,6 +32,8 @@ test.describe("responsive", () => {
       "/servicios/automatizacion-de-procesos",
       "/marcas",
       "/marcas/axi-connect",
+      "/proyectos",
+      "/proyectos/the-brothers-inc",
       "/equipo",
     ]) {
       await page.goto(path);

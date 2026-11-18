@@ -20,6 +20,50 @@ export interface BrandTheme {
   ink_muted: string;
   ink_dim: string;
   line: string;
+  /** Acentos secundarios de la marca (en Axi: violeta y ámbar de la α). */
+  accent_2?: string;
+  accent_3?: string;
+}
+
+/** Imagen de contenido: ruta SIN extensión, con variantes AVIF/WebP generadas. */
+export interface BrandImage {
+  src_base: string;
+  fallback_extension: "png" | "jpg";
+  width: number;
+  height: number;
+  alt: string;
+}
+
+/** Clip corto de la interfaz real (mp4 en bucle, sin audio). */
+export interface BrandClip {
+  src: string;
+  poster: string;
+  caption: string;
+}
+
+/**
+ * Cómo se presenta la marca en la landing de Kodecol: una escena de la pradera
+ * con el producto (la palabra gigante pasa detrás), una prueba real y las cifras
+ * que van en el carrusel.
+ */
+export interface BrandShowcase {
+  scene: {
+    background: BrandImage;
+    foreground: BrandImage;
+    entry: string;
+    word: string;
+  };
+  headline_lead: string;
+  headline_accent: string;
+  summary: string;
+  proof: {
+    label: string;
+    steps: readonly { time: string; label: string }[];
+    footnote: string;
+  };
+  /** Valores de `detail.metrics.items` que van en el carrusel, en orden. */
+  metric_values: readonly string[];
+  metrics_caption: string;
 }
 
 export interface BrandCta {
@@ -66,6 +110,7 @@ export interface BrandTeaser {
   summary: string;
   chips: readonly string[];
   cta_label: string;
+  showcase?: BrandShowcase;
 }
 
 /** El contenido de la página de detalle, ya en la marca del producto. */
@@ -76,11 +121,31 @@ export interface BrandDetail {
   description: string;
   chips: readonly string[];
   primary_cta: BrandCta;
+  /** Captura real del producto en el héroe. */
+  hero_capture?: BrandImage & { caption: string };
+  /** Notas flotantes sobre la captura (lo que pasa en una venta). */
+  hero_notes?: readonly { title: string; description: string }[];
+  /** Una venta real, paso a paso. */
+  journey?: BrandSection & {
+    description: string;
+    steps: readonly { time: string; text: string }[];
+  };
+  /** Los pilares del producto, cada uno con su clip de la interfaz. */
+  pillars?: readonly {
+    label: string;
+    tone: "accent" | "accent_2" | "accent_3";
+    title: string;
+    description: string;
+    clip: BrandClip;
+  }[];
+  /** Canales y su estado real (sin prometer lo que no hay). */
+  channels?: readonly { name: string; status: string; live: boolean }[];
   origin: BrandSection & { paragraphs: readonly string[] };
   principles: BrandSection & {
     quote_lead: string;
     quote_accent: string;
     items: readonly BrandPrinciple[];
+    clip?: BrandClip;
   };
   metrics: BrandSection & {
     description: string;

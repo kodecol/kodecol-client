@@ -1,0 +1,186 @@
+{
+  "slug": "neon-night",
+  "order": 1,
+  "name": "Neon Night",
+  "sector": "E-commerce de lujo",
+  "city": "Bogotá",
+  "year": "2026",
+  "status": "live",
+  "site_url": "https://neonightonline.com",
+  "scene": {
+    "background": {
+      "src_base": "/images/scenes/projects_neon-night",
+      "fallback_extension": "jpg",
+      "width": 1920,
+      "height": 1200,
+      "alt": ""
+    },
+    "foreground": {
+      "src_base": "/images/scenes/projects_neon-night_fg",
+      "fallback_extension": "png",
+      "width": 1920,
+      "height": 1200,
+      "alt": ""
+    },
+    "entry": "un reloj de lujo no se compra en una página",
+    "word": "barata.",
+    "remate": "Por eso esta se ve premium.",
+    "word_top": 26
+  },
+  "teaser": {
+    "accent": "a un clic.",
+    "summary": "Una tienda de lujo que se ve tan cuidada como lo que vende, con pago en línea y un panel propio para operarla.",
+    "bullets": [
+      "Catálogo por líneas con filtros de marca, precio y disponibilidad",
+      "Checkout con precios recalculados en el servidor y pago con Bold",
+      "Panel de administración propio: catálogo, pedidos y pagos"
+    ],
+    "chips": [
+      "Next.js",
+      "Pagos con Bold",
+      "SEO técnico"
+    ]
+  },
+  "detail": {
+    "headline_lead": "Lujo verificado,",
+    "headline_accent": "a un clic.",
+    "summary": "Relojes, joyas y perfumes de las grandes casas, verificados uno por uno. Una tienda que se ve tan cuidada como lo que vende, con pagos en línea y un panel propio para operarla.",
+    "desktop_shots": [
+      {
+        "src_base": "/images/projects/neon-night/desktop_hero",
+        "fallback_extension": "jpg",
+        "width": 3200,
+        "height": 2000,
+        "alt": "Portada de Neon Night con un Rolex Day-Date a pantalla completa"
+      },
+      {
+        "src_base": "/images/projects/neon-night/desktop_2",
+        "fallback_extension": "jpg",
+        "width": 3200,
+        "height": 2000,
+        "alt": "Las tres líneas de Neon Night: relojería, joyería y perfumería"
+      },
+      {
+        "src_base": "/images/projects/neon-night/desktop_3",
+        "fallback_extension": "jpg",
+        "width": 3200,
+        "height": 2000,
+        "alt": "Selección de piezas con precio y botón para añadir a la bolsa"
+      }
+    ],
+    "mobile_shot": {
+      "src_base": "/images/projects/neon-night/mobile_hero",
+      "fallback_extension": "jpg",
+      "width": 1170,
+      "height": 2532,
+      "alt": "Portada de Neon Night en el celular"
+    },
+    "callouts": [
+      {
+        "side": "left",
+        "x": 52,
+        "y": 38,
+        "kicker": "Fotografía",
+        "title": "La pieza manda",
+        "description": "Foto a pantalla completa: el reloj se ve antes que cualquier texto."
+      },
+      {
+        "side": "left",
+        "x": 9,
+        "y": 88,
+        "kicker": "Conversión",
+        "title": "Dos caminos, nada más",
+        "description": "Ver la pieza o explorar la colección. Sin menú de veinte opciones."
+      },
+      {
+        "side": "right",
+        "x": 95,
+        "y": 4,
+        "kicker": "Interfaz",
+        "title": "La bolsa siempre visible",
+        "description": "El contador acompaña toda la visita."
+      },
+      {
+        "side": "right",
+        "x": 21,
+        "y": 79,
+        "kicker": "Copy",
+        "title": "La promesa en una línea",
+        "description": "«Verificados uno por uno y a un precio justo»: confianza antes del precio."
+      }
+    ],
+    "crop": {
+      "x": 2,
+      "y": 62,
+      "width": 40,
+      "height": 32,
+      "label": "zona de decisión"
+    },
+    "mobile_notes": [
+      {
+        "title": "El producto, primero",
+        "description": "La foto ocupa el pliegue; el texto entra debajo."
+      },
+      {
+        "title": "Pensada para el pulgar",
+        "description": "Las dos acciones quedan en la mitad baja de la pantalla."
+      },
+      {
+        "title": "Bolsa en el encabezado",
+        "description": "Comprar nunca está a más de un toque."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Descubre",
+        "description": "Portada editorial con la pieza recién llegada."
+      },
+      {
+        "title": "Elige",
+        "description": "Relojería, joyería y perfumería, cada línea con su propio criterio."
+      },
+      {
+        "title": "Compra",
+        "description": "Precio visible, añadir a la bolsa y pago con Bold."
+      }
+    ],
+    "spec": [
+      {
+        "label": "Plataforma",
+        "value": "Next.js 15 · React 19 · TypeScript estricto"
+      },
+      {
+        "label": "Arquitectura",
+        "value": "Cuatro capas con fronteras verificadas por lint"
+      },
+      {
+        "label": "Pagos",
+        "value": "Bold: tarjetas, PSE, Nequi, Botón Bancolombia y Daviplata"
+      },
+      {
+        "label": "Operación",
+        "value": "Panel propio: catálogo, pedidos, pagos y ajustes"
+      },
+      {
+        "label": "Datos",
+        "value": "MongoDB y Cloudinary para las fotos"
+      },
+      {
+        "label": "SEO",
+        "value": "Datos estructurados de producto, sitemap y vista previa al compartir"
+      },
+      {
+        "label": "Legal",
+        "value": "Términos, privacidad (Ley 1581) y garantía (Ley 1480)"
+      },
+      {
+        "label": "Calidad",
+        "value": "Pruebas con Vitest, Playwright y axe"
+      }
+    ]
+  },
+  "seo": {
+    "title": "Neon Night: e-commerce de lujo verificado",
+    "description": "Cómo construimos Neon Night: tienda de relojes, joyas y perfumes de lujo en Bogotá con pago con Bold, panel propio y SEO técnico desde el día uno."
+  }
+}

@@ -28,6 +28,41 @@ const theme_schema = z.object({
   ink_muted: hex,
   ink_dim: hex,
   line: hex,
+  accent_2: hex.optional(),
+  accent_3: hex.optional(),
+});
+
+const image_schema = z.object({
+  src_base: asset_src.refine((v) => !/\.(png|jpe?g|webp|avif)$/i.test(v), "src_base va SIN extensión"),
+  fallback_extension: z.enum(["png", "jpg"]),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+  alt: z.string(),
+});
+
+const clip_schema = z.object({
+  src: z.string().startsWith("/videos/", "los clips viven en public/videos/").endsWith(".mp4"),
+  poster: z.string().startsWith("/videos/"),
+  caption: text,
+});
+
+const showcase_schema = z.object({
+  scene: z.object({
+    background: image_schema,
+    foreground: image_schema,
+    entry: text,
+    word: text,
+  }),
+  headline_lead: text,
+  headline_accent: text,
+  summary: text,
+  proof: z.object({
+    label: text,
+    steps: z.array(z.object({ time: text, label: text })).min(2),
+    footnote: text,
+  }),
+  metric_values: z.array(text).min(3),
+  metrics_caption: text,
 });
 
 const cta_schema = z.object({
@@ -69,6 +104,7 @@ const teaser_schema = z.object({
   summary: text,
   chips: z.array(text).min(1),
   cta_label: text,
+  showcase: showcase_schema.optional(),
 });
 
 const detail_schema = z.object({
@@ -78,6 +114,27 @@ const detail_schema = z.object({
   description: text,
   chips: z.array(text).min(1),
   primary_cta: cta_schema,
+  hero_capture: image_schema.extend({ caption: text }).optional(),
+  hero_notes: z.array(z.object({ title: text, description: text })).optional(),
+  journey: z
+    .object({
+      ...section,
+      description: text,
+      steps: z.array(z.object({ time: text, text })).min(2),
+    })
+    .optional(),
+  pillars: z
+    .array(
+      z.object({
+        label: text,
+        tone: z.enum(["accent", "accent_2", "accent_3"]),
+        title: text,
+        description: text,
+        clip: clip_schema,
+      }),
+    )
+    .optional(),
+  channels: z.array(z.object({ name: text, status: text, live: z.boolean() })).optional(),
   origin: z.object({
     ...section,
     paragraphs: z.array(text).min(1),
@@ -87,6 +144,7 @@ const detail_schema = z.object({
     quote_lead: text,
     quote_accent: text,
     items: z.array(principle_schema).min(1),
+    clip: clip_schema.optional(),
   }),
   metrics: z.object({
     ...section,

@@ -5,15 +5,18 @@ export interface HeroCta {
 }
 
 export interface HeroContent {
-  // eyebrow: string;
-  /** El titular se parte en dos: la cola lleva gradiente menta (clip a texto). */
-  title_lead: string;
-  title_accent: string;
-  /** Párrafo con una palabra enfatizada en blanco. */
-  description_lead: string;
-  description_emphasis: string;
-  description_tail: string;
+  /** El titular completo, para el <h1> (los lectores de pantalla y Google). */
+  title: string;
+  /** La misma frase, partida en el lockup motion (K-24): entrada · palabra · remate. */
+  entry: string;
+  word: string;
+  remate: string;
   primary_cta: HeroCta;
   secondary_cta: HeroCta;
   microcopy: string;
+  /** Lo que hacemos, en una frase, con un tramo enfatizado. */
+  intro_lead: string;
+  intro_emphasis: string;
+  intro_tail: string;
+  band_label: string;
 }

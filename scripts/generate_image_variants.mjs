@@ -31,7 +31,40 @@ const FIXED_SOURCES = [
   /* Miembros de la crew sin ficha propia: no tienen JSON en content/developers/,
      así que read_profile_photos() no los ve y hay que listarlos aquí. */
   { path: "public/images/team/juan_carlos_lopez_v2.png", width: 460 },
+  /* Escenas de la pradera (renders 3D propios, en capas: fondo + objeto con alfa).
+     Fondo y recorte deben tener el MISMO ancho de variante para que calcen. */
+  { path: "public/images/scenes/hero_desktop.jpg", width: 1600 },
+  { path: "public/images/scenes/hero_desktop_fg.png", width: 1600 },
+  { path: "public/images/scenes/hero_mobile.jpg", width: 720 },
+  { path: "public/images/scenes/hero_mobile_fg.png", width: 720 },
+  { path: "public/images/scenes/sky_desktop.jpg", width: 1600 },
+  { path: "public/images/scenes/cta_desktop.jpg", width: 1600 },
+  { path: "public/images/scenes/axi_phone.jpg", width: 1440 },
+  { path: "public/images/scenes/axi_phone_fg.png", width: 1440 },
+  /* El computador retro recortado (alfa) de las escenas de la Biblioteca. */
+  { path: "public/images/scenes/crt_frontal.png", width: 560 },
+  /* Captura real de Axi (negocio y datos de ejemplo) en la página de la marca. */
+  { path: "public/images/products/axi-connect/captures/inbox.jpg", width: 900 },
 ];
+
+/*
+  Proyectos de clientes: escena (fondo + recorte), capturas de escritorio y la de
+  celular salen de content/projects/*.json. Añadir un proyecto no toca este script.
+*/
+async function read_project_images() {
+  const dir = resolve(root, "content/projects");
+  const files = (await readdir(dir)).filter((name) => name.endsWith(".json")).sort();
+  const images = [];
+  for (const file of files) {
+    const project = JSON.parse(await readFile(resolve(dir, file), "utf8"));
+    const to_path = (image) => `public${image.src_base}.${image.fallback_extension}`;
+    images.push({ path: to_path(project.scene.background), width: 1440 });
+    images.push({ path: to_path(project.scene.foreground), width: 1440 });
+    for (const shot of project.detail.desktop_shots) images.push({ path: to_path(shot), width: 1000 });
+    images.push({ path: to_path(project.detail.mobile_shot), width: 300 });
+  }
+  return images;
+}
 
 /*
   Las fotos del equipo NO se listan a mano: se leen de los JSON de contenido.
@@ -58,7 +91,11 @@ const QUALITY = { avif: 55, webp: 78 };
 async function main() {
   console.log("Generando variantes de imagen…");
 
-  const sources = [...FIXED_SOURCES, ...(await read_profile_photos())];
+  const sources = [
+    ...FIXED_SOURCES,
+    ...(await read_profile_photos()),
+    ...(await read_project_images()),
+  ];
 
   for (const source of sources) {
     const absolute = resolve(root, source.path);

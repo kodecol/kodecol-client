@@ -1,10 +1,11 @@
 import Link from "next/link";
 import type { ServiceOffering } from "@/core/domain/service_offering";
 import { SITE_CONFIG } from "@/shared/config/site_config";
-import { GlassCard } from "@/shared/ui/glass_card";
+import { Button } from "@/shared/ui/button";
 import { LineIcon } from "@/shared/ui/line_icon";
 import { Reveal } from "@/shared/ui/reveal";
-import { SectionHeading } from "@/shared/ui/section_heading";
+import { StaticPicture } from "@/shared/ui/static_picture";
+import { WhatsappIcon } from "@/shared/ui/whatsapp_icon";
 import { SERVICES_CONTENT } from "./content";
 
 interface ServicesSectionProps {
@@ -12,134 +13,100 @@ interface ServicesSectionProps {
 }
 
 /**
- * Servicios (#servicios): bento de 3 columnas con celda estrella 2×2 en gradiente
- * de marca + 5 celdas glass de apoyo + tira CTA de borde discontinuo (fiel al mockup).
+ * Servicios (#servicios), en atmósfera Cielo (DESIGN.md §3.1): cielo de día
+ * sobre la pradera, texto petróleo y la lista de servicios en un panel de vidrio
+ * claro. Entra con un corte limpio de color desde el Bosque de arriba.
  *
- * Cada tarjeta enlaza a su página de servicio: es el enlazado interno que hace
- * que las seis páginas de detalle existan para un buscador.
+ * Cada fila enlaza a su página de servicio: es el enlazado interno que hace que
+ * las seis páginas de detalle existan para un buscador.
  */
 export function ServicesSection({ services }: ServicesSectionProps) {
   const content = SERVICES_CONTENT;
-  const featured = services.find((service) => service.teaser.featured);
-  const support = services.filter((service) => !service.teaser.featured);
 
   return (
     <section
       id="servicios"
       aria-labelledby="servicios-title"
-      className="relative bg-surface-1 px-6 py-24 md:py-[110px]"
+      className="relative isolate overflow-hidden bg-sky-50 px-6 py-32 text-ink-petrol"
     >
-      {/* Glow radial superior de la sección */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[380px] w-[760px] max-w-full -translate-x-1/2"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 0%, rgba(0,115,92,.25), transparent 75%)",
-        }}
-      />
+      <div aria-hidden className="absolute inset-0 -z-10">
+        <StaticPicture
+          src_base="/images/scenes/sky_desktop"
+          fallback_extension="jpg"
+          width={1600}
+          height={900}
+          alt=""
+          fill
+          className="object-cover object-bottom"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-sky-50)_15%,transparent),transparent_30%,color-mix(in_srgb,var(--color-sky-50)_25%,transparent)_55%,color-mix(in_srgb,var(--color-sky-50)_10%,transparent))]" />
+      </div>
 
       <div className="relative mx-auto max-w-[1200px]">
         <Reveal>
-          <SectionHeading
-            id="servicios-title"
-            align="left"
-            eyebrow={content.eyebrow}
-            title={content.title}
-            subtitle={content.subtitle}
-            className="max-w-[680px]"
-          />
+          <header className="mb-14 grid items-end gap-6 md:grid-cols-[1.1fr_.9fr] md:gap-x-16">
+            <div className="grid gap-[18px]">
+              <p className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-mint-700">
+                <span aria-hidden className="h-px w-[18px] bg-current opacity-70" />
+                {content.eyebrow}
+              </p>
+              <h2
+                id="servicios-title"
+                className="max-w-[18ch] text-balance font-display text-[clamp(34px,4.6vw,60px)] font-extrabold leading-none tracking-[-0.045em]"
+              >
+                {content.title_lead}
+                <em className="font-serif text-[1.06em] font-normal italic tracking-[-0.01em]">
+                  {content.title_accent}
+                </em>
+              </h2>
+            </div>
+            <p className="max-w-[58ch] text-lg leading-relaxed text-ink-petrol-muted">{content.subtitle}</p>
+          </header>
         </Reveal>
 
-        <div className="mt-12 grid gap-[22px] md:grid-cols-3 md:auto-rows-[minmax(150px,auto)]">
-          {featured ? (
-            <Reveal delay={60} className="md:col-span-2 md:row-span-2">
-              <article
-                className="relative h-full overflow-hidden rounded-xl border border-border-accent shadow-glass"
-                style={{
-                  background:
-                    "linear-gradient(150deg, rgba(0,115,92,.55), rgba(1,75,77,.35))",
-                }}
-              >
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -right-16 -top-16 size-64 rounded-full"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(52,224,161,.25), transparent 70%)",
-                  }}
-                />
-                <Link
-                  href={`/servicios/${featured.slug}`}
-                  className="relative flex h-full flex-col justify-end p-7 md:p-9"
-                >
-                  <LineIcon
-                    name={featured.icon}
-                    size={44}
-                    className="mb-auto text-mint-500"
-                  />
-                  <span className="mt-8 w-fit rounded-full border border-border-accent px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-mint-300">
-                    {featured.teaser.badge}
-                  </span>
-                  <h3 className="mt-4 font-sora text-2xl font-semibold text-text-primary md:text-[26px]">
-                    {featured.teaser.title}
-                  </h3>
-                  <p className="mt-3 max-w-[520px] text-[15px] leading-relaxed text-green-100">
-                    {featured.teaser.description}
-                  </p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-mint-500">
-                    {content.card_link_label}
-                    <LineIcon name="arrow_right" size={14} />
-                  </span>
-                </Link>
-              </article>
-            </Reveal>
-          ) : null}
-
-          {support.map((service, index) => (
-            <Reveal key={service.slug} delay={100 + index * 40}>
-              <GlassCard as="article" interactive className="h-full rounded-xl">
+        <Reveal>
+          <ul className="rounded-[28px] border border-ink-petrol/10 bg-cream-50/75 px-[22px] py-1.5 shadow-[0_30px_80px_-30px_color-mix(in_srgb,var(--color-ink-petrol)_35%,transparent)] backdrop-blur-[22px]">
+            {services.map((service) => (
+              <li key={service.slug} className="border-b border-ink-petrol/15 last:border-b-0">
                 <Link
                   href={`/servicios/${service.slug}`}
-                  className="flex h-full flex-col gap-3 p-6"
+                  className="group grid grid-cols-[1fr_28px] items-center gap-x-6 gap-y-1.5 rounded px-2 py-[26px] transition-[background-color,padding] duration-slow ease-kodecol hover:bg-cream-50/80 md:grid-cols-[70px_1.1fr_1.4fr_40px] md:hover:px-5"
                 >
-                  <LineIcon name={service.icon} size={28} className="text-mint-500" />
-                  <h3 className="font-sora text-lg font-semibold text-text-primary">
-                    {service.teaser.title}
-                  </h3>
-                  <p className="text-[13.5px] leading-relaxed text-text-secondary">
-                    {service.teaser.description}
-                  </p>
-                  <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-[13px] font-semibold text-mint-500">
-                    {content.card_link_label}
-                    <LineIcon name="arrow_right" size={13} />
+                  <span className="col-span-full font-mono text-[13px] text-ink-petrol-muted md:col-span-1">
+                    {String(service.order).padStart(2, "0")}
                   </span>
+                  <h3 className="font-display text-[clamp(20px,2vw,26px)] font-semibold tracking-[-0.02em]">
+                    {service.teaser.title}
+                    {service.teaser.badge ? (
+                      <span className="ml-2.5 inline-block rounded-full border border-mint-700/40 px-2.5 py-0.5 align-middle font-poppins text-[10px] font-semibold uppercase tracking-[0.14em] text-mint-700">
+                        {service.teaser.badge}
+                      </span>
+                    ) : null}
+                  </h3>
+                  <p className="text-[15.5px] leading-relaxed text-ink-petrol-muted">{service.teaser.description}</p>
+                  <LineIcon
+                    name="arrow_right"
+                    size={22}
+                    className="row-span-2 row-start-2 justify-self-end transition-transform duration-slow ease-kodecol group-hover:translate-x-1 md:row-span-1 md:row-start-auto"
+                  />
                 </Link>
-              </GlassCard>
-            </Reveal>
-          ))}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
 
-          {/* Tira CTA full-width con borde discontinuo */}
-          <Reveal delay={320} className="md:col-span-3">
-            <a
-              href={SITE_CONFIG.whatsapp_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-dashed border-border-default px-6 py-5 text-[15px] text-text-secondary transition-colors duration-fast hover:border-border-accent"
-            >
-              <span>
-                {content.cta_lead}
-                <strong className="font-semibold text-text-primary">
-                  {content.cta_emphasis}
-                </strong>
-                {content.cta_tail}
-              </span>
-              <span className="font-semibold text-mint-500">
-                {content.cta_link_label}
-              </span>
-            </a>
-          </Reveal>
-        </div>
+        <Reveal>
+          <div className="mt-11 flex flex-wrap items-center justify-between gap-[18px] rounded-3xl border border-ink-petrol/10 bg-cream-50/60 px-[30px] py-[26px] backdrop-blur-[20px]">
+            <p className="max-w-[52ch] text-[17px]">
+              <strong className="font-semibold">{content.cta_lead}</strong>
+              {content.cta_text}
+            </p>
+            <Button href={SITE_CONFIG.whatsapp_url} external variant="ink">
+              <WhatsappIcon size={19} />
+              {content.cta_label}
+            </Button>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

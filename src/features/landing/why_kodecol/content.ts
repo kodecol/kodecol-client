@@ -1,36 +1,20 @@
 import type { WhyKodecolContent } from "./types";
 
-/* Copy fiel al mockup (sección #nosotros). */
+/*
+  Sección #nosotros, en atmósfera Espacio: el SOUL de Kodecol (KNOWLEDGE_BASE §6)
+  conectado con el concepto Raíz y circuito (§7): naturaleza, cosmos y máquina
+  funcionan igual.
+*/
 export const WHY_KODECOL_CONTENT = {
-  eyebrow: "Aliados de crecimiento consciente",
-  title_line_1: "No vendemos software.",
-  title_line_2: "Construimos futuro.",
+  eyebrow: "Raíz y circuito",
+  title_lead: "Pensamos a escala de universo.",
+  title_accent: "Construimos a escala de tu empresa.",
   subtitle:
-    "Creemos en empresas que crecen sin destruir, que innovan sin olvidar y que avanzan sin perder humanidad. Cada solución busca hacerte más eficiente, más responsable y más sostenible.",
+    "El bosque, el cielo y una buena máquina funcionan igual: cada pieza cumple una función y nada sobra. Así hacemos software, para que dure y para que crezca sin destruir lo que lo rodea.",
   differentiators: [
-    {
-      icon: "target",
-      title: "Tecnología con propósito",
-      description:
-        "Construimos pensando en el mañana: soluciones que optimizan recursos y reducen desperdicios.",
-    },
-    {
-      icon: "leaf",
-      title: "Automatización consciente",
-      description:
-        "Automatizamos para liberar a las personas, no para reemplazarlas sin criterio.",
-    },
-    {
-      icon: "star",
-      title: "Calidad que se siente",
-      description:
-        "Software útil, inteligente y bien hecho, con diseño premium y pensamiento estratégico.",
-    },
-    {
-      icon: "people",
-      title: "Aliado, no proveedor",
-      description:
-        "Nos involucramos en tu crecimiento. Tu resultado es nuestro objetivo.",
-    },
+    { title: "Tecnología con propósito", description: "Si no resuelve un problema real, no se construye." },
+    { title: "Automatización consciente", description: "Liberar a las personas, no reemplazarlas." },
+    { title: "Calidad que se siente", description: "Rápido en gama baja, accesible, medible." },
+    { title: "Aliado, no proveedor", description: "Tu resultado es nuestro objetivo." },
   ],
 } as const satisfies WhyKodecolContent;

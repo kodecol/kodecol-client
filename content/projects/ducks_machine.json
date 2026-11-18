@@ -1,0 +1,186 @@
+{
+  "slug": "ducks-machine",
+  "order": 3,
+  "name": "Ducks Machine",
+  "sector": "Rotulación de vehículos",
+  "city": "Campbell, California",
+  "year": "2026",
+  "status": "building",
+  "site_url": null,
+  "scene": {
+    "background": {
+      "src_base": "/images/scenes/projects_ducks-machine",
+      "fallback_extension": "jpg",
+      "width": 1920,
+      "height": 1200,
+      "alt": ""
+    },
+    "foreground": {
+      "src_base": "/images/scenes/projects_ducks-machine_fg",
+      "fallback_extension": "png",
+      "width": 1920,
+      "height": 1200,
+      "alt": ""
+    },
+    "entry": "en un segundo sabes a qué se dedican.",
+    "word": "clara.",
+    "remate": "Lo que se entiende, se vende.",
+    "word_top": 16
+  },
+  "teaser": {
+    "accent": "Haz que venda.",
+    "summary": "Una van en 3D que se rotula sola mientras haces scroll. La cotización sale armada por WhatsApp.",
+    "bullets": [
+      "Van 3D que pasa de rotulado a wrap completo con el scroll",
+      "Configurador «prueba tu nombre» sobre la van",
+      "Bilingüe EN/ES y cotización que arma el mensaje de WhatsApp"
+    ],
+    "chips": [
+      "3D en tiempo real",
+      "EN / ES",
+      "WhatsApp"
+    ]
+  },
+  "detail": {
+    "headline_lead": "Tu van ya es una valla.",
+    "headline_accent": "Haz que venda.",
+    "summary": "Un taller de rotulación del Bay Area. En su sitio, una van en 3D se rotula nivel por nivel mientras haces scroll: del logo a la flota completa.",
+    "desktop_shots": [
+      {
+        "src_base": "/images/projects/ducks-machine/desktop_hero",
+        "fallback_extension": "jpg",
+        "width": 3200,
+        "height": 2000,
+        "alt": "Portada de Ducks Machine con la van 3D en blanco"
+      },
+      {
+        "src_base": "/images/projects/ducks-machine/desktop_2",
+        "fallback_extension": "jpg",
+        "width": 3200,
+        "height": 2000,
+        "alt": "La van con el wrap completo impreso, a mitad del recorrido"
+      },
+      {
+        "src_base": "/images/projects/ducks-machine/desktop_3",
+        "fallback_extension": "jpg",
+        "width": 3200,
+        "height": 2000,
+        "alt": "La flota rotulada y el configurador para probar tu nombre"
+      }
+    ],
+    "mobile_shot": {
+      "src_base": "/images/projects/ducks-machine/mobile_hero",
+      "fallback_extension": "jpg",
+      "width": 1170,
+      "height": 2532,
+      "alt": "Portada de Ducks Machine en el celular"
+    },
+    "callouts": [
+      {
+        "side": "left",
+        "x": 18,
+        "y": 36,
+        "kicker": "Promesa",
+        "title": "Una línea, un negocio",
+        "description": "«Your van is already a billboard. Make it sell.» Se entiende sin leer más."
+      },
+      {
+        "side": "left",
+        "x": 8,
+        "y": 65,
+        "kicker": "Conversión",
+        "title": "Cotizar o escribir",
+        "description": "Dos botones: cotización y WhatsApp directo."
+      },
+      {
+        "side": "right",
+        "x": 66,
+        "y": 52,
+        "kicker": "3D",
+        "title": "La van real, en vivo",
+        "description": "Modelo con nivel de detalle que se rotula de atrás hacia adelante."
+      },
+      {
+        "side": "right",
+        "x": 84,
+        "y": 4,
+        "kicker": "Idioma",
+        "title": "EN / ES",
+        "description": "Inglés para el Bay Area, con español completo."
+      }
+    ],
+    "crop": {
+      "x": 44,
+      "y": 33,
+      "width": 54,
+      "height": 46,
+      "label": "escena 3D"
+    },
+    "mobile_notes": [
+      {
+        "title": "La van arriba",
+        "description": "El 3D se ve primero, también en el celular."
+      },
+      {
+        "title": "Promesa en itálica",
+        "description": "Tipografía ancha de taller, legible a una mano."
+      },
+      {
+        "title": "Cotizar, siempre visible",
+        "description": "El botón amarillo vive en el encabezado."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Mira",
+        "description": "La van espera en blanco, lista para rotularse."
+      },
+      {
+        "title": "Se rotula",
+        "description": "Con el scroll pasa por seis niveles, hasta el wrap completo."
+      },
+      {
+        "title": "Prueba tu nombre",
+        "description": "El configurador pone tu marca en la flota y arma la cotización."
+      }
+    ],
+    "spec": [
+      {
+        "label": "Tipo",
+        "value": "Sitio con escena 3D guiada por el scroll"
+      },
+      {
+        "label": "3D",
+        "value": "three.js, GSAP y Lenis · modelo GLB con nivel de detalle"
+      },
+      {
+        "label": "Idiomas",
+        "value": "Inglés por defecto, español completo"
+      },
+      {
+        "label": "Niveles",
+        "value": "Rotulado → gráficos → wrap parcial → completo → polarizado → flota"
+      },
+      {
+        "label": "Configurador",
+        "value": "Nombre, teléfono y colores sobre la van"
+      },
+      {
+        "label": "Cotización",
+        "value": "Arma el mensaje y abre WhatsApp"
+      },
+      {
+        "label": "Estado",
+        "value": "En construcción: esperando la aprobación del cliente"
+      },
+      {
+        "label": "Mercado",
+        "value": "Campbell, California · Bay Area"
+      }
+    ]
+  },
+  "seo": {
+    "title": "Ducks Machine: sitio 3D para rotulación",
+    "description": "Cómo construimos el sitio de Ducks Machine, taller de rotulación en California: una van 3D que se rotula con el scroll y cotización por WhatsApp."
+  }
+}

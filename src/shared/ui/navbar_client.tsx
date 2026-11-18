@@ -49,7 +49,7 @@ export function NavbarClient({ current_href }: NavbarClientProps) {
   const panel = (
     <div
       id="mobile-menu"
-      className="fixed inset-x-0 bottom-0 top-[96px] z-[90] flex flex-col overflow-y-auto overscroll-contain rounded-t-[24px] border-t border-glass-border bg-[rgba(4,17,15,.97)] px-8 pb-12 pt-8 backdrop-blur-[24px] md:hidden"
+      className="fixed inset-x-0 bottom-0 top-[96px] z-[90] flex flex-col overflow-y-auto overscroll-contain rounded-t-[24px] border-t border-glass-border bg-[rgba(4,17,15,.97)] px-8 pb-12 pt-8 backdrop-blur-[24px] lg:hidden"
     >
       <nav aria-label="Navegación mobile">
         <ul className="flex flex-col gap-1">
@@ -75,13 +75,13 @@ export function NavbarClient({ current_href }: NavbarClientProps) {
         onClick={() => set_open(false)}
         className="mt-8 inline-flex min-h-11 items-center justify-center gap-1 rounded-full bg-mint-500 px-6 py-3 text-sm font-semibold text-text-on-accent shadow-glow-accent-strong"
       >
-        Contáctanos <span aria-hidden>→</span>
+        Cotiza por WhatsApp <span aria-hidden>→</span>
       </a>
     </div>
   );
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         aria-label={open ? "Cerrar menú" : "Abrir menú"}

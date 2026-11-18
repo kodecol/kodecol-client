@@ -9,6 +9,7 @@
 - Estética: minimalismo iOS/Apple + glassmorphism + bento.
 - Acento (3er color): **Menta luminoso `#34E0A1`**.
 - Tipografías: **Sora** (titulares) + **Poppins** (cuerpo/UI).
+- Dirección en evolución: **híbrido orgánico** (ver `DESIGN.md`). Los tokens propuestos para esa dirección están en §11 y aún no están implementados.
 
 ---
 
@@ -354,3 +355,56 @@ MOVIMIENTO
   curva ............ cubic-bezier(0.16,1,0.3,1)
   duración base .... 250ms
 ```
+
+---
+
+## 11. Tokens de la dirección orgánica
+
+> Acompaña a la dirección **híbrido orgánico** de `DESIGN.md` (§3, §7, §8 y §15.2).
+> **Implementados en `globals.css` (nov. 2026):** `sky-50/100/200`, `cream-50/200`,
+> `ink-petrol`, `ink-petrol-muted`, `cream-ink` (#F6F2E8, la crema de la tipografía motion) y
+> las familias `--font-display` (Inter Tight) y `--font-serif` (Instrument Serif). Los
+> colores de naturaleza (§11.2) y los velos (§11.3) siguen como referencia: los velos se
+> escriben por escena con `color-mix` sobre `--color-bg`. Las tablas 1–10 siguen vigentes.
+
+### 11.1 Atmósfera Cielo (superficies claras)
+
+| Token propuesto | Hex | Uso |
+|---|---|---|
+| `sky-50` | `#F3F7F6` | fondo base de secciones Cielo (cielo pálido con matiz verde) |
+| `sky-100` | `#E4EEEC` | superficies, tarjetas de vidrio claro (con alpha) |
+| `sky-200` | `#C9DCDA` | bordes hairline sobre claro, niebla |
+| `cream-50` | `#FAF7F0` | hueso: tarjeta de dato destacada |
+| `cream-200` | `#EDE6D6` | beige retro (el del computador vintage) |
+| `ink-petrol` | `#0E2A26` | texto principal sobre Cielo (≈ green-950 desaturado) |
+| `ink-petrol-muted` | `#3F5A55` | texto secundario sobre Cielo |
+
+- Vidrio claro de referencia: `rgba(250, 247, 240, 0.62)` + `blur(20px)` + borde `rgba(14, 42, 38, 0.10)`.
+- CTA primario en Cielo: pill `ink-petrol` con texto `cream-50`; la menta queda para detalles.
+- Texto de acento sobre Cielo: `mint-700` o `green-600`, nunca `mint-500` en tamaños pequeños.
+
+### 11.2 Colores de la naturaleza (solo en imagen o como apoyo puntual)
+
+| Token propuesto | Hex | Rol |
+|---|---|---|
+| `moss-400` | `#7A9A3A` | musgo iluminado (referencia para dirección de arte y velos) |
+| `moss-700` | `#2F4A1F` | musgo en sombra |
+| `earth-500` | `#8A6A4A` | tierra |
+| `bloom-500` | `#E4572E` | flor silvestre — **solo** en fotografía, nunca en UI |
+
+### 11.3 Velos de legibilidad sobre fotografía
+
+| Token propuesto | Valor | Uso |
+|---|---|---|
+| `veil-forest` | `linear-gradient(180deg, rgba(4,17,15,0.55) 0%, rgba(4,17,15,0.25) 45%, rgba(4,17,15,0.75) 100%)` | Bosque: oscurece arriba (navbar) y abajo (contenido) |
+| `veil-mist` | `linear-gradient(180deg, rgba(243,247,246,0.70) 0%, rgba(243,247,246,0) 55%)` | Cielo: niebla clara detrás del titular |
+
+### 11.4 Serif de énfasis
+
+| Rol | Candidatas (Google Fonts, vía `next/font/google`) |
+|---|---|
+| Remate de titulares, citas, cifras editoriales | **Instrument Serif** (itálica, primera opción) · Fraunces (itálica, más cálida/retro) |
+
+- Variable propuesta: `--font-serif`; clase utilitaria `font-serif italic`.
+- Tamaño: el mismo estilo de la escala §2.2 que el titular que remata (Display XL, Display o H1), peso regular; tracking 0.
+- Nunca en cuerpo, botones ni navegación.

@@ -1,0 +1,186 @@
+{
+  "slug": "the-brothers-inc",
+  "order": 2,
+  "name": "The Brothers Inc",
+  "sector": "Estudio de grabación y sello",
+  "city": "Bogotá",
+  "year": "2026",
+  "status": "live",
+  "site_url": "https://thebrothersinc.co",
+  "scene": {
+    "background": {
+      "src_base": "/images/scenes/projects_the-brothers-inc",
+      "fallback_extension": "jpg",
+      "width": 1920,
+      "height": 1200,
+      "alt": ""
+    },
+    "foreground": {
+      "src_base": "/images/scenes/projects_the-brothers-inc_fg",
+      "fallback_extension": "png",
+      "width": 1920,
+      "height": 1200,
+      "alt": ""
+    },
+    "entry": "escuchar, comprar, reservar:",
+    "word": "un clic.",
+    "remate": "Todo en el mismo sitio.",
+    "word_top": 19
+  },
+  "teaser": {
+    "accent": "brotherhood.",
+    "summary": "Música, tienda de drops y reservas de sesión en un solo sitio. Y un agente de Axi que agenda por WhatsApp.",
+    "bullets": [
+      "Reproductor que sigue sonando mientras navegas",
+      "Tienda de drops con estado real: disponible, agotado o próximamente",
+      "Reserva de sesión y agenda por WhatsApp con Axi Connect"
+    ],
+    "chips": [
+      "Tienda",
+      "Reservas",
+      "Axi Connect"
+    ]
+  },
+  "detail": {
+    "headline_lead": "Música, cultura y",
+    "headline_accent": "brotherhood.",
+    "summary": "El sitio de un estudio de grabación y sello de Bogotá: escuchas a sus artistas, compras el drop de la semana y reservas tu sesión sin salir de la página.",
+    "desktop_shots": [
+      {
+        "src_base": "/images/projects/the-brothers-inc/desktop_hero",
+        "fallback_extension": "jpg",
+        "width": 3200,
+        "height": 2000,
+        "alt": "Portada de The Brothers Inc con el monograma del sello sobre el estudio"
+      },
+      {
+        "src_base": "/images/projects/the-brothers-inc/desktop_2",
+        "fallback_extension": "jpg",
+        "width": 3200,
+        "height": 2000,
+        "alt": "Discografía del sello en abanico, con sus cinco lanzamientos"
+      },
+      {
+        "src_base": "/images/projects/the-brothers-inc/desktop_3",
+        "fallback_extension": "jpg",
+        "width": 3200,
+        "height": 2000,
+        "alt": "TBI Store: merch, producción y paquetes del estudio"
+      }
+    ],
+    "mobile_shot": {
+      "src_base": "/images/projects/the-brothers-inc/mobile_hero",
+      "fallback_extension": "jpg",
+      "width": 1170,
+      "height": 2532,
+      "alt": "Portada de The Brothers Inc en el celular"
+    },
+    "callouts": [
+      {
+        "side": "left",
+        "x": 50,
+        "y": 44,
+        "kicker": "Identidad",
+        "title": "El sello al centro",
+        "description": "Música · Cultura · Brotherhood. La marca se entiende en un segundo."
+      },
+      {
+        "side": "left",
+        "x": 50,
+        "y": 93,
+        "kicker": "Canales",
+        "title": "Todo a un toque",
+        "description": "WhatsApp, Instagram, Spotify y la tienda en la misma barra."
+      },
+      {
+        "side": "right",
+        "x": 74,
+        "y": 4.5,
+        "kicker": "Navegación",
+        "title": "Cinco secciones",
+        "description": "Inicio, nosotros, tienda, artistas y contacto. Nada sobra."
+      },
+      {
+        "side": "right",
+        "x": 88,
+        "y": 93,
+        "kicker": "Audio",
+        "title": "Reproductor persistente",
+        "description": "El inédito sigue sonando mientras recorres el sitio."
+      }
+    ],
+    "crop": {
+      "x": 77,
+      "y": 88,
+      "width": 22,
+      "height": 10,
+      "label": "reproductor"
+    },
+    "mobile_notes": [
+      {
+        "title": "El sello primero",
+        "description": "Logo y lema llenan el pliegue, como una portada de disco."
+      },
+      {
+        "title": "Música en el bolsillo",
+        "description": "El reproductor se queda a la mano mientras navegas."
+      },
+      {
+        "title": "Menú de una mano",
+        "description": "Todo el sitio cabe detrás de un solo botón."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Escucha",
+        "description": "El reproductor del sello, con el inédito de la semana."
+      },
+      {
+        "title": "Descubre",
+        "description": "La discografía en abanico: cinco lanzamientos para escuchar ahora."
+      },
+      {
+        "title": "Compra y reserva",
+        "description": "Drops de merch, paquetes del estudio y la reserva de tu sesión."
+      }
+    ],
+    "spec": [
+      {
+        "label": "Tipo",
+        "value": "Sitio de marca, tienda y reservas"
+      },
+      {
+        "label": "Audio",
+        "value": "Reproductor persistente entre secciones"
+      },
+      {
+        "label": "Tienda",
+        "value": "Drops con estado: comprar, agotado o próximamente"
+      },
+      {
+        "label": "Reservas",
+        "value": "Formulario de sesión con cuatro servicios y fecha preferida"
+      },
+      {
+        "label": "Agenda",
+        "value": "Agente de Axi Connect por WhatsApp: 19 servicios con agenda"
+      },
+      {
+        "label": "Recordatorios",
+        "value": "24 horas y 1 hora antes de la sesión"
+      },
+      {
+        "label": "Crédito",
+        "value": "«Desarrollado por Kodecol» en el pie del sitio"
+      },
+      {
+        "label": "Estado",
+        "value": "En producción · thebrothersinc.co"
+      }
+    ]
+  },
+  "seo": {
+    "title": "The Brothers Inc: sitio de un estudio musical",
+    "description": "Cómo construimos el sitio de The Brothers Inc, estudio y sello de Bogotá: reproductor persistente, tienda de drops, reservas y agenda por WhatsApp con Axi."
+  }
+}

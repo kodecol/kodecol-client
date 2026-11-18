@@ -21,7 +21,7 @@
       "label": "tecnologías"
     }
   ],
-  "about": "Desarrollador Full Stack con más de 4 años entregando soluciones de extremo a extremo: automatización, IA y nube. He liderado la automatización de áreas completas, optimizado plataformas críticas (de 25s a menos de 1s de carga) y construido productos web, móviles, de escritorio y de datos. Hoy lidero el desarrollo en Megaguay y construyo Axi Connect.",
+  "about": "Desarrollador Full Stack con más de 4 años entregando soluciones de extremo a extremo: automatización, IA y nube. He liderado la automatización de áreas completas, optimizado plataformas críticas (de 25s a menos de 1s de carga) y construido productos web, móviles, de escritorio y de datos. Hoy lidero el desarrollo en Perplex Group y construyo Axi Connect.",
   "skill_groups": [
     {
       "title": "Lenguajes & Frameworks",
@@ -66,7 +66,7 @@
   "experience": [
     {
       "role": "Desarrollador Full Stack",
-      "company": "Megaguay Colombia",
+      "company": "Perplex Group",
       "period": "11/2025 – Actual",
       "location": "Bogotá",
       "description": "Automatización de procesos con servidor Python, integraciones SIESA/Zoho/bases de datos, alta disponibilidad y administración de servidores cloud. Una persona a cargo.",

@@ -28,10 +28,12 @@ export function Eyebrow({ children, pill = false, className }: EyebrowProps) {
   return (
     <span
       className={cn(
-        "text-xs font-semibold uppercase tracking-[0.14em] text-mint-500",
+        "inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-mint-500",
         className,
       )}
     >
+      {/* Línea guía: el gesto editorial de la dirección orgánica */}
+      <span aria-hidden className="h-px w-[18px] bg-current opacity-70" />
       {children}
     </span>
   );

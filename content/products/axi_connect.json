@@ -22,25 +22,82 @@
     "ink": "#ededed",
     "ink_muted": "#a1a1a6",
     "ink_dim": "#71717a",
-    "line": "#2b2b30"
+    "line": "#2b2b30",
+    "accent_2": "#a78bfa",
+    "accent_3": "#fbbf24"
   },
   "teaser": {
     "kind": "SaaS · Ventas por chat",
     "status": "En producción",
-    "claim_lead": "El futuro es ",
-    "claim_accent": "conversacional",
-    "summary": "Tus clientes ya no entran por la puerta: entran por el chat, desde cualquier canal. Y cada uno que se queda sin respuesta es una venta que le compraste a la competencia.",
-    "chips": ["En producción", "3 empresas piloto"],
-    "cta_label": "Conocer el producto"
+    "claim_lead": "Vende en cada ",
+    "claim_accent": "conversación",
+    "summary": "Un agente de IA que atiende tu WhatsApp como tu mejor vendedor: responde en segundos, cotiza con tus precios y deja el pago en manos de una persona.",
+    "chips": [
+      "En producción",
+      "3 empresas piloto"
+    ],
+    "cta_label": "Conocer el producto",
+    "showcase": {
+      "scene": {
+        "background": {
+          "src_base": "/images/scenes/axi_phone",
+          "fallback_extension": "jpg",
+          "width": 1920,
+          "height": 1200,
+          "alt": ""
+        },
+        "foreground": {
+          "src_base": "/images/scenes/axi_phone_fg",
+          "fallback_extension": "png",
+          "width": 1920,
+          "height": 1200,
+          "alt": ""
+        },
+        "entry": "en cada conversación, tu WhatsApp",
+        "word": "vende."
+      },
+      "headline_lead": "Vende en cada conversación.",
+      "headline_accent": "Lo construimos nosotros.",
+      "summary": "Un agente de IA que atiende tu WhatsApp como tu mejor vendedor: responde en segundos, cotiza con tus precios y deja el pago en manos de una persona. Lo pensamos, lo construimos y lo operamos.",
+      "proof": {
+        "label": "Prueba real · hamburguesería piloto · agosto de 2026",
+        "steps": [
+          {
+            "time": "6:09",
+            "label": "El cliente saluda"
+          },
+          {
+            "time": "6:14",
+            "label": "Pedido creado"
+          },
+          {
+            "time": "6:17",
+            "label": "Entregado"
+          }
+        ],
+        "footnote": "Nadie del negocio tocó el teléfono."
+      },
+      "metric_values": [
+        "88",
+        "214",
+        "2.550",
+        "8"
+      ],
+      "metrics_caption": "Lo que hay debajo de Axi, verificado contra el código · arrastra o usa las flechas"
+    }
   },
   "detail": {
     "eyebrow": "Producto propio de Kodecol",
-    "headline_lead": "Axi Connect es lo que pasa cuando construimos ",
-    "headline_accent": "para nosotros mismos",
-    "description": "Un SaaS donde las empresas venden por WhatsApp con agentes de inteligencia artificial. Lo pensamos, lo construimos y lo operamos nosotros. Hoy está en producción atendiendo clientes reales — y es la muestra más honesta de cómo trabajamos.",
-    "chips": ["En producción", "3 empresas piloto", "Colombia"],
+    "headline_lead": "Vende en cada ",
+    "headline_accent": "conversación",
+    "description": "Axi atiende tu WhatsApp como tu mejor vendedor: responde en segundos, cotiza con tus precios, cobra y te lleva a tu meta del mes.",
+    "chips": [
+      "En producción",
+      "3 empresas piloto",
+      "Colombia"
+    ],
     "primary_cta": {
-      "label": "Ver Axi Connect",
+      "label": "Prueba Axi siete días gratis",
       "href": "https://axi-connect.co",
       "external": true
     },
@@ -74,20 +131,53 @@
           "title": "Si no sabe, escala",
           "description": "Máximo 5 pasos de razonamiento y 30 segundos por turno. Tras dos fallos, la conversación pasa a una persona con todo el contexto."
         }
-      ]
+      ],
+      "clip": {
+        "src": "/videos/products/axi-connect/control.mp4",
+        "poster": "/videos/products/axi-connect/control_poster.webp",
+        "caption": "Reglas reales del agente · «Lo que nunca hace»"
+      }
     },
     "metrics": {
       "eyebrow": "Lo que hay debajo",
       "title": "La parte que un folleto de producto nunca te muestra.",
       "description": "No es un prototipo ni un MVP. Estas son las cifras del sistema que hay detrás de esas conversaciones, verificadas contra el código.",
       "items": [
-        { "value": "88", "label": "tablas en 20 familias de datos", "featured": true },
-        { "value": "214", "label": "rutas de API", "featured": false },
-        { "value": "142", "label": "casos de uso", "featured": false },
-        { "value": "29", "label": "colas de trabajo", "featured": false },
-        { "value": "18", "label": "herramientas que el agente puede ejecutar", "featured": false },
-        { "value": "8", "label": "aplicaciones de IA distintas, no una", "featured": true },
-        { "value": "2.550", "label": "pruebas automatizadas entre backend y frontend", "featured": false }
+        {
+          "value": "88",
+          "label": "tablas en 20 familias de datos",
+          "featured": true
+        },
+        {
+          "value": "214",
+          "label": "rutas de API",
+          "featured": false
+        },
+        {
+          "value": "142",
+          "label": "casos de uso",
+          "featured": false
+        },
+        {
+          "value": "29",
+          "label": "colas de trabajo",
+          "featured": false
+        },
+        {
+          "value": "18",
+          "label": "herramientas que el agente puede ejecutar",
+          "featured": false
+        },
+        {
+          "value": "8",
+          "label": "aplicaciones de IA distintas, no una",
+          "featured": true
+        },
+        {
+          "value": "2.550",
+          "label": "pruebas automatizadas entre backend y frontend",
+          "featured": false
+        }
       ]
     },
     "stack": {
@@ -150,9 +240,9 @@
     },
     "closing": {
       "title": "¿Te interesa Axi, o te interesa lo que hacemos?",
-      "description": "Las dos puertas están abiertas, y llevan a sitios distintos a propósito.",
+      "description": "Las dos puertas están abiertas. La primera te lleva a probar Axi siete días gratis. La segunda nos escribe a nosotros, si quieres un producto propio como este.",
       "product_cta": {
-        "label": "Conocer Axi Connect",
+        "label": "Prueba Axi siete días gratis",
         "href": "https://axi-connect.co",
         "external": true
       },
@@ -161,8 +251,97 @@
         "href": "/#cotizaciones",
         "external": false
       },
-      "note": "La primera te lleva al sitio de Axi, donde puedes agendar una demo. La segunda nos escribe a nosotros, si lo que quieres es un producto propio como este."
-    }
+      "note": "Axi Connect es un producto de Kodecol. Las capturas son de la app real, con un negocio y datos de ejemplo."
+    },
+    "hero_capture": {
+      "src_base": "/images/products/axi-connect/captures/inbox",
+      "fallback_extension": "jpg",
+      "width": 2880,
+      "height": 1800,
+      "alt": "Bandeja real de Axi Connect: catorce conversaciones abiertas, trece atendidas por el agente",
+      "caption": "App real · negocio y datos de ejemplo"
+    },
+    "hero_notes": [
+      {
+        "title": "Pedido #1042 confirmado",
+        "description": "Total calculado por el servidor"
+      },
+      {
+        "title": "Pago por verificar",
+        "description": "Lo confirma una persona del equipo"
+      }
+    ],
+    "journey": {
+      "eyebrow": "Una venta real",
+      "title": "Del «hola» al domicilio en ocho minutos.",
+      "description": "Hamburguesería piloto, agosto de 2026. El cliente escribió por WhatsApp; el agente tomó el pedido completo y el equipo solo despachó.",
+      "steps": [
+        {
+          "time": "6:09 p. m.",
+          "text": "El cliente saluda por WhatsApp."
+        },
+        {
+          "time": "6:14 p. m.",
+          "text": "Pedido creado, con número e inventario descontado."
+        },
+        {
+          "time": "6:17 p. m.",
+          "text": "Entregado. Nadie del negocio tocó el teléfono."
+        }
+      ]
+    },
+    "pillars": [
+      {
+        "label": "Vender y cobrar",
+        "tone": "accent",
+        "title": "La venta completa, dentro del chat",
+        "description": "Catálogo, cotización, pedido, envío y pago. El agente encuentra la prenda aunque le escriban «camizeta».",
+        "clip": {
+          "src": "/videos/products/axi-connect/vende.mp4",
+          "poster": "/videos/products/axi-connect/vende_poster.webp",
+          "caption": "Pedido confirmado dentro del chat"
+        }
+      },
+      {
+        "label": "Crecer",
+        "tone": "accent_3",
+        "title": "Una meta del mes con camino diario",
+        "description": "Sabes cuánto vendió cada conversación y cuánto falta. Lo que no cerró, se sigue solo y en horario legal.",
+        "clip": {
+          "src": "/videos/products/axi-connect/meta.mp4",
+          "poster": "/videos/products/axi-connect/meta_poster.webp",
+          "caption": "La meta del mes, con ruta diaria"
+        }
+      },
+      {
+        "label": "Atender",
+        "tone": "accent_2",
+        "title": "Como una persona del equipo",
+        "description": "Una idea por mensaje, notas de voz entendidas y llamadas. Si no sabe, pasa a una persona con todo el contexto.",
+        "clip": {
+          "src": "/videos/products/axi-connect/llamadas.mp4",
+          "poster": "/videos/products/axi-connect/llamadas_poster.webp",
+          "caption": "Llamada atendida y resumida"
+        }
+      }
+    ],
+    "channels": [
+      {
+        "name": "WhatsApp oficial, con tu mismo número",
+        "status": "Con clientes reales",
+        "live": true
+      },
+      {
+        "name": "Llamadas entrantes y salientes",
+        "status": "En producción",
+        "live": true
+      },
+      {
+        "name": "Instagram y Messenger",
+        "status": "Aprobados por Meta",
+        "live": false
+      }
+    ]
   },
   "seo": {
     "title": "Axi Connect — SaaS de ventas por chat con IA",

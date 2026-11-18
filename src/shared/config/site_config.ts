@@ -58,13 +58,13 @@ export const SITE_CONFIG = {
     ga_measurement_id: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "",
     google_site_verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? "",
   },
-  /* Orden fiel al mockup: Inicio · Cotizaciones · Servicios · Nosotros · Equipo */
+  /* Orden del recorrido de la landing: lo que hacemos → lo que hicimos →
+     lo nuestro → quiénes somos. La conversión vive en el CTA del navbar. */
   nav_links: [
-    { label: "Inicio", href: "/#inicio" },
-    { label: "Cotizaciones", href: "/#cotizaciones" },
     { label: "Servicios", href: "/#servicios" },
-    { label: "Marcas propias", href: "/#marcas" },
-    { label: "Nosotros", href: "/#nosotros" },
+    { label: "Proyectos", href: "/proyectos" },
+    { label: "Axi Connect", href: "/marcas/axi-connect" },
+    { label: "Biblioteca", href: "/biblioteca" },
     { label: "Equipo", href: "/#equipo" },
   ] satisfies NavLink[],
 } as const;

@@ -5,9 +5,12 @@ import { KodecolLogo } from "@/shared/ui/kodecol_mark";
 import { LegalBadge } from "@/shared/ui/legal_badge";
 
 const FOOTER_NAV = [
-  { label: "Inicio", href: "/#inicio" },
+  { label: "Inicio", href: "/" },
   { label: "Servicios", href: "/servicios" },
-  { label: "Nosotros", href: "/#nosotros" },
+  { label: "Proyectos", href: "/proyectos" },
+  { label: "Axi Connect", href: "/marcas/axi-connect" },
+  { label: "Biblioteca", href: "/biblioteca" },
+  { label: "Equipo", href: "/#equipo" },
   { label: "Cotizaciones", href: "/#cotizaciones" },
 ];
 

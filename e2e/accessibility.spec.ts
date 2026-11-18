@@ -9,6 +9,8 @@ const PAGES = [
   "/servicios/desarrollo-web",
   "/marcas",
   "/marcas/axi-connect",
+  "/proyectos",
+  "/proyectos/neon-night",
   "/equipo",
   "/equipo/cristian-velasquez",
   /* /equipo/juan: perfil oculto temporalmente */

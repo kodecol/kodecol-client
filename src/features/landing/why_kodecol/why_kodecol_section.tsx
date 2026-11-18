@@ -1,12 +1,15 @@
-import { GlassCard } from "@/shared/ui/glass_card";
-import { LineIcon } from "@/shared/ui/line_icon";
+import { CANVAS_PALETTE } from "@/shared/config/canvas_palette";
+import { BlackHole } from "@/shared/ui/black_hole";
+import { Eyebrow } from "@/shared/ui/eyebrow";
 import { Reveal } from "@/shared/ui/reveal";
-import { SectionHeading } from "@/shared/ui/section_heading";
 import { WHY_KODECOL_CONTENT } from "./content";
 
 /**
- * Por qué Kodecol (#nosotros): encabezado centrado con luz focal + 4 tarjetas glass
- * de diferenciadores con ícono en caja menta (fiel al mockup).
+ * Por qué Kodecol (#nosotros), en atmósfera Espacio: un agujero negro trazado en
+ * tiempo real, con el disco de gas en los verdes de la marca y las estrellas que
+ * continúan las luciérnagas de la pradera. Debajo, los cuatro pilares del SOUL.
+ *
+ * Server component: el agujero negro es la única hoja client.
  */
 export function WhyKodecolSection() {
   const content = WHY_KODECOL_CONTENT;
@@ -15,55 +18,42 @@ export function WhyKodecolSection() {
     <section
       id="nosotros"
       aria-labelledby="nosotros-title"
-      className="relative bg-bg px-6 py-24 md:py-[110px]"
+      className="relative isolate min-h-[980px] overflow-hidden bg-black md:h-svh md:max-h-[1000px] md:min-h-[820px]"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[820px] max-w-full -translate-x-1/2 blur-lg"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 0%, rgba(0,115,92,.30), transparent 75%)",
-        }}
+      <BlackHole
+        focus={[0.7, 0.47]}
+        narrow_focus={[0.5, 0.78]}
+        scrim="left"
+        hot_color={CANVAS_PALETTE.green_50}
+        mid_color={CANVAS_PALETTE.mint_500}
+        cool_color={CANVAS_PALETTE.green_800}
+        className="z-0"
       />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[200px] bg-gradient-to-b from-bg to-transparent" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[200px] bg-gradient-to-t from-bg to-transparent" />
 
-      <div className="relative mx-auto max-w-[1200px]">
+      <div className="relative z-[2] mx-auto flex h-full max-w-[1200px] flex-col justify-start gap-6 px-6 pt-32 md:justify-center md:pt-0">
         <Reveal>
-          <SectionHeading
+          <Eyebrow className="text-green-200">{content.eyebrow}</Eyebrow>
+          <h2
             id="nosotros-title"
-            eyebrow={content.eyebrow}
-            title={
-              <>
-                {content.title_line_1}
-                <br />
-                {content.title_line_2}
-              </>
-            }
-            subtitle={content.subtitle}
-            title_class_name="md:text-[40px] md:leading-[1.12]"
-          />
+            className="mt-6 max-w-[13ch] text-balance font-display text-[clamp(38px,5vw,70px)] font-light leading-none tracking-[-0.035em] text-text-primary"
+          >
+            {content.title_lead}{" "}
+            <em className="block font-serif font-normal italic text-green-200">{content.title_accent}</em>
+          </h2>
+          <p className="mt-6 max-w-[46ch] text-lg leading-relaxed text-text-secondary">{content.subtitle}</p>
         </Reveal>
-
-        <div className="mt-14 grid gap-[22px] sm:grid-cols-2 lg:grid-cols-4">
-          {content.differentiators.map((item, index) => (
-            <Reveal key={item.title} delay={80 + index * 60}>
-              <GlassCard
-                as="article"
-                interactive
-                className="flex h-full flex-col gap-4 rounded-xl p-6"
-              >
-                <span className="grid size-12 place-items-center rounded-lg border border-border-accent bg-surface-inset/60 text-mint-500">
-                  <LineIcon name={item.icon} size={24} />
-                </span>
-                <h3 className="font-sora text-lg font-semibold text-text-primary">
-                  {item.title}
-                </h3>
-                <p className="text-[13.5px] leading-relaxed text-text-secondary">
-                  {item.description}
-                </p>
-              </GlassCard>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal>
+          <ul className="mt-8 grid max-w-[760px] grid-cols-2 border-t border-white/15 md:grid-cols-4">
+            {content.differentiators.map((item) => (
+              <li key={item.title} className="pr-[18px] pt-[18px]">
+                <h3 className="font-display text-sm font-semibold tracking-[-0.01em] text-text-primary">{item.title}</h3>
+                <p className="mt-1 text-[13px] leading-normal text-text-muted">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

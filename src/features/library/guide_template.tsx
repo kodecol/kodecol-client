@@ -5,18 +5,21 @@ import {
   type GuideLine,
   type LibraryGuide,
 } from "@/core/domain/library_guide";
+import type { NavLink } from "@/shared/config/site_config";
 import { FloatingReel } from "./floating_reel";
-import { GuideCard, KeywordTitle } from "./guide_card";
+import { GuideCard } from "./guide_card";
 import { GuideToc, type TocEntry } from "./guide_toc";
 import { to_card } from "./guide_view_model";
-import { format_duration, format_guide_date, get_guide_media, GUIDES_PATH, LIBRARY_PATH } from "./library_paths";
+import { format_duration, format_guide_date, get_guide_media, GUIDES_PATH, LIBRARY_BACKDROPS, LIBRARY_PATH } from "./library_paths";
 import { LibraryShell } from "./library_shell";
+import { LibraryStage, split_lockup } from "./library_stage";
 import { PromptTerminal } from "./prompt_terminal";
 import { ClosingSection } from "./sections/closing_section";
 import { ShareActions } from "./share_actions";
 import { TrackedLink } from "./tracked_link";
 
 interface GuideTemplateProps {
+  service_links?: readonly NavLink[];
   guide: LibraryGuide;
   related: readonly LibraryGuide[];
   canonical_url: string;
@@ -57,9 +60,10 @@ function SectionHead({ kicker, children, id }: { kicker: string; children: React
  * paso a paso → recursos → aprendizajes → archivo para Claude → cierre →
  * relacionadas → nota legal.
  */
-export function GuideTemplate({ guide, related, canonical_url }: GuideTemplateProps) {
+export function GuideTemplate({ guide, related, canonical_url, service_links }: GuideTemplateProps) {
   const media = get_guide_media(guide.slug);
   const name = guide.title.split(":")[0];
+  const lockup = split_lockup(guide.title, guide.title_keyword);
 
   return (
     <LibraryShell
@@ -69,31 +73,25 @@ export function GuideTemplate({ guide, related, canonical_url }: GuideTemplatePr
         { label: name },
       ]}
       legal={guide.legal}
+      service_links={service_links}
       progress
       context={guide.slug}
     >
-      <header className="lib-ghero">
-        <div className="lib-wrap lib-ghero-grid">
-          <div className="lib-ghero-copy">
+      <LibraryStage
+        labelled_by="guia-titulo"
+        heading={guide.title}
+        backdrop={LIBRARY_BACKDROPS.guides}
+        priority
+        compact
+        top={
+          <div className="lib-stage-top">
             <p className="lib-kicker">Guía · {GUIDE_TOPIC_LABELS[guide.topic]}</p>
-            <h1 className="lib-display">
-              <KeywordTitle title={guide.title} keyword={guide.title_keyword} />
-            </h1>
-            <p className="lib-lede">{guide.summary}</p>
-            <div className="lib-ghero-meta">
-              <span className="lib-chip lib-chip--menta">Hecho con {guide.made_with[0]}</span>
-              {guide.made_with.slice(1).map((tool) => (
-                <span key={tool} className="lib-chip">
-                  {tool}
-                </span>
-              ))}
-              <span className="lib-chip">
-                {GUIDE_LEVEL_LABELS[guide.level]} · {guide.duration}
-              </span>
-              <span className="lib-chip">{format_guide_date(guide.published_at)}</span>
-            </div>
-            <ShareActions slug={guide.slug} title={`${guide.title} · Biblioteca Kodecol`} url={canonical_url} />
+            <p className="lib-stage-name">{name}</p>
           </div>
+        }
+        entry={lockup.entry}
+        word={lockup.word}
+        object={
           <FloatingReel
             title={name}
             sources={[
@@ -101,8 +99,23 @@ export function GuideTemplate({ guide, related, canonical_url }: GuideTemplatePr
               { id: "publicado", label: "En Instagram", duration: format_duration(guide.video_seconds.published), video: media.published_video, poster: media.published_poster },
             ]}
           />
+        }
+      >
+        <p className="lib-lede">{guide.summary}</p>
+        <div className="lib-ghero-meta">
+          <span className="lib-chip lib-chip--menta">Hecho con {guide.made_with[0]}</span>
+          {guide.made_with.slice(1).map((tool) => (
+            <span key={tool} className="lib-chip">
+              {tool}
+            </span>
+          ))}
+          <span className="lib-chip">
+            {GUIDE_LEVEL_LABELS[guide.level]} · {guide.duration}
+          </span>
+          <span className="lib-chip">{format_guide_date(guide.published_at)}</span>
         </div>
-      </header>
+        <ShareActions slug={guide.slug} title={`${guide.title} · Biblioteca Kodecol`} url={canonical_url} />
+      </LibraryStage>
 
       <div className="lib-wrap">
         <p className="lib-lede" style={{ maxWidth: "70ch", paddingBottom: 8 }}>

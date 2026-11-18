@@ -1,25 +1,25 @@
 import { SITE_CONFIG } from "@/shared/config/site_config";
 import type { HeroContent } from "./types";
 
-/* Copy fiel al mockup Kodecol Landing (sección #inicio). */
+/* Copy del héroe (#inicio). La frase es la promesa oficial (KNOWLEDGE_BASE §1). */
 export const HERO_CONTENT = {
-  // eyebrow: "Tecnología con propósito",
-  title_lead: "El software que tu empresa necesita para ",
-  title_accent: "crecer de verdad.",
-  description_lead:
-    "Diseñamos y desarrollamos productos digitales con inteligencia artificial y pensamiento estratégico para resolver problemas reales. No construimos software para que exista: lo construimos para que ",
-  description_emphasis: "impacte",
-  description_tail: ".",
+  title: "El software que tu empresa necesita para crecer de verdad.",
+  entry: "el software que tu empresa necesita para",
+  word: "crecer",
+  remate: "de verdad.",
   primary_cta: {
-    label: "Hablemos por WhatsApp",
+    label: "Cuéntanos tu caso",
     href: SITE_CONFIG.whatsapp_url,
     external: true,
   },
   secondary_cta: {
-    label: "Ver servicios",
-    href: "/#servicios",
+    label: "Ver proyectos",
+    href: "/proyectos",
     external: false,
   },
-  microcopy:
-    "Fábrica de software en Colombia · Aliados de crecimiento consciente.",
+  microcopy: "Hablas directo con quien construye. Sin formularios.",
+  intro_lead: "Páginas que venden, procesos que corren solos e ",
+  intro_emphasis: "inteligencia artificial que no inventa datos",
+  intro_tail: ". Lo diseñamos, lo construimos y lo dejamos funcionando.",
+  band_label: "Trabajo real · en línea hoy",
 } as const satisfies HeroContent;

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import {
+  get_client_project_repository,
   get_developer_profile_repository,
   get_library_guide_repository,
   get_product_brand_repository,
@@ -48,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const brands = get_product_brand_repository();
   const services = get_service_offering_repository();
   const guides = get_library_guide_repository();
+  const projects = get_client_project_repository();
 
   return [
     to_entry("/", null, "weekly", 1),
@@ -56,6 +58,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...services
       .get_all_slugs()
       .map((slug) => to_entry(`/servicios/${slug}`, `services/${slug}`, "monthly", 0.9)),
+    /* Proyectos: la prueba social de la fábrica de software. */
+    to_entry("/proyectos", null, "monthly", 0.9),
+    ...projects
+      .get_all_slugs()
+      .map((slug) => to_entry(`/proyectos/${slug}`, `projects/${slug}`, "monthly", 0.8)),
     to_entry("/marcas", null, "monthly", 0.8),
     ...brands
       .get_all_slugs()

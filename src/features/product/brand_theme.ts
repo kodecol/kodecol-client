@@ -20,5 +20,8 @@ export function build_brand_theme(theme: BrandTheme): CSSProperties {
     "--brand-ink-muted": theme.ink_muted,
     "--brand-ink-dim": theme.ink_dim,
     "--brand-line": theme.line,
+    /* Acentos secundarios: si la marca no los trae, caen al principal. */
+    "--brand-accent-2": theme.accent_2 ?? theme.accent,
+    "--brand-accent-3": theme.accent_3 ?? theme.accent_soft,
   } as CSSProperties;
 }

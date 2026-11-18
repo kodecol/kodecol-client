@@ -1,17 +1,16 @@
 /*
-  El copy de cada servicio ya no vive aquí: es contenido de dominio y viene del
-  repositorio (content/services/*.json), para que el título de la tarjeta y el de
+  El copy de cada servicio no vive aquí: es contenido de dominio y viene del
+  repositorio (content/services/*.json), para que el título de la fila y el de
   su página no puedan divergir. Este archivo solo tipa el copy DE LA SECCIÓN.
 */
 
 export interface ServicesContent {
   eyebrow: string;
-  title: string;
+  /** El titular se parte: la cola va en serif itálica. */
+  title_lead: string;
+  title_accent: string;
   subtitle: string;
-  /** Texto del enlace de cada tarjeta hacia su página de servicio. */
-  card_link_label: string;
   cta_lead: string;
-  cta_emphasis: string;
-  cta_tail: string;
-  cta_link_label: string;
+  cta_text: string;
+  cta_label: string;
 }

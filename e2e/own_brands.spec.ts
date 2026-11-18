@@ -3,24 +3,22 @@ import { expect, test } from "@playwright/test";
 /* Marcas propias: la sección de la landing y la página de detalle de cada producto. */
 
 test.describe("marcas propias", () => {
-  test("la landing muestra la sección con la tarjeta de Axi Connect", async ({
-    page,
-  }) => {
+  test("la landing presenta Axi Connect con su prueba real", async ({ page }) => {
     await page.goto("/");
     const section = page.locator("#marcas");
-    await expect(section).toBeVisible();
+    await section.scrollIntoViewIfNeeded();
     await expect(
-      section.getByRole("heading", { name: /también construimos lo nuestro/i }),
+      section.getByRole("heading", { name: /Vende en cada conversación/ }),
     ).toBeVisible();
-    await expect(section.getByText("Axi Connect")).toBeVisible();
-    await expect(section.getByText("El futuro es")).toBeVisible();
+    await expect(section.getByText("Axi Connect", { exact: true })).toBeVisible();
+    await expect(section.getByText("Nadie del negocio tocó el teléfono.")).toBeVisible();
   });
 
   test("la tarjeta lleva a la página de la marca", async ({ page }) => {
     await page.goto("/");
     await page
       .locator("#marcas")
-      .getByRole("link", { name: /Axi Connect/i })
+      .getByRole("link", { name: "Conocer Axi Connect" })
       .click();
     await expect(page).toHaveURL(/\/marcas\/axi-connect$/);
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
@@ -35,11 +33,14 @@ test.describe("marcas propias", () => {
 
     /* Las secciones que solo existen aquí: el criterio de ingeniería */
     await expect(page.getByText(/el dato no pasa por ahí/i)).toBeVisible();
-    await expect(page.getByText("88")).toBeVisible();
+    /* La cifra va en la lista accesible además del carrusel (decorativo). */
+    await expect(page.getByRole("definition").filter({ hasText: /^88$/ })).toBeAttached();
     await expect(page.getByText(/Joao's Burguer/)).toBeVisible();
 
     /* Cierre a dos puertas: una al producto, otra a Kodecol */
-    const to_product = page.getByRole("link", { name: "Conocer Axi Connect" });
+    const to_product = page
+      .getByRole("link", { name: "Prueba Axi siete días gratis" })
+      .last();
     await expect(to_product).toHaveAttribute("href", "https://axi-connect.co");
     await expect(to_product).toHaveAttribute("target", "_blank");
     await expect(

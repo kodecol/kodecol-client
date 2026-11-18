@@ -3,8 +3,9 @@ interface TrustBarContent {
   brands: readonly string[];
 }
 
-/* Marcas fieles al mockup (texto, no logos de imagen). */
+/* Marcas como texto, no logos de imagen. Todas en mayúsculas para que la barra
+   se lea pareja (MEGAGUAY ahora se llama PERPLEX GROUP). */
 export const TRUST_BAR_CONTENT = {
-  heading: "Empresas que ya construyen futuro con Kodecol",
-  brands: ["MEGAGUAY", "Quántica", "Fedegolf", "Terpel", "Acertemos"],
+  heading: "Empresas que ya construyen con Kodecol",
+  brands: ["PERPLEX GROUP", "QUÁNTICA", "FEDEGOLF", "TERPEL", "ACERTEMOS"],
 } as const satisfies TrustBarContent;

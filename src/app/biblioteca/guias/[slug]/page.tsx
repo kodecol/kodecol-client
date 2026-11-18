@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { build_service_links } from "@/shared/config/service_links";
 import { notFound } from "next/navigation";
-import { get_library_guide_repository } from "@/adapters/content";
+import { get_library_guide_repository, get_service_offering_repository } from "@/adapters/content";
 import { GuideTemplate } from "@/features/library/guide_template";
 import { build_guide_path, get_guide_media } from "@/features/library/library_paths";
 import { build_page_metadata } from "@/shared/seo/build_page_metadata";
@@ -96,7 +97,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
           },
         ])}
       />
-      <GuideTemplate guide={guide} related={related} canonical_url={canonical} />
+      <GuideTemplate guide={guide} related={related} canonical_url={canonical} service_links={build_service_links(get_service_offering_repository().get_all())} />
     </>
   );
 }
