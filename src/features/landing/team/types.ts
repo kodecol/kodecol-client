@@ -11,6 +11,13 @@ export interface TeamMemberCard {
   photo_src: string;
   photo_width: number;
   photo_height: number;
+  /**
+   * Dónde está la cabeza en la foto, para encuadrar a todos igual en el móvil:
+   * `x` es su centro (0–1 del ancho) y `head` su ancho dividido por el alto de
+   * la foto. Cada recorte viene con otro encuadre; con esto las cabezas salen
+   * del mismo tamaño y centradas en su tarjeta.
+   */
+  photo_focus: { x: number; head: number };
   /** Hoja de vida en PDF, si la persona la publica. */
   cv_src: string | null;
 }

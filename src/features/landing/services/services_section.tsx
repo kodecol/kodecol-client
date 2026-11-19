@@ -68,6 +68,9 @@ export function ServicesSection({ services }: ServicesSectionProps) {
           <ul className="rounded-[28px] border border-ink-petrol/10 bg-cream-50/75 px-[22px] py-1.5 shadow-[0_30px_80px_-30px_color-mix(in_srgb,var(--color-ink-petrol)_35%,transparent)] backdrop-blur-[22px]">
             {services.map((service) => (
               <li key={service.slug} className="border-b border-ink-petrol/15 last:border-b-0">
+                {/* En móvil la flecha va fija en la columna 2: con solo `row-start-2`,
+                    la grilla la colocaba primero en la columna ancha y empujaba el
+                    título y el texto a la de 28 px, donde se desbordaban. */}
                 <Link
                   href={`/servicios/${service.slug}`}
                   className="group grid grid-cols-[1fr_28px] items-center gap-x-6 gap-y-1.5 rounded px-2 py-[26px] transition-[background-color,padding] duration-slow ease-kodecol hover:bg-cream-50/80 md:grid-cols-[70px_1.1fr_1.4fr_40px] md:hover:px-5"
@@ -87,7 +90,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                   <LineIcon
                     name="arrow_right"
                     size={22}
-                    className="row-span-2 row-start-2 justify-self-end transition-transform duration-slow ease-kodecol group-hover:translate-x-1 md:row-span-1 md:row-start-auto"
+                    className="col-start-2 row-span-2 row-start-2 justify-self-end transition-transform duration-slow ease-kodecol group-hover:translate-x-1 md:col-start-auto md:row-span-1 md:row-start-auto"
                   />
                 </Link>
               </li>

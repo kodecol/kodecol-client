@@ -16,6 +16,7 @@ export const TEAM_CONTENT = {
       photo_src: "/images/team/cristian_hero.png",
       photo_width: 1024,
       photo_height: 1536,
+      photo_focus: { x: 0.497, head: 0.353 },
       cv_src: "/cv/cristian_velasquez_cv.pdf",
     },
     {
@@ -27,6 +28,7 @@ export const TEAM_CONTENT = {
       photo_src: "/images/team/juan_carlos_lopez_v2.png",
       photo_width: 1089,
       photo_height: 1444,
+      photo_focus: { x: 0.325, head: 0.294 },
       cv_src: null,
     },
     /* Juan David Herrera — oculto temporalmente. Su JSON sigue en

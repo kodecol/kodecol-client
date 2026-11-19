@@ -45,9 +45,11 @@ export function HeroSection({ work_images }: HeroSectionProps) {
         object_position="var(--hero-op)"
         fireflies
         priority
-        className="h-[860px] [--hero-op:50%_100%] md:h-[clamp(720px,100svh,1000px)] md:[--hero-op:50%_62%]"
+        className="h-[max(760px,100svh)] [--hero-op:50%_100%] md:h-[clamp(720px,100svh,1000px)] md:[--hero-op:50%_62%]"
         word={
-          <div className="absolute left-1/2 top-[47%] z-[2] -translate-x-1/2 -translate-y-1/2 md:top-[40%]">
+          /* En móvil el computador ocupa el 40 % de abajo (su borde, ~60 %): la
+             palabra baja hasta rozarlo para pasar detrás, y la entrada va justo encima. */
+          <div className="absolute left-1/2 top-[55%] z-[2] -translate-x-1/2 -translate-y-1/2 md:top-[40%]">
             <GiantWord text={content.word} appear="load" className="text-[27vw] md:text-[clamp(110px,17.5vw,290px)]" />
           </div>
         }
@@ -62,7 +64,7 @@ export function HeroSection({ work_images }: HeroSectionProps) {
         </h1>
         <p
           aria-hidden
-          className="absolute inset-x-0 top-[13%] z-[5] px-5 text-center font-serif text-[clamp(30px,3.6vw,54px)] italic leading-none tracking-[-0.02em] text-cream-ink [text-shadow:0_2px_30px_rgb(0_0_0/.45)] md:top-[15%]"
+          className="absolute inset-x-0 top-[34%] z-[5] text-balance px-5 text-center font-serif text-[clamp(30px,3.6vw,54px)] italic leading-none tracking-[-0.02em] text-cream-ink [text-shadow:0_2px_30px_rgb(0_0_0/.45)] md:top-[15%]"
         >
           {content.entry}
         </p>

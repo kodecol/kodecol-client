@@ -10,10 +10,18 @@ import { TEAM_CONTENT } from "./content";
 
 const to_base = (src: string) => src.replace(/\.[a-zA-Z]+$/, "");
 
+/** Ancho de la cabeza en el retrato móvil de cada tarjeta: todas iguales. */
+const HEAD_PX = 92;
+
 /**
  * Equipo (#equipo), en la estética motion de Kodecol (K-24): la crew recortada
  * en la pradera de noche, con «construyen.» pasando detrás. Debajo, una tarjeta
  * de vidrio por persona con su perfil y su hoja de vida.
+ *
+ * En móvil las tarjetas van una debajo de otra, así que la foto de grupo no
+ * casaría con ellas: la escena queda solo con el lockup y cada tarjeta abre con
+ * el retrato de su persona, encuadrado por `photo_focus` para que todos se vean
+ * del mismo tamaño.
  */
 export function TeamSection() {
   const content = TEAM_CONTENT;
@@ -23,7 +31,7 @@ export function TeamSection() {
       <h2 id="equipo-title" className="sr-only">
         {content.title}
       </h2>
-      <div className="relative isolate h-[520px] overflow-hidden md:h-[clamp(640px,64vw,900px)]">
+      <div className="relative isolate h-[400px] overflow-hidden md:h-[clamp(640px,64vw,900px)]">
         <StaticPicture
           src_base="/images/scenes/cta_desktop"
           fallback_extension="jpg"
@@ -36,14 +44,14 @@ export function TeamSection() {
         <Fireflies className="z-[1]" />
         <p
           aria-hidden
-          className="absolute inset-x-0 top-[9%] z-[4] text-center font-serif text-[clamp(30px,3.6vw,54px)] italic leading-none tracking-[-0.02em] text-cream-ink md:top-[11%]"
+          className="absolute inset-x-0 top-[33%] z-[4] text-center font-serif text-[clamp(30px,3.6vw,54px)] italic leading-none tracking-[-0.02em] text-cream-ink md:top-[11%]"
         >
           {content.entry}
         </p>
-        <div className="absolute left-1/2 top-[27%] z-[2] -translate-x-1/2 -translate-y-1/2">
-          <GiantWord text={content.word} className="text-[17vw] md:text-[clamp(90px,14.5vw,240px)]" />
+        <div className="absolute left-1/2 top-[54%] z-[2] -translate-x-1/2 -translate-y-1/2 md:top-[27%]">
+          <GiantWord text={content.word} className="text-[13.5vw] md:text-[clamp(90px,14.5vw,240px)]" />
         </div>
-        <div className="absolute inset-x-0 bottom-0 z-[3] flex items-end justify-center md:gap-[clamp(0px,6vw,110px)]">
+        <div className="absolute inset-x-0 bottom-0 z-[3] hidden items-end justify-center md:flex md:gap-[clamp(0px,6vw,110px)]">
           {content.members.map((member) => (
             <StaticPicture
               key={member.name}
@@ -61,7 +69,32 @@ export function TeamSection() {
       <div className="relative z-[5] mx-auto -mt-10 grid max-w-[1200px] gap-[22px] px-6 md:-mt-[90px] md:grid-cols-2">
         {content.members.map((member, index) => (
           <Reveal key={member.name} delay={index * 100} className="h-full">
-            <article className="flex h-full flex-col gap-3.5 rounded-[28px] border border-border-default bg-glass-fill-strong p-[30px] shadow-glass-lg backdrop-blur-[22px]">
+            <article className="flex h-full flex-col gap-3.5 overflow-hidden rounded-[28px] border border-border-default bg-glass-fill-strong p-[30px] shadow-glass-lg backdrop-blur-[22px]">
+              <div
+                aria-hidden
+                className="relative -mx-[30px] -mt-[30px] mb-1 h-[240px] overflow-hidden [mask-image:linear-gradient(180deg,#000_62%,transparent)] md:hidden"
+              >
+                <StaticPicture
+                  src_base="/images/scenes/cta_desktop"
+                  fallback_extension="jpg"
+                  width={1600}
+                  height={900}
+                  alt=""
+                  fill
+                  className="object-cover object-[50%_42%] brightness-[.5] saturate-[.9]"
+                />
+                <StaticPicture
+                  src_base={to_base(member.photo_src)}
+                  alt=""
+                  width={member.photo_width}
+                  height={member.photo_height}
+                  className="absolute top-8 w-auto max-w-none drop-shadow-[0_24px_40px_rgb(0_0_0/.6)]"
+                  style={{
+                    height: `${Math.round(HEAD_PX / member.photo_focus.head)}px`,
+                    left: `calc(50% - ${Math.round((HEAD_PX / member.photo_focus.head) * (member.photo_width / member.photo_height) * member.photo_focus.x)}px)`,
+                  }}
+                />
+              </div>
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-mint-500">{member.role}</p>
               <h3 className="font-display text-[clamp(26px,2.6vw,36px)] font-extrabold leading-none tracking-[-0.045em] text-text-primary">
                 {member.name}
