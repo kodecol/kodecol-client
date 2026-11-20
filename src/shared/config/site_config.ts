@@ -33,7 +33,7 @@ export const SITE_CONFIG = {
   whatsapp_number: "573224970950",
   whatsapp_url: "https://wa.me/573224970950",
   whatsapp_display: "322 497 0950",
-  email: "gestion.proyectos.axi@gmail.com",
+  email: "technology@axi-connect.co",
   location: "Colombia",
   legal: {
     business_name: "KODECOL S.A.S",
